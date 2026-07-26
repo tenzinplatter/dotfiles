@@ -5,6 +5,9 @@
 (defvar
   tap-time 150
   hold-time 200
+  ;; urob's require-prior-idle-ms: if the previous key was pressed this
+  ;; recently, we're mid-burst, so the mod is a plain letter, no hold at all.
+  prior-idle 150
 )
 
 (defsrc
@@ -30,14 +33,24 @@
   ;; same-hand ignore + timeout hold: a quick same-hand roll still taps (released
   ;; before timeout), but HOLDING two same-hand mods past the timeout chords them
   ;; (e.g. d+f = Ctrl+Shift).
-  a (tap-hold-opposite-hand $hold-time a lmet (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  s (tap-hold-opposite-hand $hold-time s lalt (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  d (tap-hold-opposite-hand $hold-time d lctl (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  f (tap-hold-opposite-hand $hold-time f lsft (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  j (tap-hold-opposite-hand $hold-time j rsft (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  k (tap-hold-opposite-hand $hold-time k rctl (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  l (tap-hold-opposite-hand $hold-time l ralt (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  ; (tap-hold-opposite-hand $hold-time ; rmet (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  a- (tap-hold-opposite-hand $hold-time a lmet (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  s- (tap-hold-opposite-hand $hold-time s lalt (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  d- (tap-hold-opposite-hand $hold-time d lctl (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  f- (tap-hold-opposite-hand $hold-time f lsft (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  j- (tap-hold-opposite-hand $hold-time j rsft (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  k- (tap-hold-opposite-hand $hold-time k rctl (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  l- (tap-hold-opposite-hand $hold-time l ralt (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+  ;- (tap-hold-opposite-hand $hold-time ; rmet (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
+
+  ;; prior-idle gate: plain letter mid-burst, hold-tap when starting from rest.
+  a (switch ((key-timing 1 less-than $prior-idle)) a break () @a- break)
+  s (switch ((key-timing 1 less-than $prior-idle)) s break () @s- break)
+  d (switch ((key-timing 1 less-than $prior-idle)) d break () @d- break)
+  f (switch ((key-timing 1 less-than $prior-idle)) f break () @f- break)
+  j (switch ((key-timing 1 less-than $prior-idle)) j break () @j- break)
+  k (switch ((key-timing 1 less-than $prior-idle)) k break () @k- break)
+  l (switch ((key-timing 1 less-than $prior-idle)) l break () @l- break)
+  ; (switch ((key-timing 1 less-than $prior-idle)) ; break () @;- break)
 )
 
 (deflayer base
