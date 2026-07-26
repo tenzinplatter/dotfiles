@@ -5,8 +5,9 @@
 (defvar
   tap-time 150
   hold-time 200
-  ;; urob's require-prior-idle-ms: if the previous key was pressed this
-  ;; recently, we're mid-burst, so the mod is a plain letter, no hold at all.
+  ;; Mirrors config/skeletyl.keymap hml/hmr:
+  ;;   tapping-term-ms 280, require-prior-idle-ms 150
+  hrm-hold-time 280
   prior-idle 150
 )
 
@@ -26,31 +27,23 @@
   ;; Caps lock → Esc (tap) / Ctrl (hold)
   cec (tap-hold $tap-time $hold-time esc lctl)
 
-  ;; Home row mods - opposite-hand chordal hold (GACS: Super, Alt, Ctrl, Shift)
-  ;; A mod resolves to its modifier only when the next key is on the OTHER
-  ;; hand (see defhands), so same-hand rolls never misfire. spc/tab are
-  ;; neutral, so resting on a mod while reaching for them just types the letter.
-  ;; same-hand ignore + timeout hold: a quick same-hand roll still taps (released
-  ;; before timeout), but HOLDING two same-hand mods past the timeout chords them
-  ;; (e.g. d+f = Ctrl+Shift).
-  a- (tap-hold-opposite-hand $hold-time a lmet (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  s- (tap-hold-opposite-hand $hold-time s lalt (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  d- (tap-hold-opposite-hand $hold-time d lctl (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  f- (tap-hold-opposite-hand $hold-time f lsft (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  j- (tap-hold-opposite-hand $hold-time j rsft (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  k- (tap-hold-opposite-hand $hold-time k rctl (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  l- (tap-hold-opposite-hand $hold-time l ralt (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-  ;- (tap-hold-opposite-hand $hold-time ; rmet (neutral-keys spc tab) (neutral hold) (same-hand ignore) (timeout hold))
-
-  ;; prior-idle gate: plain letter mid-burst, hold-tap when starting from rest.
-  a (switch ((key-timing 1 less-than $prior-idle)) a break () @a- break)
-  s (switch ((key-timing 1 less-than $prior-idle)) s break () @s- break)
-  d (switch ((key-timing 1 less-than $prior-idle)) d break () @d- break)
-  f (switch ((key-timing 1 less-than $prior-idle)) f break () @f- break)
-  j (switch ((key-timing 1 less-than $prior-idle)) j break () @j- break)
-  k (switch ((key-timing 1 less-than $prior-idle)) k break () @k- break)
-  l (switch ((key-timing 1 less-than $prior-idle)) l break () @l- break)
-  ; (switch ((key-timing 1 less-than $prior-idle)) ; break () @;- break)
+  ;; Home row mods (GACS: Super, Alt, Ctrl, Shift), mirroring the hml/hmr
+  ;; hold-tap behaviors in ~/zmk-skeletyl/config/skeletyl.keymap:
+  ;;   -release variant      = hold-trigger-on-release
+  ;;   opposite-hand + thumbs = hold-trigger-key-positions <KEYS_x THUMBS>
+  ;;   (require-prior-idle N) = require-prior-idle-ms
+  ;;   (same-hand ignore)     = same-hand key is NOT in the trigger list
+  ;;   (timeout hold)         = flavor "balanced" falling back to hold
+  ;; unknown-hand covers keys the Skeletyl doesn't have (digits, F-keys,
+  ;; arrows); hold so Super+1, Ctrl+Left etc. still work.
+  a (tap-hold-opposite-hand-release $hrm-hold-time a lmet (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  s (tap-hold-opposite-hand-release $hrm-hold-time s lalt (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  d (tap-hold-opposite-hand-release $hrm-hold-time d lctl (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  f (tap-hold-opposite-hand-release $hrm-hold-time f lsft (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  j (tap-hold-opposite-hand-release $hrm-hold-time j rsft (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  k (tap-hold-opposite-hand-release $hrm-hold-time k rctl (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  l (tap-hold-opposite-hand-release $hrm-hold-time l ralt (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
+  ; (tap-hold-opposite-hand-release $hrm-hold-time ; rmet (neutral-keys spc tab ret bspc esc) (neutral hold) (same-hand ignore) (unknown-hand hold) (timeout hold) (require-prior-idle $prior-idle))
 )
 
 (deflayer base
