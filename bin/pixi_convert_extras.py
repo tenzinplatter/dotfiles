@@ -89,20 +89,25 @@ def join_blocks(blocks: list[tuple[str | None, list[str]]]) -> str:
     return "\n".join(out).rstrip("\n") + "\n"
 
 
-def dep_names(blocks, *table_suffixes: str) -> set[str]:
-    """Names declared in the given dep tables (e.g. 'host-dependencies')."""
+def dep_names(blocks, *tables: str) -> set[str]:
+    """Names declared in the given dep tables, matched by FULL header path (e.g.
+    'dependencies', 'package.host-dependencies').
+
+    Full-path matching matters: a suffix match on 'dependencies' also hits
+    '[feature.tests.dependencies]', which would make every test-only dep look
+    like it was declared somewhere else and silently droppable.
+    """
     names: set[str] = set()
     for header, body in blocks:
         if header is None:
             continue
-        # [package.host-dependencies], [dependencies], [package.run-dependencies]...
-        if any(header == s or header.endswith("." + s) for s in table_suffixes):
+        if header in tables:
             for line in body:
                 m = DEP_RE.match(line)
                 if m and not line.lstrip().startswith("#"):
                     names.add(m.group("name"))
         # table form: [dependencies.foo]
-        for s in table_suffixes:
+        for s in tables:
             if header.startswith(s + "."):
                 names.add(header[len(s) + 1:])
     return names
@@ -140,9 +145,15 @@ def check_flags(blocks) -> None:
 def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
     """feature.tests.dependencies -> package.extra-dependencies.test, tasks -> tasks."""
     changed = False
-    # Names safe to drop from the extras block: sibling path deps that are also
-    # declared in a real dep table (so the artifact still gets them).
-    declared = dep_names(blocks, "dependencies", "host-dependencies", "run-dependencies")
+    # A sibling path dep in the tests feature was installed into the WORKSPACE env,
+    # which is where `colcon build`/`colcon test` run. Only two tables put a name
+    # in that env: [dependencies] directly, and [package.run-dependencies] via the
+    # self dep's run closure. [package.host-dependencies] does NOT — those go to
+    # the build backend's isolated env, so a dep that lives only there is invisible
+    # to find_package() during the test build.
+    in_env = dep_names(blocks, "dependencies", "package.run-dependencies")
+    # Sibling path deps that need re-homing into [dependencies] to stay in the env.
+    rehome: list[str] = []
 
     # Arch-conditional test deps get flattened into the single extras block —
     # extras carry no target selector. Safe because a relock follows: if the dep
@@ -169,12 +180,12 @@ def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
                         name = m.group("name")
                         if pm.group("path") == ".":
                             continue  # self dep; extras handles it
-                        if name not in declared:
-                            raise Flag(
-                                f"test-only sibling path dep '{name}' — declare it in a real "
-                                "dep table first, or convert this file by hand"
-                            )
-                        continue  # already declared elsewhere; drop from extras
+                        if name not in in_env:
+                            # Move it to [dependencies] — same workspace env the
+                            # tests feature put it in, and a table that takes path
+                            # deps (unlike package.extra-dependencies).
+                            rehome.append(line)
+                        continue  # never keep a path dep in the extras block
                 kept.append(line)
             # Fold arch-conditional deps in, before any trailing blanks/comments.
             if extra_lines:
@@ -190,6 +201,20 @@ def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
             changed = True
         else:
             out.append((header, body))
+
+    if rehome:
+        for i, (header, body) in enumerate(out):
+            if header == "dependencies":
+                at = max((j for j, l in enumerate(body) if DEP_RE.match(l)), default=len(body) - 1)
+                out[i] = (header, body[: at + 1] + rehome + body[at + 1 :])
+                changed = True
+                break
+        else:
+            raise Flag(
+                "test-only sibling path deps "
+                f"({', '.join(DEP_RE.match(l).group('name') for l in rehome)}) "
+                "but no [dependencies] table to re-home them into — convert by hand"
+            )
     return out, changed
 
 
@@ -523,8 +548,8 @@ prod = { features = ["vessel"] }
         assert "feature.tests" not in out, "feature.tests survived"
         assert 'extras = ["test"]' in out, "self dep did not gain extras"
         assert NEW_CHANNEL in out and OLD_CHANNEL not in out, "channel not swapped"
-        # sibling path dep dropped from extras (declared in host-deps) but kept there
-        extras_body = out.split("[package.extra-dependencies.test]")[1].split("[")[0]
+        # sibling path dep never stays in extras; it is in [dependencies] already
+        extras_body = out.split("[package.extra-dependencies.test]")[1].split("\n[")[0]
         assert "sibling" not in extras_body, "sibling path dep should be dropped from extras"
         assert "[package.host-dependencies]" in out, "host-deps clobbered"
         # other environments must survive; the tests env must not
@@ -548,6 +573,19 @@ prod = { features = ["vessel"] }
         assert "target.linux-64" not in out, "target table survived"
         assert out.index('pyds = "*"') > out.index("[package.extra-dependencies.test]"), \
             "arch-conditional dep landed outside the extras block"
+
+        # a sibling path dep that lives ONLY in host-dependencies is not in the
+        # workspace env, so it must be re-homed into [dependencies], not dropped
+        p.write_text(before.replace(
+            "[feature.tests.dependencies]",
+            '[package.host-dependencies]\nsib = { path = "../sib" }\n\n'
+            '[feature.tests.dependencies]\nsib = { path = "../sib" }',
+        ))
+        out, _ = convert_manifest(p)
+        dep_block = out.split("\n[dependencies]")[1].split("\n[", 1)[0]
+        assert 'sib = { path = "../sib" }' in dep_block, "host-only sibling path dep was dropped"
+        extras_block = out.split("[package.extra-dependencies.test]")[1].split("\n[", 1)[0]
+        assert "sib " not in extras_block and "sib=" not in extras_block, "path dep left in extras block"
 
         # flags: no-default-feature changes semantics
         p.write_text(before.replace(
