@@ -54,10 +54,19 @@ class Flag(Exception):
 
 
 def discover(root: pathlib.Path) -> list[pathlib.Path]:
-    return sorted(
+    found = sorted(
         p for p in root.rglob("pixi.toml")
         if not any(seg in p.parts for seg in SKIP_DIRS)
     )
+    # A gitignored manifest is somebody's local dev workspace (several repos keep
+    # an untracked root pixi.toml for that). Converting it is pointless — CI never
+    # reads it — and relocking it drops an untracked pixi.lock next to it that
+    # then gets staged into the PR.
+    ignored = git(
+        root, "check-ignore", *(str(p) for p in found), check=False
+    ).stdout.splitlines()
+    ignored = {pathlib.Path(l).resolve() for l in ignored}
+    return [p for p in found if p.resolve() not in ignored]
 
 
 def split_blocks(text: str) -> list[tuple[str | None, list[str]]]:
