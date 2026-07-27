@@ -348,9 +348,9 @@ def taplo_format(paths: list[pathlib.Path], root: pathlib.Path) -> str | None:
     return None
 
 
-def git(root: pathlib.Path, *args: str) -> subprocess.CompletedProcess:
+def git(root: pathlib.Path, *args: str, check: bool = True) -> subprocess.CompletedProcess:
     return subprocess.run(
-        ["git", "-C", str(root), *args], capture_output=True, text=True, check=True
+        ["git", "-C", str(root), *args], capture_output=True, text=True, check=check
     )
 
 
@@ -372,10 +372,16 @@ def preflight(root: pathlib.Path, expect: str = "main") -> str | None:
         return f"on branch '{branch}', not {expect} — switch to it (or handle this repo manually)"
     if dirty:
         return "worktree is dirty — commit/stash first:\n    " + dirty.replace("\n", "\n    ")
-    try:
-        git(root, "pull", "--ff-only")
-    except subprocess.CalledProcessError as e:
-        return f"git pull failed: {(e.stderr or e.stdout).strip()}"
+    # A freshly created local branch has no upstream to pull from; that's normal,
+    # not an error. Only pull when there is something to pull.
+    has_upstream = git(
+        root, "rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}", check=False
+    ).returncode == 0
+    if has_upstream:
+        try:
+            git(root, "pull", "--ff-only")
+        except subprocess.CalledProcessError as e:
+            return f"git pull failed: {(e.stderr or e.stdout).strip()}"
     return None
 
 
