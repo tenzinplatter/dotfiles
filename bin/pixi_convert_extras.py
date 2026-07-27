@@ -22,6 +22,8 @@ alone -- this never guesses at semantics. Flagged cases are a human's call:
 import argparse
 import pathlib
 import re
+import shutil
+import subprocess
 import sys
 
 OLD_CHANNEL = "http://localhost:12222/general"
@@ -262,6 +264,25 @@ def bump_workflows(root: pathlib.Path, apply: bool) -> list[str]:
     return notes
 
 
+def taplo_format(paths: list[pathlib.Path]) -> str | None:
+    """Re-align the manifests we rewrote. Our line edits don't pad `=` to match
+    taplo's alignment, so without this every converted file shows up as dirty
+    under the repo's taplo-format pre-commit hook."""
+    if not paths:
+        return None
+    taplo = shutil.which("taplo")
+    if not taplo:
+        return "taplo not on PATH — run the repo's pre-commit to format"
+    r = subprocess.run(
+        [taplo, "format", *map(str, paths)],
+        capture_output=True,
+        text=True,
+    )
+    if r.returncode != 0:
+        return f"taplo format failed: {(r.stderr or r.stdout).strip()}"
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("root", type=pathlib.Path)
@@ -275,6 +296,7 @@ def main() -> int:
         return 1
 
     converted, skipped, flagged = [], [], []
+    written: list[pathlib.Path] = []
     for m in manifests:
         try:
             new_text, notes = convert_manifest(m)
@@ -287,9 +309,11 @@ def main() -> int:
         else:
             if args.apply:
                 m.write_text(new_text)
+                written.append(m)
             converted.append((rel, notes))
 
     wf_notes = bump_workflows(root, args.apply)
+    taplo_warning = taplo_format(written) if args.apply else None
 
     for rel, notes in converted:
         print(f"✓ {rel}  ({', '.join(notes)})")
@@ -297,6 +321,8 @@ def main() -> int:
         print(f"✓ {note}")
     for m, why in flagged:
         print(f"⚠ {m.relative_to(root)}\n    {why}")
+    if taplo_warning:
+        print(f"⚠ {taplo_warning}")
 
     print(
         f"\n{len(converted)} converted, {len(skipped)} already current, "
@@ -308,5 +334,87 @@ def main() -> int:
     return 2 if flagged else 0
 
 
+def _selfcheck() -> None:
+    """python3 pixi_convert_extras.py --selfcheck — smallest thing that fails if
+    the transform breaks. No framework, no fixtures."""
+    import tempfile
+
+    before = '''[workspace]
+name = "demo"
+channels = ["http://localhost:12222/general"]
+
+[dependencies]
+demo = { path = "." }
+sibling = { path = "../sibling" }
+
+[package.host-dependencies]
+sibling = { path = "../sibling" }
+
+[feature.tests.dependencies]
+ros-dev-tools-meta = "*"
+sibling = { path = "../sibling" }
+
+[feature.tests.tasks]
+build = "colcon build"
+
+[feature.tests.tasks.test]
+cmd = "colcon test-result"
+
+[environments]
+tests = { features = ["tests"] }
+prod = { features = ["vessel"] }
+'''
+    with tempfile.TemporaryDirectory() as d:
+        p = pathlib.Path(d) / "pixi.toml"
+        p.write_text(before)
+        out, notes = convert_manifest(p)
+        assert out is not None, "expected a conversion"
+        assert "[package.extra-dependencies.test]" in out, "extras table missing"
+        assert "feature.tests" not in out, "feature.tests survived"
+        assert 'extras = ["test"]' in out, "self dep did not gain extras"
+        assert NEW_CHANNEL in out and OLD_CHANNEL not in out, "channel not swapped"
+        # sibling path dep dropped from extras (declared in host-deps) but kept there
+        extras_body = out.split("[package.extra-dependencies.test]")[1].split("[")[0]
+        assert "sibling" not in extras_body, "sibling path dep should be dropped from extras"
+        assert "[package.host-dependencies]" in out, "host-deps clobbered"
+        # other environments must survive; the tests env must not
+        assert 'prod = { features = ["vessel"] }' in out, "unrelated env was dropped"
+        assert not re.search(r"^\s*tests\s*=", out, re.M), "tests env survived"
+        assert "[tasks]" in out and "[tasks.test]" in out, "tasks not promoted"
+
+        # idempotent: converting the result again is a no-op
+        p.write_text(out)
+        again, _ = convert_manifest(p)
+        assert again is None, "second pass should be a no-op"
+
+        # flags: arch-conditional must refuse rather than guess
+        p.write_text(before.replace(
+            "[feature.tests.dependencies]",
+            "[feature.tests.target.linux-64.dependencies]\npyds = \"*\"\n\n[feature.tests.dependencies]",
+        ))
+        try:
+            convert_manifest(p)
+        except Flag:
+            pass
+        else:
+            raise AssertionError("arch-conditional deps should have been flagged")
+
+        # flags: no-default-feature changes semantics
+        p.write_text(before.replace(
+            'tests = { features = ["tests"] }',
+            'tests = { features = ["tests"], no-default-feature = true }',
+        ))
+        try:
+            convert_manifest(p)
+        except Flag:
+            pass
+        else:
+            raise AssertionError("no-default-feature should have been flagged")
+    print("selfcheck ok")
+
+
 if __name__ == "__main__":
+    if "--selfcheck" in sys.argv:
+        _selfcheck()
+        sys.exit(0)
     sys.exit(main())
