@@ -28,7 +28,18 @@ import sys
 
 OLD_CHANNEL = "http://localhost:12222/general"
 NEW_CHANNEL = "az://stgrcondachannel.blob.core.windows.net/general"
-BRANCH = "tenzinplatter/sc-23507/reintroduce-lockfiles-in-ci-mise-v6"
+BRANCH = "refactor/pixi-test-extras"
+TITLE = "refactor: pixi test extras, az:// channels, mise @v8"
+BODY = """Mechanical conversion (scripted, `pixi_convert_extras.py`):
+
+- test deps move from a `tests` environment to a `test` extra, so they fold into
+  the `default` env — no separate environment to resolve or solve for
+- GR conda channel -> `az://stgrcondachannel.blob.core.windows.net/general`
+- mise action/workflow refs -> `@v8`
+- `pixi.lock` regenerated for every package
+
+[sc-23514] [sc-21396]
+"""
 
 SKIP_DIRS = (".pixi", "_ci_fix", "node_modules", "build", "install", "log", ".git")
 
@@ -330,7 +341,7 @@ def make_pr(root: pathlib.Path, branch: str, paths: list[pathlib.Path]) -> str |
         git(root, "add", "--", "*pixi.lock")
         if not git(root, "diff", "--cached", "--name-only").stdout.strip():
             return "nothing staged — no PR created"
-        git(root, "commit", "-m", "refactor: use pixi extras for test deps and az:// channels")
+        git(root, "commit", "-m", TITLE)
         git(root, "push", "-u", "origin", branch, "--force-with-lease")
     except subprocess.CalledProcessError as e:
         return f"git failed: {(e.stderr or e.stdout).strip()}"
@@ -342,7 +353,8 @@ def make_pr(root: pathlib.Path, branch: str, paths: list[pathlib.Path]) -> str |
     url = view.stdout.strip()
     if not url:
         create = subprocess.run(
-            ["gh", "pr", "create", "--fill", "--head", branch, "--base", "main"],
+            ["gh", "pr", "create", "--title", TITLE, "--body", BODY,
+             "--head", branch, "--base", "main"],
             cwd=root, capture_output=True, text=True,
         )
         url = create.stdout.strip().splitlines()[-1] if create.returncode == 0 else ""
