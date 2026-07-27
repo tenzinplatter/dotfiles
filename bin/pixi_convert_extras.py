@@ -28,6 +28,8 @@ import sys
 
 OLD_CHANNEL = "http://localhost:12222/general"
 NEW_CHANNEL = "az://stgrcondachannel.blob.core.windows.net/general"
+BRANCH = "tenzinplatter/sc-23507/reintroduce-lockfiles-in-ci-mise-v6"
+
 SKIP_DIRS = (".pixi", "_ci_fix", "node_modules", "build", "install", "log", ".git")
 
 # A dep line: `name = "spec"` or `name = { ... }`, keeping alignment whitespace.
@@ -264,7 +266,7 @@ def bump_workflows(root: pathlib.Path, apply: bool) -> list[str]:
     return notes
 
 
-def taplo_format(paths: list[pathlib.Path]) -> str | None:
+def taplo_format(paths: list[pathlib.Path], root: pathlib.Path) -> str | None:
     """Re-align the manifests we rewrote. Our line edits don't pad `=` to match
     taplo's alignment, so without this every converted file shows up as dirty
     under the repo's taplo-format pre-commit hook."""
@@ -273,13 +275,81 @@ def taplo_format(paths: list[pathlib.Path]) -> str | None:
     taplo = shutil.which("taplo")
     if not taplo:
         return "taplo not on PATH — run the repo's pre-commit to format"
+    # cwd=root so taplo picks up the repo's .taplo.toml (align_entries etc.);
+    # formatting with defaults leaves every file dirty under the pre-commit hook.
     r = subprocess.run(
         [taplo, "format", *map(str, paths)],
         capture_output=True,
         text=True,
+        cwd=root,
     )
     if r.returncode != 0:
         return f"taplo format failed: {(r.stderr or r.stdout).strip()}"
+    return None
+
+
+def git(root: pathlib.Path, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        ["git", "-C", str(root), *args], capture_output=True, text=True, check=True
+    )
+
+
+def preflight(root: pathlib.Path) -> str | None:
+    """Refuse to touch anything unless we're on a clean `main`. Returns the
+    reason to hand back to the human, or None when good to go."""
+    try:
+        branch = git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
+        dirty = git(root, "status", "--porcelain").stdout.strip()
+    except subprocess.CalledProcessError as e:
+        return f"git failed: {(e.stderr or e.stdout).strip()}"
+    if branch != "main":
+        return f"on branch '{branch}', not main — switch to main (or handle this repo manually)"
+    if dirty:
+        return "worktree is dirty — commit/stash first:\n    " + dirty.replace("\n", "\n    ")
+    try:
+        git(root, "pull", "--ff-only")
+    except subprocess.CalledProcessError as e:
+        return f"git pull failed: {(e.stderr or e.stdout).strip()}"
+    return None
+
+
+def relock(root: pathlib.Path) -> str | None:
+    """Regenerate every pixi.lock via the user's pixi_update_all.py."""
+    script = shutil.which("pixi_update_all.py") or str(pathlib.Path.home() / "bin" / "pixi_update_all.py")
+    if not pathlib.Path(script).exists():
+        return "pixi_update_all.py not found — relock manually"
+    r = subprocess.run([sys.executable, script, str(root)], cwd=root)
+    return None if r.returncode == 0 else "pixi_update_all.py reported failures (see output above)"
+
+
+def make_pr(root: pathlib.Path, branch: str, paths: list[pathlib.Path]) -> str | None:
+    """Branch, stage only what we touched, push, PR (reuse if it exists), open it."""
+    try:
+        git(root, "checkout", "-B", branch)
+        git(root, "add", "--", *(str(p) for p in paths))
+        git(root, "add", "--", "*pixi.lock")
+        if not git(root, "diff", "--cached", "--name-only").stdout.strip():
+            return "nothing staged — no PR created"
+        git(root, "commit", "-m", "refactor: use pixi extras for test deps and az:// channels")
+        git(root, "push", "-u", "origin", branch, "--force-with-lease")
+    except subprocess.CalledProcessError as e:
+        return f"git failed: {(e.stderr or e.stdout).strip()}"
+
+    view = subprocess.run(
+        ["gh", "pr", "view", branch, "--json", "url", "-q", ".url"],
+        cwd=root, capture_output=True, text=True,
+    )
+    url = view.stdout.strip()
+    if not url:
+        create = subprocess.run(
+            ["gh", "pr", "create", "--fill", "--head", branch, "--base", "main"],
+            cwd=root, capture_output=True, text=True,
+        )
+        url = create.stdout.strip().splitlines()[-1] if create.returncode == 0 else ""
+        if not url:
+            return f"gh pr create failed: {(create.stderr or create.stdout).strip()}"
+    print(f"\nPR: {url}")
+    subprocess.run(["xdg-open", url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return None
 
 
@@ -287,9 +357,16 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("root", type=pathlib.Path)
     ap.add_argument("--apply", action="store_true", help="write changes (default: dry run)")
+    ap.add_argument("--branch", default=BRANCH, help="branch/PR name")
+    ap.add_argument("--no-pr", action="store_true", help="stop after relock; no branch/commit/PR")
     args = ap.parse_args()
 
     root = args.root.resolve()
+    if args.apply and not args.no_pr:
+        why = preflight(root)
+        if why:
+            print(f"⚠ {root}: {why}", file=sys.stderr)
+            return 1
     manifests = discover(root)
     if not manifests:
         print(f"no pixi.toml found under {root}", file=sys.stderr)
@@ -313,7 +390,7 @@ def main() -> int:
             converted.append((rel, notes))
 
     wf_notes = bump_workflows(root, args.apply)
-    taplo_warning = taplo_format(written) if args.apply else None
+    taplo_warning = taplo_format(written, root) if args.apply else None
 
     for rel, notes in converted:
         print(f"✓ {rel}  ({', '.join(notes)})")
@@ -329,9 +406,29 @@ def main() -> int:
         f"{len(flagged)} need review"
         + ("" if args.apply else "   [DRY RUN — re-run with --apply]")
     )
-    if args.apply and (converted or wf_notes):
-        print("\nNext: relock and commit\n  pixi_update_all.py .")
-    return 2 if flagged else 0
+    if not args.apply or not (converted or wf_notes):
+        return 2 if flagged else 0
+
+    # A flagged manifest keeps the localhost channel while CI moves to @v8/fork
+    # — PRing that is a guaranteed-red build. Human resolves those first.
+    if flagged:
+        print("\nStopping before relock/PR — resolve the flagged manifests above, then re-run.")
+        return 2
+
+    print("\nRelocking...")
+    if warn := relock(root):
+        print(f"⚠ {warn}\nStopping before commit/PR.", file=sys.stderr)
+        return 1
+
+    if args.no_pr:
+        print("\nRelocked. --no-pr: commit and PR yourself.")
+        return 0
+
+    touched = written + [root / n.split(":")[0] for n in wf_notes]
+    if warn := make_pr(root, args.branch, touched):
+        print(f"⚠ {warn}", file=sys.stderr)
+        return 1
+    return 0
 
 
 def _selfcheck() -> None:
