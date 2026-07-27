@@ -155,15 +155,19 @@ def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
     # Sibling path deps that need re-homing into [dependencies] to stay in the env.
     rehome: list[str] = []
 
-    # Arch-conditional test deps get flattened into the single extras block —
-    # extras carry no target selector. Safe because a relock follows: if the dep
-    # has no build for one of the workspace's platforms, the solve fails and the
-    # commit/PR is aborted rather than landing an unsolvable manifest.
-    target_re = re.compile(r"feature\.tests\.target\.[^.]+\.dependencies")
-    extra_lines: list[str] = []
+    # Arch-conditional test deps: [package.extra-dependencies.<group>] has no
+    # target subtable, so [feature.tests.target.<plat>.dependencies] becomes an
+    # inline-conditional extras block instead. The deprecated
+    # [package.target.<plat>.extra-dependencies] form is not used.
+    target_re = re.compile(r"feature\.tests\.target\.(?P<plat>[^.]+)\.dependencies")
+    cond_blocks: list[tuple[str, list[str]]] = []
     for header, body in blocks:
-        if header and target_re.fullmatch(header):
-            extra_lines += [l for l in body if DEP_RE.match(l) and not l.lstrip().startswith("#")]
+        m = header and target_re.fullmatch(header)
+        if m:
+            cond_blocks.append((
+                f"""package.extra-dependencies.test."if(host_platform == '{m.group("plat")}')\"""",
+                body,
+            ))
 
     out = []
     for header, body in blocks:
@@ -187,11 +191,8 @@ def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
                             rehome.append(line)
                         continue  # never keep a path dep in the extras block
                 kept.append(line)
-            # Fold arch-conditional deps in, before any trailing blanks/comments.
-            if extra_lines:
-                at = max((j for j, l in enumerate(kept) if DEP_RE.match(l)), default=len(kept) - 1)
-                kept = kept[: at + 1] + extra_lines + kept[at + 1 :]
             out.append(("package.extra-dependencies.test", kept))
+            out += cond_blocks
             changed = True
         elif header == "feature.tests.tasks":
             out.append(("tasks", body))
