@@ -339,9 +339,10 @@ def make_pr(root: pathlib.Path, branch: str, paths: list[pathlib.Path]) -> str |
         git(root, "checkout", "-B", branch)
         git(root, "add", "--", *(str(p) for p in paths))
         git(root, "add", "--", "*pixi.lock")
-        if not git(root, "diff", "--cached", "--name-only").stdout.strip():
-            return "nothing staged — no PR created"
-        git(root, "commit", "-m", TITLE)
+        if git(root, "diff", "--cached", "--name-only").stdout.strip():
+            git(root, "commit", "-m", TITLE)
+        elif not git(root, "rev-list", "origin/main..HEAD").stdout.strip():
+            return "nothing to commit and nothing ahead of main — no PR created"
         git(root, "push", "-u", "origin", branch, "--force-with-lease")
     except subprocess.CalledProcessError as e:
         return f"git failed: {(e.stderr or e.stdout).strip()}"
