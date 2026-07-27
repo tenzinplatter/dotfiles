@@ -328,9 +328,9 @@ def git(root: pathlib.Path, *args: str) -> subprocess.CompletedProcess:
     )
 
 
-def preflight(root: pathlib.Path) -> str | None:
-    """Refuse to touch anything unless we're on a clean `main`. Returns the
-    reason to hand back to the human, or None when good to go."""
+def preflight(root: pathlib.Path, expect: str = "main") -> str | None:
+    """Refuse to touch anything unless we're on a clean `expect` branch. Returns
+    the reason to hand back to the human, or None when good to go."""
     try:
         branch = git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
         # Untracked files are fine — the commit stages explicit paths, so a stray
@@ -342,8 +342,8 @@ def preflight(root: pathlib.Path) -> str | None:
         ).strip()
     except subprocess.CalledProcessError as e:
         return f"git failed: {(e.stderr or e.stdout).strip()}"
-    if branch != "main":
-        return f"on branch '{branch}', not main — switch to main (or handle this repo manually)"
+    if branch != expect:
+        return f"on branch '{branch}', not {expect} — switch to it (or handle this repo manually)"
     if dirty:
         return "worktree is dirty — commit/stash first:\n    " + dirty.replace("\n", "\n    ")
     try:
@@ -401,11 +401,19 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true", help="write changes (default: dry run)")
     ap.add_argument("--branch", default=BRANCH, help="branch/PR name")
     ap.add_argument("--no-pr", action="store_true", help="stop after relock; no branch/commit/PR")
+    ap.add_argument(
+        "--onto-current",
+        action="store_true",
+        help="commit onto the branch already checked out (folds into its existing PR) "
+             "instead of branching off main",
+    )
     args = ap.parse_args()
 
     root = args.root.resolve()
+    if args.onto_current:
+        args.branch = git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
     if args.apply and not args.no_pr:
-        why = preflight(root)
+        why = preflight(root, args.branch)
         if why:
             print(f"⚠ {root}: {why}", file=sys.stderr)
             return 1
