@@ -366,8 +366,11 @@ def make_pr(root: pathlib.Path, branch: str, paths: list[pathlib.Path]) -> str |
     """Branch, stage only what we touched, push, PR (reuse if it exists), open it."""
     try:
         git(root, "checkout", "-B", branch)
-        git(root, "add", "--", *(str(p) for p in paths))
-        git(root, "add", "--", "*pixi.lock")
+        # Stage the lock beside each manifest we rewrote, by exact path. A
+        # `*pixi.lock` pathspec would also sweep up locks under build/ or other
+        # ignored dirs and make `git add` fail for the whole command.
+        locks = [p.parent / "pixi.lock" for p in paths if p.name == "pixi.toml"]
+        git(root, "add", "--", *(str(p) for p in paths + [l for l in locks if l.exists()]))
         if git(root, "diff", "--cached", "--name-only").stdout.strip():
             git(root, "commit", "-m", TITLE)
         elif not git(root, "rev-list", "origin/main..HEAD").stdout.strip():
