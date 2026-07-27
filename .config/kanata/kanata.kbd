@@ -3,7 +3,6 @@
 )
 
 (defvar
-  tap-time 150
   hold-time 200
   ;; Mirrors config/skeletyl.keymap hml/hmr:
   ;;   tapping-term-ms 280, require-prior-idle-ms 150
@@ -24,8 +23,10 @@
   (right y u i o p h j k l ; n m , . /))
 
 (defalias
-  ;; Caps lock → Esc (tap) / Ctrl (hold)
-  cec (tap-hold $tap-time $hold-time esc lctl)
+  ;; Caps lock → Esc (tap) / Ctrl (hold), Ctrl-biased: any other key pressed
+  ;; while it's down resolves to Ctrl immediately. Only a clean down-up inside
+  ;; the timeout gives Esc.
+  cec (tap-hold-press $hold-time $hold-time esc lctl)
 
   ;; Home row mods (GACS: Super, Alt, Ctrl, Shift), mirroring the hml/hmr
   ;; hold-tap behaviors in ~/zmk-skeletyl/config/skeletyl.keymap:
