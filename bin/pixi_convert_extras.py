@@ -112,8 +112,8 @@ def check_flags(blocks) -> None:
     for header, body in blocks:
         if header is None:
             continue
-        if header.startswith("feature.tests.target"):
-            raise Flag(f"arch-conditional test deps ([{header}]) — needs flat vs if(...) decision")
+        if header.startswith("feature.tests.target") and not header.endswith(".dependencies"):
+            raise Flag(f"unhandled arch-conditional table ([{header}]) — review by hand")
         if header.startswith("feature.tests.activation"):
             raise Flag(f"[{header}] — extras cannot carry activation env vars")
         if header == "feature.tests":
@@ -124,6 +124,7 @@ def check_flags(blocks) -> None:
             header == "feature.tests.dependencies"
             or header == "feature.tests.tasks"
             or header.startswith("feature.tests.tasks.")
+            or re.fullmatch(r"feature\.tests\.target\.[^.]+\.dependencies", header)
         ):
             raise Flag(f"unhandled [{header}] — review by hand")
         if header == "environments" or header == "environments.tests":
@@ -143,8 +144,21 @@ def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
     # declared in a real dep table (so the artifact still gets them).
     declared = dep_names(blocks, "dependencies", "host-dependencies", "run-dependencies")
 
+    # Arch-conditional test deps get flattened into the single extras block —
+    # extras carry no target selector. Safe because a relock follows: if the dep
+    # has no build for one of the workspace's platforms, the solve fails and the
+    # commit/PR is aborted rather than landing an unsolvable manifest.
+    target_re = re.compile(r"feature\.tests\.target\.[^.]+\.dependencies")
+    extra_lines: list[str] = []
+    for header, body in blocks:
+        if header and target_re.fullmatch(header):
+            extra_lines += [l for l in body if DEP_RE.match(l) and not l.lstrip().startswith("#")]
+
     out = []
     for header, body in blocks:
+        if header and target_re.fullmatch(header):
+            changed = True
+            continue  # folded into the extras block below
         if header == "feature.tests.dependencies":
             kept = []
             for line in body:
@@ -162,6 +176,10 @@ def convert_tests_feature(blocks, path: pathlib.Path) -> tuple[list, bool]:
                             )
                         continue  # already declared elsewhere; drop from extras
                 kept.append(line)
+            # Fold arch-conditional deps in, before any trailing blanks/comments.
+            if extra_lines:
+                at = max((j for j, l in enumerate(kept) if DEP_RE.match(l)), default=len(kept) - 1)
+                kept = kept[: at + 1] + extra_lines + kept[at + 1 :]
             out.append(("package.extra-dependencies.test", kept))
             changed = True
         elif header == "feature.tests.tasks":
@@ -241,8 +259,13 @@ def convert_manifest(path: pathlib.Path) -> tuple[str | None, list[str]]:
         h and (h == "feature.tests" or h.startswith("feature.tests."))
         for h, _ in blocks
     )
+    # Extras are a *package* concept. A manifest with no [package] table is a
+    # dev-only workspace (the repo-root ones that source-build siblings via path
+    # deps); its `tests` env is local build tooling that CI never runs, so leave
+    # the envs alone and only swap the channel.
+    is_package = any(h and (h == "package" or h.startswith("package.")) for h, _ in blocks)
 
-    if has_tests_feature:
+    if has_tests_feature and is_package:
         check_flags(blocks)
         blocks, c1 = convert_tests_feature(blocks, path)
         blocks, c2 = drop_tests_env(blocks)
@@ -310,7 +333,13 @@ def preflight(root: pathlib.Path) -> str | None:
     reason to hand back to the human, or None when good to go."""
     try:
         branch = git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
-        dirty = git(root, "status", "--porcelain").stdout.strip()
+        # Untracked files are fine — the commit stages explicit paths, so a stray
+        # artifact can't ride along. Tracked modifications are not: they'd land in
+        # this PR (or get clobbered by the relock).
+        dirty = "\n".join(
+            l for l in git(root, "status", "--porcelain").stdout.splitlines()
+            if not l.startswith("??")
+        ).strip()
     except subprocess.CalledProcessError as e:
         return f"git failed: {(e.stderr or e.stdout).strip()}"
     if branch != "main":
@@ -497,17 +526,17 @@ prod = { features = ["vessel"] }
         again, _ = convert_manifest(p)
         assert again is None, "second pass should be a no-op"
 
-        # flags: arch-conditional must refuse rather than guess
+        # arch-conditional deps fold into the single extras block (extras carry no
+        # target selector); the target table itself must not survive
         p.write_text(before.replace(
             "[feature.tests.dependencies]",
-            "[feature.tests.target.linux-64.dependencies]\npyds = \"*\"\n\n[feature.tests.dependencies]",
+            '[feature.tests.target.linux-64.dependencies]\npyds = "*"\n\n[feature.tests.dependencies]',
         ))
-        try:
-            convert_manifest(p)
-        except Flag:
-            pass
-        else:
-            raise AssertionError("arch-conditional deps should have been flagged")
+        out, _ = convert_manifest(p)
+        assert 'pyds = "*"' in out, "arch-conditional dep was dropped"
+        assert "target.linux-64" not in out, "target table survived"
+        assert out.index('pyds = "*"') > out.index("[package.extra-dependencies.test]"), \
+            "arch-conditional dep landed outside the extras block"
 
         # flags: no-default-feature changes semantics
         p.write_text(before.replace(
