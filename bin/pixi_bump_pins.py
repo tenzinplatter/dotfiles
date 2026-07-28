@@ -22,6 +22,7 @@ Only exact pins are touched. Ranges (">=1,<2"), wildcards ("*"), path deps and
 
 import argparse
 import asyncio
+import json
 import re
 import subprocess
 import sys
@@ -87,17 +88,56 @@ def manifest_context(path: Path) -> tuple[tuple[str, ...], str] | None:
     return tuple(channels), platforms[0]
 
 
+async def run_search(args: list[str], sem) -> bytes | None:
+    async with sem:
+        proc = await asyncio.create_subprocess_exec(
+            "pixi", "search", *args,
+            stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL,
+        )
+        out, _ = await proc.communicate()
+    return out if proc.returncode == 0 else None
+
+
+def vkey(v: str) -> tuple:
+    """Sort key for a version string. Numeric segments compare numerically."""
+    # ponytail: not full conda version ordering (no epochs, no `dev`/`post`
+    # ranking). Fine for the X.Y.Z pins this bumps; swap in rattler's ordering
+    # if a pin ever needs prerelease semantics.
+    return tuple((0, int(p)) if p.isdigit() else (1, p) for p in re.split(r"[._\-+]", v))
+
+
+async def sweep(channel: str, platform: str, sem) -> dict[str, str]:
+    """name -> newest version for a whole channel, in ONE pixi search.
+
+    `pixi search` takes a per-channel lock on the repodata cache, so N searches
+    against one channel cost N * one-search no matter the concurrency. Sweeping
+    the channel once and filtering locally collapses that to a single lock hold.
+    Only worth it for small private channels -- a `*` glob over conda-forge or
+    robostack expands to ~34k names and takes minutes.
+    """
+    out = await run_search(["--channel", channel, "--platform", platform, "--json", "*"], sem)
+    if out is None:
+        return {}
+    try:
+        data = json.loads(out)
+    except json.JSONDecodeError:
+        return {}
+    best: dict[str, str] = {}
+    for records in data.values():
+        for r in records:
+            name, ver = r["name"], r["version"]
+            if name not in best or vkey(ver) > vkey(best[name]):
+                best[name] = ver
+    return best
+
+
 async def latest(pkg: str, channels: tuple[str, ...], platform: str, sem) -> str | None:
-    args = ["pixi", "search"]
+    args = []
     for c in channels:
         args += ["--channel", c]
     args += ["--platform", platform, pkg]
-    async with sem:
-        proc = await asyncio.create_subprocess_exec(
-            *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL
-        )
-        out, _ = await proc.communicate()
-    if proc.returncode != 0:
+    out = await run_search(args, sem)
+    if out is None:
         return None
     for line in out.decode(errors="replace").splitlines():
         if m := VERSION.match(line):
@@ -160,10 +200,28 @@ async def main() -> int:
         return 0
 
     sem = asyncio.Semaphore(args.jobs)
+
+    # Sweep each manifest's primary channel wholesale -- that's where the
+    # first-party pins live, and it turns ~one search per pin into one search
+    # per channel. Anything the sweep misses falls back to a full multi-channel
+    # search below.
+    primaries = sorted({(ch[0], plat) for _, ch, plat in work})
+    swept = dict(zip(primaries, await asyncio.gather(
+        *(sweep(c, p, sem) for c, p in primaries)
+    )))
+    print(f"swept {len(primaries)} channels, "
+          f"{sum(len(s) for s in swept.values())} packages")
+
     keys = list(work)
-    results = await asyncio.gather(
-        *(latest(pkg, ch, plat, sem) for pkg, ch, plat in keys)
-    )
+    hits = {k: swept[(k[1][0], k[2])].get(k[0]) for k in keys}
+    misses = [k for k in keys if hits[k] is None]
+    if misses:
+        print(f"{len(misses)} pins not on the primary channel, searching individually")
+        for key, found in zip(misses, await asyncio.gather(
+            *(latest(pkg, ch, plat, sem) for pkg, ch, plat in misses)
+        )):
+            hits[key] = found
+    results = [hits[k] for k in keys]
 
     bumps: dict[Path, dict[int, str]] = {}
     unresolved: list[str] = []
@@ -245,6 +303,13 @@ def selftest() -> None:
     assert not is_conda_deps_table("pypi-dependencies")
     assert not is_conda_deps_table("package")
     assert not is_conda_deps_table(None)
+
+    # Numeric segments must not compare as strings ("10" > "9").
+    assert vkey("1.10.0") > vkey("1.9.0")
+    assert vkey("2.0.1") > vkey("1.26.3")
+    assert max(["1.4.0", "1.10.0", "1.9.2"], key=vkey) == "1.10.0"
+    assert vkey("3.5.5") > vkey("3.5.4")
+    assert vkey("1.2.3-1") > vkey("1.2.3")
 
     print("selftest ok")
 
