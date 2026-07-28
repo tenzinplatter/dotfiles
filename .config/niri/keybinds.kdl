@@ -194,7 +194,7 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    // Mod+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
+    Mod+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
 
     Mod+Shift+E { quit; }
 
