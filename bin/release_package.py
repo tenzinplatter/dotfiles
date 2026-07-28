@@ -18,6 +18,8 @@ one GitHub will run.
 
 import argparse
 import re
+import shlex
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -121,6 +123,20 @@ def package_input(text: str) -> tuple[bool, list[str] | None]:
     return True, [o for o in opts if o]
 
 
+def show(text: str, title: str) -> None:
+    """Print YAML through bat when it's around, else plain with a header."""
+    for exe in ("bat", "batcat"):  # Debian ships it as batcat
+        if shutil.which(exe):
+            r = subprocess.run(
+                [exe, "--language=yaml", "--paging=never", f"--file-name={title}"],
+                input=text, text=True,
+            )
+            if r.returncode == 0:
+                return
+            break  # bat exists but failed — fall through rather than lose the file
+    print(f"\n----- {title}\n{text}")
+
+
 def ask(prompt: str, choices: str) -> str:
     while True:
         try:
@@ -183,6 +199,10 @@ def main() -> int:
     print(f"workflow {WORKFLOW}  (package input ok"
           f"{f', {len(options)} options' if options is not None else ''})")
 
+    cmd = ["gh", "workflow", "run", "release.yml", "-R", name or str(repo),
+           "--ref", ref, "-f", f"package={pkg}"]
+    print(f"\nwould run:\n  {shlex.join(cmd)}")
+
     if not args.yes:
         if not sys.stdin.isatty():
             print("\nnot a tty; pass --yes to dispatch unattended", file=sys.stderr)
@@ -190,16 +210,13 @@ def main() -> int:
         while True:
             got = ask(f"\nrelease {pkg} from {name} @ {ref}?", "ynv")
             if got == "v":
-                print(f"\n----- origin/{branch}:{WORKFLOW}\n{text}")
+                show(text, f"origin/{branch}:{WORKFLOW}")
                 continue
             if got == "n":
                 print("cancelled")
                 return 1
             break
 
-    cmd = ["gh", "workflow", "run", "release.yml", "-R", name or str(repo),
-           "--ref", ref, "-f", f"package={pkg}"]
-    print(f"\n$ {' '.join(cmd)}")
     r = subprocess.run(cmd)
     if r.returncode != 0:
         return r.returncode
