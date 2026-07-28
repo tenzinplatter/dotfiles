@@ -247,6 +247,7 @@ def main() -> int:
         print(f"{pkg!r} declared in {len(found)} repos:")
         for i, (repo, manifest) in enumerate(found, 1):
             print(f"  {i}) {slug(repo) or repo}  ({manifest.relative_to(repo)})")
+            print(f"     {repo}")
         pick = ask("which?", "".join(str(i) for i in range(1, len(found) + 1)))
         found = [found[int(pick) - 1]]
 
