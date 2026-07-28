@@ -3,6 +3,7 @@
 
 Usage:
     release_package.py <package> [--root DIR] [--ref REF] [--yes]
+    release_package.py --state | --clear
     release_package.py --selftest
 
 Locates the package's source under --root (default ~/Repositories) via its
@@ -14,19 +15,26 @@ its options, and asks before dispatching.
 release.yml is read from the repo's DEFAULT BRANCH, not the working tree — a
 clone parked on a feature branch would otherwise show a workflow that isn't the
 one GitHub will run.
+
+Dispatched runs are recorded in $XDG_STATE_HOME/release_package.json; --state
+re-queries them via gh, --clear drops the finished ones.
 """
 
 import argparse
+import json
+import os
 import re
 import shlex
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import yaml
 
 WORKFLOW = ".github/workflows/release.yml"
+STATE = Path(os.environ.get("XDG_STATE_HOME") or Path.home() / ".local/state") / "release_package.json"
 
 
 def name_variants(pkg: str) -> list[str]:
@@ -147,6 +155,69 @@ def ask(prompt: str, choices: str) -> str:
             return got[0]
 
 
+def load_state() -> list[dict]:
+    try:
+        return json.loads(STATE.read_text())
+    except (OSError, ValueError):  # missing or hand-mangled — start over
+        return []
+
+
+def save_state(runs: list[dict]) -> None:
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    STATE.write_text(json.dumps(runs, indent=2) + "\n")
+
+
+def gh_json(*args: str):
+    r = subprocess.run(["gh", *args], capture_output=True, text=True)
+    if r.returncode != 0:
+        return None
+    try:
+        return json.loads(r.stdout or "null")
+    except ValueError:
+        return None
+
+
+FIELDS = "databaseId,status,conclusion,url,createdAt"
+
+
+def latest_run(repo: str) -> dict | None:
+    runs = gh_json("run", "list", "-R", repo, "-w", "release.yml", "-L", "1", "--json", FIELDS)
+    return runs[0] if runs else None
+
+
+def wait_for_run(repo: str, before: int | None) -> dict | None:
+    """The run our dispatch just created — poll until a newer id than `before` shows up."""
+    for _ in range(15):
+        run = latest_run(repo)
+        if run and run["databaseId"] != before:
+            return run
+        time.sleep(1)
+    return None
+
+
+def refresh(entry: dict) -> dict:
+    got = gh_json("run", "view", str(entry["id"]), "-R", entry["repo"], "--json",
+                  "status,conclusion,url")
+    return {**entry, **(got or {"status": "?", "conclusion": "?"})}
+
+
+def report(clear: bool) -> int:
+    runs = load_state()
+    if not runs:
+        print("no recorded runs")
+        return 0
+    live = [refresh(e) for e in runs]
+    for e in live:
+        state = e["conclusion"] or e["status"]
+        print(f"{state:<12} {e['package']:<24} {e['repo']:<40} {e['url']}")
+    if clear:
+        keep = [{k: v for k, v in e.items() if k in ("package", "repo", "ref", "id", "createdAt")}
+                for e in live if e["status"] != "completed"]
+        save_state(keep)
+        print(f"\ncleared {len(live) - len(keep)}, {len(keep)} still running")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -154,12 +225,16 @@ def main() -> int:
     ap.add_argument("--root", type=Path, default=Path.home() / "Repositories")
     ap.add_argument("--ref", help="ref to dispatch on (default: the repo's default branch)")
     ap.add_argument("--yes", action="store_true", help="skip the confirmation prompt")
+    ap.add_argument("--state", action="store_true", help="status of every dispatched run")
+    ap.add_argument("--clear", action="store_true", help="as --state, then forget finished runs")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
 
     if args.selftest:
         selftest()
         return 0
+    if args.state or args.clear:
+        return report(args.clear)
     if not args.package:
         ap.error("package is required")
 
@@ -217,11 +292,19 @@ def main() -> int:
                 return 1
             break
 
+    target = name or str(repo)
+    before = latest_run(target)
     r = subprocess.run(cmd)
     if r.returncode != 0:
         return r.returncode
-    subprocess.run(["gh", "run", "list", "-R", name or str(repo),
-                    "-w", "release.yml", "-L", "1"])
+
+    run = wait_for_run(target, before["databaseId"] if before else None)
+    if not run:
+        print("dispatched, but the run didn't appear in time — not recorded", file=sys.stderr)
+        return 0
+    save_state(load_state() + [{"package": pkg, "repo": target, "ref": ref,
+                                "id": run["databaseId"], "createdAt": run["createdAt"]}])
+    print(f"\nrun {run['databaseId']}  {run['url']}")
     return 0
 
 
@@ -284,6 +367,16 @@ def selftest() -> None:
     assert name_variants("is-nmea0183") == ["is-nmea0183", "is_nmea0183"]
     assert name_variants("topic_utils") == ["topic_utils", "topic-utils"]
     assert name_variants("cip") == ["cip"]
+
+    global STATE
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        STATE = Path(d) / "runs.json"
+        assert load_state() == []          # missing file
+        save_state([{"id": 1}])
+        assert load_state() == [{"id": 1}]
+        STATE.write_text("{ not json")
+        assert load_state() == []
 
     print("selftest ok")
 
