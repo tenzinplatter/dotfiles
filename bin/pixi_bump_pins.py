@@ -2,7 +2,12 @@
 """Bump every exact (`==X.Y.Z`) conda pin in every pixi.toml to the channel's latest.
 
 Usage:
-    pixi_bump_pins.py [root] [--apply] [--jobs N]
+    pixi_bump_pins.py [root] [--apply] [-i PKG]... [--jobs N]
+
+Some pins are held back deliberately (an incompatible transitive dep, a stale
+channel build); -i/--ignore keeps those out of the run, and repeats:
+
+    pixi_bump_pins.py -i ivp_manager -i launch_ext --apply
 
 Discovers manifests with `rg --files -g pixi.toml`, so .gitignore/.ignore are
 respected for free. Dry-run by default; --apply writes (matching
@@ -41,7 +46,7 @@ def is_conda_deps_table(table: str | None) -> bool:
     return last.endswith("dependencies") and last != "pypi-dependencies"
 
 
-def find_pins(text: str) -> list[tuple[int, str, str]]:
+def find_pins(text: str, ignore=frozenset()) -> list[tuple[int, str, str]]:
     """Return (line_index, package, version) for each exact conda pin."""
     out = []
     table = None
@@ -51,7 +56,7 @@ def find_pins(text: str) -> list[tuple[int, str, str]]:
             continue
         if not is_conda_deps_table(table):
             continue
-        if m := PIN.match(line):
+        if (m := PIN.match(line)) and m.group("name") not in ignore:
             out.append((i, m.group("name"), m.group("ver")))
     return out
 
@@ -118,6 +123,8 @@ async def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("root", nargs="?", default=".", type=Path)
     ap.add_argument("--apply", action="store_true", help="write changes (default: dry run)")
+    ap.add_argument("-i", "--ignore", action="append", default=[], metavar="PKG",
+                    help="leave this package's pin alone; repeatable")
     ap.add_argument("--jobs", type=int, default=8, help="concurrent pixi searches")
     ap.add_argument("--selftest", action="store_true", help="run the rewrite self-check")
     args = ap.parse_args()
@@ -131,6 +138,10 @@ async def main() -> int:
         print("no pixi.toml found")
         return 0
 
+    ignore = frozenset(args.ignore)
+    if ignore:
+        print(f"ignoring: {', '.join(sorted(ignore))}\n")
+
     # One search per (package, channels, platform) no matter how many manifests
     # share it — the same pin repeats across dozens of variant manifests.
     work: dict[tuple, list[tuple[Path, int, str]]] = {}
@@ -141,7 +152,7 @@ async def main() -> int:
             continue
         channels, platform = ctx
         text = texts[path] = path.read_text()
-        for idx, pkg, ver in find_pins(text):
+        for idx, pkg, ver in find_pins(text, ignore):
             work.setdefault((pkg, channels, platform), []).append((path, idx, ver))
 
     if not work:
@@ -213,6 +224,10 @@ def selftest() -> None:
     names = [p[1] for p in pins]
     assert names == ["autopilot", "geofence", "python"], names
     assert [p[2] for p in pins] == ["3.5.4", "1.6.2", "3.12"]
+
+    kept = find_pins(SAMPLE, {"geofence", "python"})
+    assert [p[1] for p in kept] == ["autopilot"], kept
+    assert find_pins(SAMPLE, {"autopilot", "geofence", "python"}) == []
 
     out = apply_bumps(SAMPLE, {pins[0][0]: "3.5.5", pins[1][0]: "2.0.0"})
     # Alignment and trailing comments survive.
