@@ -1,3 +1,6 @@
+# Iris Autocomplete
+eval "$(iris init zsh)"
+
 bindkey -e
 
 export EDITOR=nvim

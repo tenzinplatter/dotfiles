@@ -1,4 +1,4 @@
-zsh-users/zsh-autosuggestions
+# zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
 MichaelAquilina/zsh-you-should-use
 fdellwing/zsh-bat
