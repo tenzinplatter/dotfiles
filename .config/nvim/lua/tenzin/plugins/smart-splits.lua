@@ -3,6 +3,7 @@ return {
   -- Must load at startup: the kitty integration sets the IS_NVIM user-var then,
   -- so do NOT lazy-load this plugin.
   lazy = false,
+  enabled = false,
   opts = {
     -- At a nvim window edge, hand off to the neighbouring kitty window.
     -- smart-splits' built-in kitty backend relies on the (uninstalled)

@@ -23,14 +23,3 @@ for _, file_path in ipairs(lua_files) do
   local file_name = vim.fn.fnamemodify(file_path, ":t:r")
   require("tenzin." .. file_name)
 end
-
-local mux = require("smart-splits.mux").get()
-if mux == nil then
-  return
-end
-
-vim.keymap.set("n", "<M-L>", function()
-  vim.notify("In session: " .. tostring(mux.is_in_session()))
-  vim.notify("Pane at edge in right direction: " .. tostring(mux.current_pane_at_edge("right")))
-  mux.next_pane("right")
-end)
