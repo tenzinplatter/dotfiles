@@ -25,16 +25,8 @@ split_horizontal = "prefix+s"
 rename_tab = "prefix+r"      # tmux: prefix + r rename-window
 resize_mode = "prefix+shift+r"
 reload_config = "prefix+ctrl+r"
-goto = ""                    # freed up so prefix+g stays lazygit
 
-# pane nav (prefix + hjkl), zoom, close, tabs: herdr defaults already match tmux
-
-[[keys.command]]
-key = "prefix+g"
-type = "popup"
-command = "lazygit"
-width = "90%"
-height = "90%"
+# pane nav (prefix + hjkl), zoom, close, tabs, goto: herdr defaults already match tmux
 
 [[keys.command]]
 key = "prefix+shift+f"
