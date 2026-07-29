@@ -1,0 +1,44 @@
+# herdr configuration — ported from ~/.config/tmux
+
+[theme]
+name = "rose-pine"
+
+[terminal]
+default_shell = "/bin/zsh"
+new_cwd = "follow"  # tmux: split-window -c "#{pane_current_path}"
+
+[session]
+resume_agents_on_restore = true  # replaces resurrect + continuum
+
+[ui]
+mouse_capture = true
+copy_on_select = true    # replaces tmux-yank
+mouse_scroll_lines = 3   # replaces tmux-smooth-scroll
+
+[keys]
+prefix = "ctrl+f"
+
+# splits: tmux `s` = stacked, `v` = side-by-side
+split_vertical = "prefix+v"
+split_horizontal = "prefix+s"
+
+rename_tab = "prefix+r"      # tmux: prefix + r rename-window
+resize_mode = "prefix+shift+r"
+reload_config = "prefix+ctrl+r"
+goto = ""                    # freed up so prefix+g stays lazygit
+
+# pane nav (prefix + hjkl), zoom, close, tabs: herdr defaults already match tmux
+
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = "lazygit"
+width = "90%"
+height = "90%"
+
+[[keys.command]]
+key = "prefix+shift+f"
+type = "popup"
+command = "/bin/zsh"
+width = "90%"
+height = "90%"
