@@ -58,6 +58,3 @@ chpwd() {
 stty -ixon
 eval "$(tv init zsh)"
 [[ -f  "$HOME/.local/share/../bin/env" ]] && . "$HOME/.local/share/../bin/env"
-
-# Iris Autocomplete
-eval "$(iris init zsh)"
