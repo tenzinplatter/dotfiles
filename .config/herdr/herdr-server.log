@@ -66,3 +66,5 @@
 2026-07-30T12:00:36.965823Z  INFO herdr::pane: pane session terminated pane=3 pid=7132 signal=Hangup
 2026-07-30T12:00:41.969372Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-07-30T12:04:30.268683Z  INFO herdr::server::headless: client resize client_id=2 cols=151 rows=49 cell_width_px=0 cell_height_px=0
+2026-07-30T12:06:33.003765Z  INFO herdr::server::headless: client resize client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0
+2026-07-30T12:06:55.969478Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
