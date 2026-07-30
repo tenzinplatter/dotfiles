@@ -7,7 +7,7 @@ import os
 import shutil
 import subprocess
 import sys
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 
@@ -53,10 +53,16 @@ def main() -> None:
         shutil.rmtree(target, ignore_errors=True)
         return size
 
+    total = len(targets)
+    freed = 0
     with ThreadPoolExecutor() as pool:
-        freed = sum(pool.map(clean, targets))
+        futures = [pool.submit(clean, t) for t in targets]
+        for done, fut in enumerate(as_completed(futures), 1):
+            freed += fut.result()
+            bar = "#" * (30 * done // total) if total else ""
+            print(f"\r[{bar:<30}] {done}/{total} {human(freed)}", end="", flush=True)
 
-    print(f"\n{len(targets)} env dir(s) removed, {human(freed)} freed")
+    print(f"\n{total} env dir(s) removed, {human(freed)} freed")
 
 
 if __name__ == "__main__":
