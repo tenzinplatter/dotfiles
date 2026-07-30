@@ -27,3 +27,4 @@
 2026-07-30T10:23:51.476994Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
 2026-07-30T10:23:56.413778Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
 2026-07-30T10:24:01.417213Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-07-30T10:29:49.631569Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
