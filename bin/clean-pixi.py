@@ -37,7 +37,7 @@ def main() -> None:
 
     # fd --prune stops descending into matched .pixi dirs (their nested files aren't hits)
     out = subprocess.run(
-        ["fd", "-H", "-t", "d", "-a", "--prune", r"^\.pixi$", str(root)],
+        ["fd", "-HI", "-t", "d", "-a", "--prune", r"^\.pixi$", str(root)],
         capture_output=True, text=True, check=True,
     ).stdout
 
