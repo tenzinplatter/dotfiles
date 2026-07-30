@@ -1,0 +1,15 @@
+2026-07-30T09:59:49.593126Z  INFO herdr::api::server: api server listening path=/home/tenzin/.config/herdr/herdr.sock
+2026-07-30T09:59:49.593915Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-07-30T09:59:49.630352Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-30T09:59:49.631665Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-30T09:59:49.632415Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=106710
+2026-07-30T09:59:49.632559Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w1" pane_id=1
+2026-07-30T09:59:49.632567Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-30T09:59:49.632583Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-30T09:59:49.632594Z  INFO herdr::server::headless: created startup workspace cwd=/home/tenzin/code/diffler
+2026-07-30T09:59:49.632658Z  INFO herdr::server::headless: client protocol socket listening path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-07-30T09:59:49.632679Z  INFO herdr::server::headless: herdr server started api_socket=/home/tenzin/.config/herdr/herdr.sock client_socket=/home/tenzin/.config/herdr/herdr-client.sock
+2026-07-30T09:59:49.632825Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=106673
+2026-07-30T09:59:49.748447Z  INFO herdr::server::headless: client connected client_id=2 cols=306 rows=48 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-07-30T09:59:53.252002Z  INFO herdr::server::headless: client resize client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0
+2026-07-30T09:59:54.634001Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
