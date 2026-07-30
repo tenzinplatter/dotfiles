@@ -78,3 +78,4 @@
 2026-07-30T12:26:55.589504Z  INFO herdr::pane: pane session terminated pane=4 pid=24288 signal=Hangup
 2026-07-30T12:27:00.591723Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-07-30T12:29:25.518614Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-30T12:59:25.524685Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
