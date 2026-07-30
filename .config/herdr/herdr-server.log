@@ -68,3 +68,12 @@
 2026-07-30T12:04:30.268683Z  INFO herdr::server::headless: client resize client_id=2 cols=151 rows=49 cell_width_px=0 cell_height_px=0
 2026-07-30T12:06:33.003765Z  INFO herdr::server::headless: client resize client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0
 2026-07-30T12:06:55.969478Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-07-30T12:26:10.644132Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=48 cols=302 scrollback_limit_bytes=10000000
+2026-07-30T12:26:10.645523Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=24288
+2026-07-30T12:26:10.646366Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-30T12:26:11.699075Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(Claude) process=claude pgid=Some(24453)
+2026-07-30T12:26:17.000412Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-07-30T12:26:55.437507Z  INFO herdr::pane: agent changed pane=4 previous_agent=Some(Claude) agent=None pgid=Some(24288)
+2026-07-30T12:26:55.589416Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 0, signal: None }"
+2026-07-30T12:26:55.589504Z  INFO herdr::pane: pane session terminated pane=4 pid=24288 signal=Hangup
+2026-07-30T12:27:00.591723Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
