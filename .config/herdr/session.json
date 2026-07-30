@@ -6,13 +6,15 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/diffler",
       "public_pane_numbers": {
+        "3": 3,
         "1": 1
       },
-      "next_public_pane_number": 3,
+      "next_public_pane_number": 4,
       "public_tab_numbers": [
-        1
+        1,
+        2
       ],
-      "next_public_tab_number": 2,
+      "next_public_tab_number": 3,
       "tabs": [
         {
           "custom_name": null,
@@ -27,6 +29,20 @@
           "zoomed": false,
           "focused": 1,
           "root_pane": 1
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 3
+          },
+          "panes": {
+            "3": {
+              "cwd": "/home/tenzin/code/diffler"
+            }
+          },
+          "zoomed": false,
+          "focused": 3,
+          "root_pane": 3
         }
       ],
       "active_tab": 0
