@@ -49,7 +49,7 @@ zle -N recent-paths
 zle -N edit-command-line
 
 bindkey '\e\x7f' backward-kill-word
-# bindkey '^ ' autosuggest-accept
+bindkey '^ ' autosuggest-accept
 bindkey '' edit-command-line
 
 # fn to run on change pwd
