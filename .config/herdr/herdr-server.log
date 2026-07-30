@@ -35,3 +35,8 @@
 2026-07-30T10:59:49.632702Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
 2026-07-30T11:29:49.641001Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
 2026-07-30T11:42:25.087131Z  INFO herdr::server::headless: client resize client_id=2 cols=151 rows=49 cell_width_px=0 cell_height_px=0
+2026-07-30T11:53:01.400838Z  INFO herdr::server::headless: client resize client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0
+2026-07-30T11:53:45.997330Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=48 cols=302 scrollback_limit_bytes=10000000
+2026-07-30T11:53:46.005940Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=185597
+2026-07-30T11:53:46.006156Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-30T11:53:51.017016Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
