@@ -4,45 +4,45 @@ cdp() {
     cd $HOME/Repositories/platform/packages/platform_$1
 }
 
-missim() {
-    # Unset the function temporarily to check for the real command
-    unset -f missim
+# missim() {
+#     # Unset the function temporarily to check for the real command
+#     unset -f missim
 
-    # Check if missim command exists
-    if command -v missim > /dev/null 2>&1; then
-        # Call the actual missim command with all arguments
-        missim "$@"
-    else
-        # Source the virtual environment
-        local venv_path="$HOME/Repositories/missim/missim"
+#     # Check if missim command exists
+#     if command -v missim > /dev/null 2>&1; then
+#         # Call the actual missim command with all arguments
+#         missim "$@"
+#     else
+#         # Source the virtual environment
+#         local venv_path="$HOME/Repositories/missim/missim"
 
-        if [[ ! -f "$venv_path/bin/activate" ]]; then
-            echo "Error: Virtual environment not found at $venv_path"
-            # Restore the function before returning
-            source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-            return 1
-        fi
+#         if [[ ! -f "$venv_path/bin/activate" ]]; then
+#             echo "Error: Virtual environment not found at $venv_path"
+#             # Restore the function before returning
+#             source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+#             return 1
+#         fi
 
-        # Source the virtual environment and call missim
-        source "$venv_path/bin/activate"
+#         # Source the virtual environment and call missim
+#         source "$venv_path/bin/activate"
 
-        # Check if missim is now available
-        if command -v missim > /dev/null 2>&1; then
-            missim "$@"
-            # Deactivate venv after command execution
-            deactivate
-        else
-            echo "Error: missim command not found even after sourcing virtual environment"
-            # Deactivate venv and restore the function before returning
-            deactivate
-            source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-            return 1
-        fi
-    fi
+#         # Check if missim is now available
+#         if command -v missim > /dev/null 2>&1; then
+#             missim "$@"
+#             # Deactivate venv after command execution
+#             deactivate
+#         else
+#             echo "Error: missim command not found even after sourcing virtual environment"
+#             # Deactivate venv and restore the function before returning
+#             deactivate
+#             source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+#             return 1
+#         fi
+#     fi
 
-    # Restore the function for next time
-    source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-}
+#     # Restore the function for next time
+#     source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+# }
 
 lookout() {
     # Unset the function temporarily to check for the real command
