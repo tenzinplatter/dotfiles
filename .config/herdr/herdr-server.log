@@ -80,3 +80,17 @@
 2026-07-30T12:29:25.518614Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
 2026-07-30T12:59:25.524685Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
 2026-07-30T13:24:53.460533Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-08-03T09:26:02.038086Z  INFO herdr::api::server: api server listening path=/home/tenzin/.config/herdr/herdr.sock
+2026-08-03T09:26:02.039237Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-08-03T09:26:02.039261Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-03T09:26:02.088482Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-03T09:26:02.089840Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/home/tenzin/code/diffler
+2026-08-03T09:26:02.089988Z  INFO herdr::server::headless: client protocol socket listening path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-03T09:26:02.090005Z  INFO herdr::server::headless: herdr server started api_socket=/home/tenzin/.config/herdr/herdr.sock client_socket=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-03T09:26:02.090068Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=21034
+2026-08-03T09:26:02.341963Z  INFO herdr::server::headless: client connected client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-03T09:26:02.361845Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-03T09:26:02.368951Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=21112
+2026-08-03T09:26:02.920879Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(Claude) process=claude pgid=Some(21252)
+2026-08-03T09:26:06.835701Z  INFO herdr::pane: agent changed pane=1 previous_agent=Some(Claude) agent=None pgid=Some(21112)
+2026-08-03T09:26:11.535957Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1

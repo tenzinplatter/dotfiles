@@ -21,13 +21,7 @@
           },
           "panes": {
             "1": {
-              "cwd": "/home/tenzin/code/diffler",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "e861fa3e-edc0-498a-b95b-6c85b9a4443f"
-              }
+              "cwd": "/home/tenzin/code/diffler"
             }
           },
           "zoomed": false,
