@@ -2,11 +2,11 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w2",
+      "id": "w6",
       "custom_name": null,
       "identity_cwd": "/home/tenzin",
       "public_pane_numbers": {
-        "3": 1
+        "7": 1
       },
       "next_public_pane_number": 2,
       "public_tab_numbers": [
@@ -17,16 +17,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 3
+            "Pane": 7
           },
           "panes": {
-            "3": {
+            "7": {
               "cwd": "/home/tenzin"
             }
           },
           "zoomed": false,
-          "focused": 3,
-          "root_pane": 3
+          "focused": 7,
+          "root_pane": 7
         }
       ],
       "active_tab": 0
