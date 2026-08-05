@@ -45,6 +45,7 @@ def main() -> None:
         p for line in out.splitlines()
         if (p := Path(line)) != installation
     ]
+
     for target in targets:
         print(target)
 
