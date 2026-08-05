@@ -14,6 +14,9 @@ return {
             files = {
               excludeDirs = { ".pixi", "target" },
             },
+            checkOnSave = {
+              command = "check",
+            }
           },
         },
       },
