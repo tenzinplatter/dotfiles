@@ -10,6 +10,8 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from tqdm import tqdm
+
 
 def dir_size(path: Path) -> int:
     total = 0
@@ -58,16 +60,17 @@ def main() -> None:
         shutil.rmtree(target, ignore_errors=True)
         return size
 
-    total = len(targets)
     freed = 0
-    with ThreadPoolExecutor() as pool:
+    with ThreadPoolExecutor() as pool, tqdm(
+        total=total_size, unit="B", unit_scale=True, unit_divisor=1024
+    ) as bar:
         futures = [pool.submit(clean, *t) for t in targets]
-        for done, fut in enumerate(as_completed(futures), 1):
-            freed += fut.result()
-            bar = "#" * (30 * done // total) if total else ""
-            print(f"\r[{bar:<30}] {done}/{total} {human(freed)}", end="", flush=True)
+        for fut in as_completed(futures):
+            size = fut.result()
+            freed += size
+            bar.update(size)
 
-    print(f"\n{total} env dir(s) removed, {human(freed)} freed")
+    print(f"{len(targets)} env dir(s) removed, {human(freed)} freed")
 
 
 if __name__ == "__main__":
