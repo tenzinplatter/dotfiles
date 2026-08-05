@@ -41,21 +41,20 @@ def main() -> None:
         capture_output=True, text=True, check=True,
     ).stdout
 
-    targets = [
-        (p, dir_size(p)) for line in out.splitlines()
-        if (p := Path(line)) != installation
-    ]
+    paths = [p for line in out.splitlines() if (p := Path(line)) != installation]
+    with ThreadPoolExecutor() as pool:
+        targets = list(zip(paths, pool.map(dir_size, paths)))
 
     for target, _ in targets:
         print(target)
 
-    total_size = sum([size for _, size in targets])
-    print(f"Size to be cleaned: {total_size}")
+    total_size = sum(size for _, size in targets)
+    print(f"Size to be cleaned: {human(total_size)}")
     cont = input("Continue? [Y/n]").strip()
     if cont.lower() not in ["y", ""]:
         return
 
-    def clean(target: Path, size) -> int:
+    def clean(target: Path, size: int) -> int:
         shutil.rmtree(target, ignore_errors=True)
         return size
 
