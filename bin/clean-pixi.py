@@ -42,22 +42,27 @@ def main() -> None:
     ).stdout
 
     targets = [
-        p for line in out.splitlines()
+        (p, dir_size(p)) for line in out.splitlines()
         if (p := Path(line)) != installation
     ]
 
-    for target in targets:
+    for target, _ in targets:
         print(target)
 
-    def clean(target: Path) -> int:
-        size = dir_size(target)
+    total_size = sum([size for _, size in targets])
+    print(f"Size to be cleaned: {total_size}")
+    cont = input("Continue? [Y/n]").strip()
+    if cont.lower() not in ["y", ""]:
+        return
+
+    def clean(target: Path, size) -> int:
         shutil.rmtree(target, ignore_errors=True)
         return size
 
     total = len(targets)
     freed = 0
     with ThreadPoolExecutor() as pool:
-        futures = [pool.submit(clean, t) for t in targets]
+        futures = [pool.submit(clean, *t) for t in targets]
         for done, fut in enumerate(as_completed(futures), 1):
             freed += fut.result()
             bar = "#" * (30 * done // total) if total else ""
