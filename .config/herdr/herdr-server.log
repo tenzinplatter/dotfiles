@@ -36,3 +36,5 @@
 2026-08-07T03:23:59.538804Z  INFO herdr::pane: pane session terminated pane=3 pid=25247 signal=Hangup
 2026-08-07T03:24:01.401768Z  INFO herdr::pane: agent changed pane=2 previous_agent=Some(Claude) agent=None pgid=Some(20615)
 2026-08-07T03:24:04.541373Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-07T03:24:23.892612Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:server:reload-config" method="server.reload_config" changes_ui=true
+2026-08-07T03:24:23.893270Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:server:reload-config" method="server.reload_config"
