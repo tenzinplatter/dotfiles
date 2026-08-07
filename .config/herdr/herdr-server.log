@@ -38,3 +38,4 @@
 2026-08-07T03:24:04.541373Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-07T03:24:23.892612Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:server:reload-config" method="server.reload_config" changes_ui=true
 2026-08-07T03:24:23.893270Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:server:reload-config" method="server.reload_config"
+2026-08-07T03:25:38.837948Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
