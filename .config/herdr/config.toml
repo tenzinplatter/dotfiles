@@ -30,6 +30,12 @@ reload_config = "prefix+ctrl+r"
 
 # pane nav (prefix + hjkl), zoom, close, tabs, goto: herdr defaults already match tmux
 
+# ctrl+enter -> plain enter (herdr has no key remap; round-trip via the API)
+[[keys.command]]
+key = "ctrl+enter"
+type = "shell"
+command = 'herdr pane send-keys "$HERDR_ACTIVE_PANE_ID" enter'
+
 [[keys.command]]
 key = "prefix+shift+f"
 type = "popup"
