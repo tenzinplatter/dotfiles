@@ -6,8 +6,8 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs",
       "public_pane_numbers": {
-        "8": 5,
-        "5": 2
+        "5": 2,
+        "8": 5
       },
       "next_public_pane_number": 11,
       "public_tab_numbers": [
@@ -45,7 +45,7 @@
           "root_pane": 8
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
