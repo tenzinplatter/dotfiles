@@ -103,3 +103,6 @@
 2026-08-11T06:47:18.993603Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=12 pid=81441
 2026-08-11T06:47:18.993784Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t6"
 2026-08-11T06:47:23.995932Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-11T06:49:24.409455Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t6"
+2026-08-11T06:49:25.701513Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 130, signal: None }"
+2026-08-11T06:49:25.701649Z  INFO herdr::pane: pane session terminated pane=11 pid=79749 signal=Hangup
