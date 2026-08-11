@@ -6,17 +6,13 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs",
       "public_pane_numbers": {
-        "13": 10,
         "8": 5,
-        "5": 2,
-        "12": 9
+        "5": 2
       },
       "next_public_pane_number": 11,
       "public_tab_numbers": [
         1,
-        4,
-        6,
-        7
+        4
       ],
       "next_public_tab_number": 8,
       "tabs": [
@@ -47,34 +43,6 @@
           "zoomed": false,
           "focused": 8,
           "root_pane": 8
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 12
-          },
-          "panes": {
-            "12": {
-              "cwd": "/home/tenzin/code/rosu"
-            }
-          },
-          "zoomed": false,
-          "focused": 12,
-          "root_pane": 12
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 13
-          },
-          "panes": {
-            "13": {
-              "cwd": "/home/tenzin/code/rosu"
-            }
-          },
-          "zoomed": false,
-          "focused": 13,
-          "root_pane": 13
         }
       ],
       "active_tab": 1
