@@ -148,3 +148,4 @@
 2026-08-11T07:38:44.475529Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=39 cell_width_px=0 cell_height_px=0
 2026-08-11T07:38:44.675762Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=44 cell_width_px=0 cell_height_px=0
 2026-08-11T07:38:44.876000Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=50 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:52.793165Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
