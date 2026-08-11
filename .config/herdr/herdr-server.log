@@ -135,3 +135,7 @@
 2026-08-11T07:27:02.487608Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=51 cell_width_px=0 cell_height_px=0
 2026-08-11T07:27:07.399448Z  INFO herdr::server::headless: client resize client_id=2 cols=99 rows=23 cell_width_px=0 cell_height_px=0
 2026-08-11T07:27:08.301241Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:28:08.660701Z  INFO herdr::server::headless: client resize client_id=2 cols=183 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:28:09.562774Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:28:10.965558Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=17 cell_width_px=0 cell_height_px=0
+2026-08-11T07:28:11.365983Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=23 cell_width_px=0 cell_height_px=0
