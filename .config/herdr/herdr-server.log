@@ -71,3 +71,4 @@
 2026-08-11T06:33:19.822421Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t3"
 2026-08-11T06:33:20.295886Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 0, signal: None }"
 2026-08-11T06:33:20.296043Z  INFO herdr::pane: pane session terminated pane=7 pid=66635 signal=Hangup
+2026-08-11T06:33:25.297814Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1

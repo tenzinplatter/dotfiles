@@ -6,15 +6,11 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs",
       "public_pane_numbers": {
-        "7": 4,
-        "5": 2,
-        "6": 3
+        "5": 2
       },
       "next_public_pane_number": 5,
       "public_tab_numbers": [
-        1,
-        2,
-        3
+        1
       ],
       "next_public_tab_number": 4,
       "tabs": [
@@ -31,37 +27,9 @@
           "zoomed": false,
           "focused": 5,
           "root_pane": 5
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 6
-          },
-          "panes": {
-            "6": {
-              "cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs"
-            }
-          },
-          "zoomed": false,
-          "focused": 6,
-          "root_pane": 6
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 7
-          },
-          "panes": {
-            "7": {
-              "cwd": "/home/tenzin/.dotfiles/.config/nvim"
-            }
-          },
-          "zoomed": false,
-          "focused": 7,
-          "root_pane": 7
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
