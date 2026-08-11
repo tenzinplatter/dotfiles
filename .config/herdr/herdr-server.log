@@ -139,3 +139,12 @@
 2026-08-11T07:28:09.562774Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=23 cell_width_px=0 cell_height_px=0
 2026-08-11T07:28:10.965558Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=17 cell_width_px=0 cell_height_px=0
 2026-08-11T07:28:11.365983Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:42.973815Z  INFO herdr::server::headless: client resize client_id=2 cols=225 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:43.174046Z  INFO herdr::server::headless: client resize client_id=2 cols=247 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:43.674861Z  INFO herdr::server::headless: client resize client_id=2 cols=225 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:43.875085Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=23 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:44.175326Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=28 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:44.375521Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=33 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:44.475529Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=39 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:44.675762Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=44 cell_width_px=0 cell_height_px=0
+2026-08-11T07:38:44.876000Z  INFO herdr::server::headless: client resize client_id=2 cols=204 rows=50 cell_width_px=0 cell_height_px=0
