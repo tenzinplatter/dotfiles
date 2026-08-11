@@ -129,3 +129,4 @@
 2026-08-11T06:56:54.471074Z  INFO herdr::pane: pane session terminated pane=13 pid=101149 signal=Hangup
 2026-08-11T06:56:59.474067Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-11T07:03:18.669720Z  INFO herdr::server::headless: client resize client_id=2 cols=99 rows=51 cell_width_px=0 cell_height_px=0
+2026-08-11T07:08:52.790792Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
