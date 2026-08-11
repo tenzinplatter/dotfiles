@@ -120,3 +120,10 @@
 2026-08-11T06:56:17.253361Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-11T06:56:39.149098Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 130, signal: None }"
 2026-08-11T06:56:39.169072Z  INFO herdr::pane: pane session terminated pane=10 pid=75107 signal=Hangup
+2026-08-11T06:56:44.177181Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-11T06:56:46.003801Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t6"
+2026-08-11T06:56:49.754799Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 130, signal: None }"
+2026-08-11T06:56:49.759934Z  INFO herdr::pane: pane session terminated pane=12 pid=81441 signal=Hangup
+2026-08-11T06:56:50.748937Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t7"
+2026-08-11T06:56:54.470911Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=13 status="ExitStatus { code: 147, signal: None }"
+2026-08-11T06:56:54.471074Z  INFO herdr::pane: pane session terminated pane=13 pid=101149 signal=Hangup

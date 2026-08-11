@@ -6,17 +6,15 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs",
       "public_pane_numbers": {
-        "12": 9,
-        "5": 2,
         "13": 10,
-        "10": 7,
-        "8": 5
+        "8": 5,
+        "5": 2,
+        "12": 9
       },
       "next_public_pane_number": 11,
       "public_tab_numbers": [
         1,
         4,
-        5,
         6,
         7
       ],
@@ -53,20 +51,6 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 10
-          },
-          "panes": {
-            "10": {
-              "cwd": "/home/tenzin/code/voxel-engine"
-            }
-          },
-          "zoomed": false,
-          "focused": 10,
-          "root_pane": 10
-        },
-        {
-          "custom_name": null,
-          "layout": {
             "Pane": 12
           },
           "panes": {
@@ -93,7 +77,7 @@
           "root_pane": 13
         }
       ],
-      "active_tab": 2
+      "active_tab": 1
     }
   ],
   "active": 0,
