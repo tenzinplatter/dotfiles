@@ -2,13 +2,13 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w2",
+      "id": "w3",
       "custom_name": null,
       "identity_cwd": "/home/tenzin",
       "public_pane_numbers": {
-        "2": 1
+        "4": 1
       },
-      "next_public_pane_number": 3,
+      "next_public_pane_number": 2,
       "public_tab_numbers": [
         1
       ],
@@ -17,16 +17,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 2
+            "Pane": 4
           },
           "panes": {
-            "2": {
+            "4": {
               "cwd": "/home/tenzin"
             }
           },
           "zoomed": false,
-          "focused": 2,
-          "root_pane": 2
+          "focused": 4,
+          "root_pane": 4
         }
       ],
       "active_tab": 0
