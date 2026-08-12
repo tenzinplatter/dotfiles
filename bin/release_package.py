@@ -228,6 +228,7 @@ def main() -> int:
     ap.add_argument("--state", action="store_true", help="status of every dispatched run")
     ap.add_argument("--clear", action="store_true", help="as --state, then forget finished runs")
     ap.add_argument("--selftest", action="store_true")
+    ap.add_argument("--no-open", action="store_true")
     args = ap.parse_args()
 
     if args.selftest:
@@ -306,7 +307,8 @@ def main() -> int:
     save_state(load_state() + [{"package": pkg, "repo": target, "ref": ref,
                                 "id": run["databaseId"], "createdAt": run["createdAt"]}])
     print(f"\nrun {run['databaseId']}  {run['url']}")
-    subprocess.run(["xdg-open", run["url"]])
+    if not args.no_open:
+        subprocess.run(["xdg-open", run["url"]])
     return 0
 
 
