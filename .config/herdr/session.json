@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs",
       "public_pane_numbers": {
-        "15": 12,
+        "5": 2,
         "8": 5,
         "14": 11,
-        "5": 2
+        "15": 12
       },
       "next_public_pane_number": 13,
       "public_tab_numbers": [
@@ -62,15 +62,15 @@
             }
           },
           "panes": {
-            "14": {
+            "15": {
               "cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs/COMP3419-W02-Lab-Files"
             },
-            "15": {
+            "14": {
               "cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs/COMP3419-W02-Lab-Files"
             }
           },
           "zoomed": false,
-          "focused": 14,
+          "focused": 15,
           "root_pane": 14
         }
       ],
