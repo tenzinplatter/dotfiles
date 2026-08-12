@@ -306,6 +306,7 @@ def main() -> int:
     save_state(load_state() + [{"package": pkg, "repo": target, "ref": ref,
                                 "id": run["databaseId"], "createdAt": run["createdAt"]}])
     print(f"\nrun {run['databaseId']}  {run['url']}")
+    subprocess.run(["xdg-open", run["url"]])
     return 0
 
 
