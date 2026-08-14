@@ -2,66 +2,34 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w3",
+      "id": "w4",
       "custom_name": null,
-      "identity_cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs",
+      "identity_cwd": "/home/tenzin",
       "public_pane_numbers": {
-        "5": 2,
-        "8": 5,
-        "14": 11
+        "17": 1
       },
-      "next_public_pane_number": 14,
+      "next_public_pane_number": 2,
       "public_tab_numbers": [
-        1,
-        4,
-        8
+        1
       ],
-      "next_public_tab_number": 9,
+      "next_public_tab_number": 2,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 5
+            "Pane": 17
           },
           "panes": {
-            "5": {
-              "cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs"
+            "17": {
+              "cwd": "/home/tenzin"
             }
           },
           "zoomed": false,
-          "focused": 5,
-          "root_pane": 5
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 8
-          },
-          "panes": {
-            "8": {
-              "cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs/COMP3419-W02-Lab-Files"
-            }
-          },
-          "zoomed": false,
-          "focused": 8,
-          "root_pane": 8
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 14
-          },
-          "panes": {
-            "14": {
-              "cwd": "/home/tenzin/school/2027/graphics-multimedia/COMP3419-Python-Labs/COMP3419-W02-Lab-Files"
-            }
-          },
-          "zoomed": false,
-          "focused": 14,
-          "root_pane": 14
+          "focused": 17,
+          "root_pane": 17
         }
       ],
-      "active_tab": 2
+      "active_tab": 0
     }
   ],
   "active": 0,
