@@ -3,7 +3,6 @@
 
 Never touch ~/.pixi itself - that is the pixi installation (bin, global envs).
 """
-import os
 import shutil
 import subprocess
 import sys
@@ -14,15 +13,8 @@ from tqdm import tqdm
 
 
 def dir_size(path: Path) -> int:
-    total = 0
-    for dirpath, _, files in os.walk(path):
-        for f in files:
-            fp = Path(dirpath) / f
-            try:
-                total += fp.lstat().st_size
-            except OSError:
-                pass  # ponytail: race with rm/broken symlink, just skip
-    return total
+    out = subprocess.run(["du", "-sb", str(path)], capture_output=True, text=True)
+    return int(out.stdout.split(maxsplit=1)[0]) if out.returncode == 0 else 0
 
 
 def human(n: int) -> str:
