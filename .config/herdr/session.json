@@ -4,15 +4,17 @@
     {
       "id": "w4",
       "custom_name": null,
-      "identity_cwd": "/home/tenzin",
+      "identity_cwd": "/home/tenzin/school/2026/capstone/cow-scanner",
       "public_pane_numbers": {
+        "18": 2,
         "17": 1
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 3,
       "public_tab_numbers": [
-        1
+        1,
+        2
       ],
-      "next_public_tab_number": 2,
+      "next_public_tab_number": 3,
       "tabs": [
         {
           "custom_name": null,
@@ -21,15 +23,29 @@
           },
           "panes": {
             "17": {
-              "cwd": "/home/tenzin"
+              "cwd": "/home/tenzin/school/2026/capstone/cow-scanner"
             }
           },
           "zoomed": false,
           "focused": 17,
           "root_pane": 17
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 18
+          },
+          "panes": {
+            "18": {
+              "cwd": "/home/tenzin/school/2026/capstone/cow-scanner"
+            }
+          },
+          "zoomed": false,
+          "focused": 18,
+          "root_pane": 18
         }
       ],
-      "active_tab": 0
+      "active_tab": 1
     }
   ],
   "active": 0,
