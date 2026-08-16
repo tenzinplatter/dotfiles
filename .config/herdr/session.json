@@ -6,8 +6,8 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/2026/capstone/cow-scanner",
       "public_pane_numbers": {
-        "18": 2,
-        "17": 1
+        "17": 1,
+        "18": 2
       },
       "next_public_pane_number": 3,
       "public_tab_numbers": [
@@ -45,7 +45,7 @@
           "root_pane": 18
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
