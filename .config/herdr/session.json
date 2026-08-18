@@ -6,8 +6,8 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/projects/voxel-engine",
       "public_pane_numbers": {
-        "7": 7,
-        "1": 1
+        "1": 1,
+        "7": 7
       },
       "next_public_pane_number": 8,
       "public_tab_numbers": [
@@ -45,7 +45,7 @@
           "root_pane": 7
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
