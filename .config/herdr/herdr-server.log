@@ -309,3 +309,4 @@
 2026-08-18T06:13:55.603097Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-18T06:15:31.811109Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-18T06:45:31.812865Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T07:15:31.842652Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
