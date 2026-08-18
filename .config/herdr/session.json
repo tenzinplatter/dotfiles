@@ -23,7 +23,13 @@
           },
           "panes": {
             "1": {
-              "cwd": "/home/tenzin/code/projects/voxel-engine"
+              "cwd": "/home/tenzin/code/projects/voxel-engine",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "5e046a8e-9984-4414-9c58-9aeec34cdd8e"
+              }
             }
           },
           "zoomed": false,
@@ -45,7 +51,7 @@
           "root_pane": 7
         }
       ],
-      "active_tab": 0
+      "active_tab": 1
     }
   ],
   "active": 0,
