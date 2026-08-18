@@ -4,45 +4,45 @@
     {
       "id": "w4",
       "custom_name": null,
-      "identity_cwd": "/home/tenzin/school/2026/capstone/cow-scanner",
+      "identity_cwd": "/home/tenzin/code/projects/voxel-engine",
       "public_pane_numbers": {
-        "17": 1,
-        "18": 2
+        "1": 1,
+        "4": 4
       },
-      "next_public_pane_number": 3,
+      "next_public_pane_number": 5,
       "public_tab_numbers": [
         1,
-        2
+        3
       ],
-      "next_public_tab_number": 3,
+      "next_public_tab_number": 4,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 17
+            "Pane": 1
           },
           "panes": {
-            "17": {
-              "cwd": "/home/tenzin/school/2026/capstone/cow-scanner"
+            "1": {
+              "cwd": "/home/tenzin/code/projects/voxel-engine"
             }
           },
           "zoomed": false,
-          "focused": 17,
-          "root_pane": 17
+          "focused": 1,
+          "root_pane": 1
         },
         {
           "custom_name": null,
           "layout": {
-            "Pane": 18
+            "Pane": 4
           },
           "panes": {
-            "18": {
-              "cwd": "/home/tenzin/school/2026/capstone/cow-scanner"
+            "4": {
+              "cwd": "/home/tenzin/code/projects/voxel-engine"
             }
           },
           "zoomed": false,
-          "focused": 18,
-          "root_pane": 18
+          "focused": 4,
+          "root_pane": 4
         }
       ],
       "active_tab": 0
