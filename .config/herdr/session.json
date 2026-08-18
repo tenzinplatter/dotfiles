@@ -6,13 +6,15 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/projects/voxel-engine",
       "public_pane_numbers": {
+        "7": 7,
         "1": 1
       },
-      "next_public_pane_number": 7,
+      "next_public_pane_number": 8,
       "public_tab_numbers": [
-        1
+        1,
+        5
       ],
-      "next_public_tab_number": 5,
+      "next_public_tab_number": 6,
       "tabs": [
         {
           "custom_name": null,
@@ -27,6 +29,20 @@
           "zoomed": false,
           "focused": 1,
           "root_pane": 1
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 7
+          },
+          "panes": {
+            "7": {
+              "cwd": "/home/tenzin/code/projects/voxel-engine"
+            }
+          },
+          "zoomed": false,
+          "focused": 7,
+          "root_pane": 7
         }
       ],
       "active_tab": 0
