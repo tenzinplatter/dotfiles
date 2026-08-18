@@ -24,7 +24,8 @@ gui:
       - "#bf616a"
   nerdFontsVersion: "3"
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
       # pager: delta --side-by-side --line-numbers --paging=never
-      externalDiffCommand: difft --display=side-by-side-show-both --color=always
+      command: difft --display=side-by-side-show-both --color=always
+      type: extDiff
