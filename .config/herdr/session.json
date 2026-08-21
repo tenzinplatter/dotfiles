@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/cow-scanner",
       "public_pane_numbers": {
-        "7": 12,
         "2": 7,
-        "6": 11,
-        "4": 9
+        "4": 9,
+        "7": 12,
+        "6": 11
       },
       "next_public_pane_number": 13,
       "public_tab_numbers": [
@@ -33,6 +33,9 @@
             }
           },
           "panes": {
+            "7": {
+              "cwd": "/home/tenzin/code/cow-scanner"
+            },
             "2": {
               "cwd": "/home/tenzin/code/cow-scanner",
               "agent_session": {
@@ -41,13 +44,10 @@
                 "kind": "id",
                 "value": "cef86d14-ce62-473f-a216-f1404b93ebb5"
               }
-            },
-            "7": {
-              "cwd": "/home/tenzin/code/cow-scanner"
             }
           },
           "zoomed": false,
-          "focused": 2,
+          "focused": 7,
           "root_pane": 2
         },
         {
@@ -65,9 +65,6 @@
             }
           },
           "panes": {
-            "6": {
-              "cwd": "/home/tenzin/code/cow-scanner/recordings/recording-1"
-            },
             "4": {
               "cwd": "/home/tenzin/code/cow-scanner/recordings/recording-1",
               "agent_session": {
@@ -76,6 +73,9 @@
                 "kind": "id",
                 "value": "4660ebe0-192f-4313-8859-8ad421bd0bb1"
               }
+            },
+            "6": {
+              "cwd": "/home/tenzin/code/cow-scanner/recordings/recording-1"
             }
           },
           "zoomed": false,
