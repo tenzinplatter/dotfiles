@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/cow-scanner",
       "public_pane_numbers": {
-        "6": 11,
-        "4": 9,
+        "7": 12,
         "2": 7,
-        "7": 12
+        "6": 11,
+        "4": 9
       },
       "next_public_pane_number": 13,
       "public_tab_numbers": [
@@ -33,9 +33,6 @@
             }
           },
           "panes": {
-            "7": {
-              "cwd": "/home/tenzin/code/cow-scanner"
-            },
             "2": {
               "cwd": "/home/tenzin/code/cow-scanner",
               "agent_session": {
@@ -44,10 +41,13 @@
                 "kind": "id",
                 "value": "cef86d14-ce62-473f-a216-f1404b93ebb5"
               }
+            },
+            "7": {
+              "cwd": "/home/tenzin/code/cow-scanner"
             }
           },
           "zoomed": false,
-          "focused": 7,
+          "focused": 2,
           "root_pane": 2
         },
         {
