@@ -7,9 +7,9 @@
       "identity_cwd": "/home/tenzin/code/cow-scanner",
       "public_pane_numbers": {
         "6": 11,
+        "7": 12,
         "4": 9,
-        "2": 7,
-        "7": 12
+        "2": 7
       },
       "next_public_pane_number": 14,
       "public_tab_numbers": [
@@ -47,7 +47,7 @@
             }
           },
           "zoomed": false,
-          "focused": 7,
+          "focused": 2,
           "root_pane": 2
         },
         {
@@ -65,6 +65,9 @@
             }
           },
           "panes": {
+            "6": {
+              "cwd": "/home/tenzin/code/cow-scanner/recordings/recording-1"
+            },
             "4": {
               "cwd": "/home/tenzin/code/cow-scanner/recordings/recording-1",
               "agent_session": {
@@ -73,9 +76,6 @@
                 "kind": "id",
                 "value": "4660ebe0-192f-4313-8859-8ad421bd0bb1"
               }
-            },
-            "6": {
-              "cwd": "/home/tenzin/code/cow-scanner/recordings/recording-1"
             }
           },
           "zoomed": false,
