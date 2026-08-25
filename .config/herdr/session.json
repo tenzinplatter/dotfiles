@@ -4,14 +4,13 @@
     {
       "id": "wA",
       "custom_name": null,
-      "identity_cwd": "/home/tenzin/code/cow-scanner/Integration/GUI",
+      "identity_cwd": "/home/tenzin/code/cow-scanner",
       "public_pane_numbers": {
-        "3": 4,
-        "1": 1
+        "2": 4,
+        "3": 5
       },
-      "next_public_pane_number": 5,
+      "next_public_pane_number": 6,
       "public_tab_numbers": [
-        1,
         3
       ],
       "next_public_tab_number": 4,
@@ -19,33 +18,37 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 1
-          },
-          "panes": {
-            "1": {
-              "cwd": "/home/tenzin/code/cow-scanner/Integration/GUI"
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 2
+              },
+              "second": {
+                "Pane": 3
+              }
             }
           },
-          "zoomed": false,
-          "focused": 1,
-          "root_pane": 1
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 3
-          },
           "panes": {
+            "2": {
+              "cwd": "/home/tenzin/code/cow-scanner",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "adfdc6b5-af34-4df8-aa28-8a2c82269668"
+              }
+            },
             "3": {
-              "cwd": "/home/tenzin/code/cow-scanner/Integration/GUI"
+              "cwd": "/home/tenzin/code/cow-scanner"
             }
           },
           "zoomed": false,
-          "focused": 3,
-          "root_pane": 3
+          "focused": 2,
+          "root_pane": 2
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
