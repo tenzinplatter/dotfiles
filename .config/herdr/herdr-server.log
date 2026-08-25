@@ -622,3 +622,4 @@
 2026-08-25T08:02:29.388952Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-25T08:32:29.391304Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-25T09:02:29.394624Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-25T09:32:29.398637Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
