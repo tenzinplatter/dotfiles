@@ -372,3 +372,125 @@
 2026-08-21T11:05:17.656866Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-21T11:05:18.138658Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t7"
 2026-08-21T11:05:23.140794Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:22:38.318898Z  INFO herdr::api::server: api server listening path=/home/tenzin/.config/herdr/herdr.sock
+2026-08-25T00:22:38.320130Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-25T00:22:38.320787Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=17721
+2026-08-25T00:22:38.320974Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-25T00:22:38.321538Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=17726
+2026-08-25T00:22:38.321688Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-08-25T00:22:38.321702Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-25T00:22:38.382462Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-25T00:22:38.383679Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/home/tenzin/code/cow-scanner/Integration/GUI
+2026-08-25T00:22:38.383812Z  INFO herdr::server::headless: client protocol socket listening path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-25T00:22:38.383831Z  INFO herdr::server::headless: herdr server started api_socket=/home/tenzin/.config/herdr/herdr.sock client_socket=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-25T00:22:38.384028Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=17700
+2026-08-25T00:22:38.428992Z  INFO herdr::server::headless: client connected client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-25T00:22:38.449782Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=46 cols=138 scrollback_limit_bytes=10000000
+2026-08-25T00:22:38.450572Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=17966
+2026-08-25T00:22:38.450714Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=46 cols=137 scrollback_limit_bytes=10000000
+2026-08-25T00:22:38.451455Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=17971
+2026-08-25T00:22:38.648709Z  INFO herdr::logging: update available event="update.available" subsystem="update" outcome="ok" version="0.8.2"
+2026-08-25T00:22:38.648732Z  INFO herdr::update: new stable build available at https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64
+2026-08-25T00:22:38.649022Z  INFO herdr::update: auto-update check: 0.8.2 available, waiting for explicit install
+2026-08-25T00:22:38.653989Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-25T00:22:39.002750Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(Claude) process=claude pgid=Some(18216)
+2026-08-25T00:22:39.003932Z  INFO herdr::pane: agent changed pane=3 previous_agent=None agent=Some(Claude) process=claude pgid=Some(18215)
+2026-08-25T00:22:43.452932Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:22:43.532397Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(Claude) process=claude pgid=Some(18216)
+2026-08-25T00:22:43.532453Z  INFO herdr::pane: agent changed pane=3 previous_agent=None agent=Some(Claude) process=claude pgid=Some(18215)
+2026-08-25T00:22:47.721172Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 130, signal: None }"
+2026-08-25T00:22:47.722920Z  INFO herdr::pane: pane session terminated pane=2 pid=17721 signal=Hangup
+2026-08-25T00:22:48.779014Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t7"
+2026-08-25T00:22:50.279570Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=5 rows=48 cols=140 scrollback_limit_bytes=10000000
+2026-08-25T00:22:50.280585Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=5 pid=18822
+2026-08-25T00:22:50.280780Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t8"
+2026-08-25T00:22:55.281739Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:23:04.306283Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 127, signal: None }"
+2026-08-25T00:23:04.307716Z  INFO herdr::pane: pane session terminated pane=5 pid=18822 signal=Hangup
+2026-08-25T00:23:07.562308Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 0, signal: None }"
+2026-08-25T00:23:07.563916Z  INFO herdr::pane: pane session terminated pane=3 pid=17971 signal=Hangup
+2026-08-25T00:23:07.839524Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:07.840972Z  INFO herdr::pane: pane session terminated pane=4 pid=17726 signal=Hangup
+2026-08-25T00:23:09.449386Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 0, signal: None }"
+2026-08-25T00:23:09.449483Z  INFO herdr::pane: pane session terminated pane=1 pid=17966 signal=Hangup
+2026-08-25T00:23:09.449731Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=6 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:09.450667Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=6 pid=19486
+2026-08-25T00:23:09.450748Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w5" pane_id=6
+2026-08-25T00:23:09.450754Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w5"
+2026-08-25T00:23:09.450798Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w5" tab_id="w5:t1"
+2026-08-25T00:23:10.381185Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:10.382762Z  INFO herdr::pane: pane session terminated pane=6 pid=19486 signal=Hangup
+2026-08-25T00:23:10.382963Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=7 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:10.383975Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=7 pid=19636
+2026-08-25T00:23:10.384082Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w6" pane_id=7
+2026-08-25T00:23:10.384089Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6"
+2026-08-25T00:23:10.384153Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6" tab_id="w6:t1"
+2026-08-25T00:23:10.830316Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:10.832066Z  INFO herdr::pane: pane session terminated pane=7 pid=19636 signal=Hangup
+2026-08-25T00:23:10.832257Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=8 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:10.833279Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=8 pid=19778
+2026-08-25T00:23:10.833368Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w7" pane_id=8
+2026-08-25T00:23:10.833376Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w7"
+2026-08-25T00:23:10.833427Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w7" tab_id="w7:t1"
+2026-08-25T00:23:10.995092Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=8 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:10.996704Z  INFO herdr::pane: pane session terminated pane=8 pid=19778 signal=Hangup
+2026-08-25T00:23:10.996934Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:10.998083Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=19919
+2026-08-25T00:23:10.998190Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w8" pane_id=9
+2026-08-25T00:23:10.998198Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w8"
+2026-08-25T00:23:10.998253Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w8" tab_id="w8:t1"
+2026-08-25T00:23:11.175029Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:11.176606Z  INFO herdr::pane: pane session terminated pane=9 pid=19919 signal=Hangup
+2026-08-25T00:23:11.176842Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:11.177988Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=20061
+2026-08-25T00:23:11.178085Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w9" pane_id=10
+2026-08-25T00:23:11.178093Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w9"
+2026-08-25T00:23:11.178138Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w9" tab_id="w9:t1"
+2026-08-25T00:23:14.176690Z  INFO herdr::server::headless: client detach requested via keybind client_id=2
+2026-08-25T00:23:14.179214Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-08-25T00:23:16.179142Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:23:17.433807Z  INFO herdr::server::headless: client connected client_id=4 cols=306 rows=49 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-25T00:23:19.382325Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 0, signal: None }"
+2026-08-25T00:23:19.383742Z  INFO herdr::pane: pane session terminated pane=10 pid=20061 signal=Hangup
+2026-08-25T00:23:19.383940Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=11 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:19.384910Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=11 pid=20373
+2026-08-25T00:23:19.385033Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wA" pane_id=11
+2026-08-25T00:23:19.385041Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wA"
+2026-08-25T00:23:19.385085Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t1"
+2026-08-25T00:23:20.520214Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=12 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:20.521240Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=12 pid=20511
+2026-08-25T00:23:20.521385Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t2"
+2026-08-25T00:23:21.976957Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:21.978161Z  INFO herdr::pane: pane session terminated pane=12 pid=20511 signal=Hangup
+2026-08-25T00:23:23.626273Z  INFO herdr::server::headless: client detach requested via keybind client_id=4
+2026-08-25T00:23:23.628875Z  INFO herdr::server::headless: client disconnected client_id=4
+2026-08-25T00:23:26.980074Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:23:30.421494Z  INFO herdr::server::headless: server shutdown initiated
+2026-08-25T00:23:30.471589Z  INFO herdr::server::headless: completing server shutdown
+2026-08-25T00:23:30.471915Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:23:30.471927Z  INFO herdr::server::headless: headless server exiting
+2026-08-25T00:23:30.472654Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 1, signal: None }"
+2026-08-25T00:23:30.476057Z  INFO herdr::pane: pane session terminated pane=11 pid=20373 signal=Hangup
+2026-08-25T00:23:30.476639Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="server" outcome="completed" pid=17700
+2026-08-25T00:23:31.956488Z  INFO herdr::api::server: api server listening path=/home/tenzin/.config/herdr/herdr.sock
+2026-08-25T00:23:31.957375Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-25T00:23:31.957997Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=20940
+2026-08-25T00:23:31.958134Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-08-25T00:23:31.958144Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-25T00:23:32.015814Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-25T00:23:32.016907Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/home/tenzin/code/cow-scanner/Integration/GUI
+2026-08-25T00:23:32.016973Z  INFO herdr::server::headless: client protocol socket listening path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-25T00:23:32.016990Z  INFO herdr::server::headless: herdr server started api_socket=/home/tenzin/.config/herdr/herdr.sock client_socket=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-25T00:23:32.017116Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=20919
+2026-08-25T00:23:32.082048Z  INFO herdr::server::headless: client connected client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-25T00:23:32.275109Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-25T00:23:32.280972Z  INFO herdr::logging: update available event="update.available" subsystem="update" outcome="ok" version="0.8.2"
+2026-08-25T00:23:32.280990Z  INFO herdr::update: new stable build available at https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64
+2026-08-25T00:23:32.281283Z  INFO herdr::update: auto-update check: 0.8.2 available, waiting for explicit install
+2026-08-25T00:23:55.286579Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T00:23:55.287591Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=21731
+2026-08-25T00:23:55.287756Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t1"
+2026-08-25T00:24:00.289673Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-25T00:24:27.631667Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 0, signal: None }"
+2026-08-25T00:24:27.633395Z  INFO herdr::pane: pane session terminated pane=2 pid=21731 signal=Hangup
+2026-08-25T00:24:32.635836Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
