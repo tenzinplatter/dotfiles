@@ -571,3 +571,14 @@
 2026-08-25T02:02:29.388553Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-25T02:32:29.379959Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-25T03:02:29.376024Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-25T03:12:03.231043Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-25T03:12:03.232198Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=55779
+2026-08-25T03:12:03.232500Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t4"
+2026-08-25T03:12:08.234354Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-25T03:12:27.124342Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 0, signal: None }"
+2026-08-25T03:12:27.126156Z  INFO herdr::pane: pane session terminated pane=9 pid=55779 signal=Hangup
+2026-08-25T03:12:28.140010Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 130, signal: None }"
+2026-08-25T03:12:28.141875Z  INFO herdr::pane: pane session terminated pane=6 pid=33201 signal=Hangup
+2026-08-25T03:12:29.642296Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 0, signal: None }"
+2026-08-25T03:12:29.644113Z  INFO herdr::pane: pane session terminated pane=7 pid=35373 signal=Hangup
+2026-08-25T03:12:34.646602Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
