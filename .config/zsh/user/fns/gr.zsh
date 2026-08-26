@@ -78,39 +78,39 @@ lookout() {
     source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
 }
 
-gama() {
-    # Unset the function temporarily to check for the real command
-    unset -f gama
+# gama() {
+#     # Unset the function temporarily to check for the real command
+#     unset -f gama
 
-    # Source the virtual environment first
-    local venv_path="$HOME/Repositories/gama/gama"
+#     # Source the virtual environment first
+#     local venv_path="$HOME/Repositories/gama/gama"
 
-    if [[ ! -f "$venv_path/bin/activate" ]]; then
-        echo "Error: Virtual environment not found at $venv_path"
-        # Restore the function before returning
-        source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-        return 1
-    fi
+#     if [[ ! -f "$venv_path/bin/activate" ]]; then
+#         echo "Error: Virtual environment not found at $venv_path"
+#         # Restore the function before returning
+#         source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+#         return 1
+#     fi
 
-    # Source the virtual environment and call gama
-    source "$venv_path/bin/activate"
+#     # Source the virtual environment and call gama
+#     source "$venv_path/bin/activate"
 
-    # Check if gama is now available
-    if command -v gama > /dev/null 2>&1; then
-        command gama "$@"
-        # Deactivate venv after command execution
-        deactivate
-    else
-        echo "Error: gama command not found even after sourcing virtual environment"
-        # Deactivate venv and restore the function before returning
-        deactivate
-        source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-        return 1
-    fi
+#     # Check if gama is now available
+#     if command -v gama > /dev/null 2>&1; then
+#         command gama "$@"
+#         # Deactivate venv after command execution
+#         deactivate
+#     else
+#         echo "Error: gama command not found even after sourcing virtual environment"
+#         # Deactivate venv and restore the function before returning
+#         deactivate
+#         source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+#         return 1
+#     fi
 
-    # Restore the function for next time
-    source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-}
+#     # Restore the function for next time
+#     source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+# }
 
 set_platform_module() {
     local dir_name="${PWD:t}"
