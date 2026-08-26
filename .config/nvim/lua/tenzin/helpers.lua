@@ -159,4 +159,8 @@ function M.in_codediff()
   return codediff_lifecycle.get_session(current_tab)
 end
 
+function M.in_herdr_session()
+  return os.getenv("HERDR_ENV") == "1"
+end
+
 return M
