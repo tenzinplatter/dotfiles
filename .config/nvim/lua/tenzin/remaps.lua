@@ -92,6 +92,10 @@ end, { desc = "Close floating window or record macro" })
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
+vim.keymap.set({ "n", "v" }, "<leader>hs", function()
+  require("tenzin.helpers").herdr_shell_at_path()
+end, { desc = "Open herdr shell at path under cursor" })
+
 -- Split other windows with current buffer
 vim.keymap.set("n", "<leader>wsh", function()
   require("tenzin.helpers").split_window_with_current_buffer("h", false)

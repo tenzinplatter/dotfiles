@@ -163,4 +163,43 @@ function M.in_herdr_session()
   return os.getenv("HERDR_ENV") == "1"
 end
 
+-- Open a shell in a new herdr tab at the path under the cursor / visually selected
+function M.herdr_shell_at_path()
+  if not M.in_herdr_session() then
+    vim.notify("Not in a herdr session", vim.log.levels.WARN)
+    return
+  end
+
+  local path
+  local mode = vim.fn.mode()
+  if mode == "v" or mode == "V" then
+    vim.cmd('normal! "zy')
+    path = vim.fn.trim(vim.fn.getreg("z"))
+  else
+    path = vim.fn.expand("<cfile>")
+  end
+
+  if path == "" then
+    vim.notify("No path under cursor", vim.log.levels.WARN)
+    return
+  end
+
+  -- Resolve relative paths against the buffer's directory
+  if not path:match("^[/~]") then
+    path = vim.fn.expand("%:p:h") .. "/" .. path
+  end
+  path = vim.fn.fnamemodify(path, ":p")
+
+  if vim.fn.isdirectory(path) == 0 then
+    local dir = vim.fn.fnamemodify(path, ":h")
+    if vim.fn.isdirectory(dir) == 0 then
+      vim.notify("Path does not exist: " .. path, vim.log.levels.WARN)
+      return
+    end
+    path = dir
+  end
+
+  vim.system({ "herdr", "tab", "create", "--cwd", path, "--focus" })
+end
+
 return M
