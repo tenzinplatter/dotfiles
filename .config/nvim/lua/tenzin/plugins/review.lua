@@ -6,6 +6,7 @@ return {
     vim.keymap.set("n", "<leader>rv", "<cmd>Review<cr>", { desc = "Toggle review" })
     vim.keymap.set("n", "<leader>rc", qc.add, { desc = "Add comment on current line" })
     vim.keymap.set("v", "<leader>rc", qc.add_visual, { desc = "Add comment on visual selection" })
+    vim.keymap.set("n", "<leader>rC", qc.clear_comments, { desc = "Clear all comments" })
     vim.keymap.set("n", "<leader>rt", qc.toggle_panel, { desc = "Toggle quick comment panel" })
     vim.keymap.set("n", "<leader>re", qc.export, { desc = "Export review to clipboard" })
     vim.keymap.set("n", "<leader>rE", qc.export, { desc = "Export review to clipboard and clear comments" })
