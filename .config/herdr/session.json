@@ -6,8 +6,8 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/cow-scanner",
       "public_pane_numbers": {
-        "2": 5,
-        "1": 4
+        "1": 4,
+        "2": 5
       },
       "next_public_pane_number": 6,
       "public_tab_numbers": [
@@ -55,18 +55,18 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/software-design/a1",
       "public_pane_numbers": {
-        "9": 15,
-        "4": 7,
         "10": 16,
-        "3": 1
+        "9": 15,
+        "3": 1,
+        "4": 7
       },
-      "next_public_pane_number": 18,
+      "next_public_pane_number": 25,
       "public_tab_numbers": [
         1,
         5,
         11
       ],
-      "next_public_tab_number": 13,
+      "next_public_tab_number": 14,
       "tabs": [
         {
           "custom_name": null,
@@ -117,6 +117,9 @@
             }
           },
           "panes": {
+            "10": {
+              "cwd": "/home/tenzin/school/software-design/a1"
+            },
             "9": {
               "cwd": "/home/tenzin/school/software-design/a1",
               "agent_session": {
@@ -125,9 +128,6 @@
                 "kind": "id",
                 "value": "fa3bd6a3-2675-48d4-9626-a1b513e175d6"
               }
-            },
-            "10": {
-              "cwd": "/home/tenzin/school/software-design/a1"
             }
           },
           "zoomed": false,
