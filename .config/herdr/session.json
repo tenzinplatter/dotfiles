@@ -30,9 +30,6 @@
             }
           },
           "panes": {
-            "2": {
-              "cwd": "/home/tenzin/code/cow-scanner"
-            },
             "1": {
               "cwd": "/home/tenzin/code/cow-scanner",
               "agent_session": {
@@ -41,6 +38,9 @@
                 "kind": "id",
                 "value": "adfdc6b5-af34-4df8-aa28-8a2c82269668"
               }
+            },
+            "2": {
+              "cwd": "/home/tenzin/code/cow-scanner"
             }
           },
           "zoomed": false,
