@@ -628,3 +628,4 @@
 2026-08-25T11:02:29.396069Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-25T11:32:29.394366Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-25T12:02:29.397044Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-25T12:04:37.164294Z  INFO herdr::server::headless: client disconnected client_id=4
