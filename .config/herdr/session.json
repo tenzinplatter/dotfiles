@@ -55,7 +55,6 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/software-design/a1",
       "public_pane_numbers": {
-        "6": 12,
         "4": 7,
         "3": 1,
         "5": 11
@@ -63,7 +62,6 @@
       "next_public_pane_number": 13,
       "public_tab_numbers": [
         1,
-        9,
         5,
         8
       ],
@@ -82,20 +80,6 @@
           "zoomed": false,
           "focused": 3,
           "root_pane": 3
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 6
-          },
-          "panes": {
-            "6": {
-              "cwd": "/home/tenzin/school/software-design/a1"
-            }
-          },
-          "zoomed": false,
-          "focused": 6,
-          "root_pane": 6
         },
         {
           "custom_name": null,
