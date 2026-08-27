@@ -14,9 +14,12 @@ return {
             files = {
               excludeDirs = { ".pixi", "target" },
             },
+            cargo = {
+              features = "all",
+            },
             checkOnSave = {
               command = "check",
-            }
+            },
           },
         },
       },
