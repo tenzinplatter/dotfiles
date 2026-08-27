@@ -910,3 +910,4 @@
 2026-08-27T11:58:22.588560Z  INFO herdr::pane: pane session terminated pane=2 pid=9087 signal=Hangup
 2026-08-27T11:58:23.165019Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t3"
 2026-08-27T11:58:28.165470Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-27T12:01:12.137752Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
