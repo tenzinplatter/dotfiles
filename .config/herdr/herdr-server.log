@@ -900,3 +900,13 @@
 2026-08-27T11:49:54.114805Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-08-27T11:50:00.205129Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t1"
 2026-08-27T11:50:05.206507Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-27T11:58:17.368413Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 0, signal: None }"
+2026-08-27T11:58:17.368500Z  INFO herdr::pane: pane session terminated pane=3 pid=9092 signal=Hangup
+2026-08-27T11:58:19.466421Z  INFO herdr::pane: agent changed pane=4 previous_agent=Some(Claude) agent=None pgid=Some(9325)
+2026-08-27T11:58:19.489582Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 0, signal: None }"
+2026-08-27T11:58:19.491139Z  INFO herdr::pane: pane session terminated pane=4 pid=9325 signal=Hangup
+2026-08-27T11:58:21.835564Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t3"
+2026-08-27T11:58:22.586859Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 1, signal: None }"
+2026-08-27T11:58:22.588560Z  INFO herdr::pane: pane session terminated pane=2 pid=9087 signal=Hangup
+2026-08-27T11:58:23.165019Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t3"
+2026-08-27T11:58:28.165470Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
