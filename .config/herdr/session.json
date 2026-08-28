@@ -9,11 +9,11 @@
         "6": 10,
         "9": 13
       },
-      "next_public_pane_number": 14,
+      "next_public_pane_number": 15,
       "public_tab_numbers": [
         4
       ],
-      "next_public_tab_number": 5,
+      "next_public_tab_number": 6,
       "tabs": [
         {
           "custom_name": null,
@@ -30,15 +30,15 @@
             }
           },
           "panes": {
-            "9": {
-              "cwd": "/home/tenzin/code/stockeye/launch"
-            },
             "6": {
               "cwd": "/home/tenzin/code/stockeye"
+            },
+            "9": {
+              "cwd": "/home/tenzin/code/stockeye/launch"
             }
           },
           "zoomed": false,
-          "focused": 6,
+          "focused": 9,
           "root_pane": 6
         }
       ],

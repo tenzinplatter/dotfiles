@@ -1055,3 +1055,39 @@
 2026-08-28T05:09:54.732109Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
 2026-08-28T05:09:56.842751Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
 2026-08-28T05:10:01.847140Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:11:06.825369Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:11:11.831349Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:11:30.617302Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:11:35.621459Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:11:48.407570Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:11:52.994859Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:11:57.998362Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:12:18.018568Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:12:23.022688Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:12:49.401647Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:12:54.406139Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:13:32.384064Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-28T05:13:33.395893Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:13:34.736683Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:13:39.741308Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:13:46.649698Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:13:49.189633Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:13:50.457428Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:13:55.462880Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:13:55.936601Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:14:00.941761Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:14:15.455985Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:14:20.463031Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:15:19.823491Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=48 cols=140 scrollback_limit_bytes=10000000
+2026-08-28T05:15:19.824575Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=35040
+2026-08-28T05:15:19.824787Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t5"
+2026-08-28T05:15:20.399753Z  INFO herdr::server::headless: client resize client_id=2 cols=151 rows=49 cell_width_px=0 cell_height_px=0
+2026-08-28T05:15:24.826849Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:15:41.517135Z  INFO herdr::server::headless: client resize client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0
+2026-08-28T05:15:47.317485Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:15:48.880868Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t5"
+2026-08-28T05:15:51.250855Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T05:15:52.736743Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t5"
+2026-08-28T05:15:55.797668Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 0, signal: None }"
+2026-08-28T05:15:55.798908Z  INFO herdr::pane: pane session terminated pane=10 pid=35040 signal=Hangup
+2026-08-28T05:16:00.801115Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
