@@ -1464,3 +1464,14 @@
 2026-08-28T06:42:10.632964Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
 2026-08-28T06:42:13.202102Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
 2026-08-28T06:42:18.203421Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T06:43:33.424402Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=23 status="ExitStatus { code: 130, signal: None }"
+2026-08-28T06:43:33.425947Z  INFO herdr::pane: pane session terminated pane=23 pid=119967 signal=Hangup
+2026-08-28T06:43:38.427553Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T06:44:20.750146Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=24 rows=48 cols=302 scrollback_limit_bytes=10000000
+2026-08-28T06:44:20.751377Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=24 pid=122685
+2026-08-28T06:44:20.751486Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-28T06:44:21.974519Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-28T06:44:23.257815Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-28T06:44:25.532938Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=24 status="ExitStatus { code: 1, signal: None }"
+2026-08-28T06:44:25.534240Z  INFO herdr::pane: pane session terminated pane=24 pid=122685 signal=Hangup
+2026-08-28T06:44:30.536606Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
