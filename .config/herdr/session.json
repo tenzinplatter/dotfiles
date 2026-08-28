@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "13": 17,
-        "21": 25
+        "21": 25,
+        "13": 17
       },
-      "next_public_pane_number": 26,
+      "next_public_pane_number": 27,
       "public_tab_numbers": [
         6,
         8
@@ -51,7 +51,7 @@
           "root_pane": 21
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
