@@ -4,14 +4,13 @@
     {
       "id": "wA",
       "custom_name": null,
-      "identity_cwd": "/home/tenzin/code/cow-scanner",
+      "identity_cwd": "/home/tenzin/code/stockeye/src",
       "public_pane_numbers": {
-        "1": 4,
+        "3": 7,
         "2": 6
       },
-      "next_public_pane_number": 7,
+      "next_public_pane_number": 8,
       "public_tab_numbers": [
-        3,
         4
       ],
       "next_public_tab_number": 5,
@@ -19,37 +18,23 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 1
-          },
-          "panes": {
-            "1": {
-              "cwd": "/home/tenzin/code/cow-scanner",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "adfdc6b5-af34-4df8-aa28-8a2c82269668"
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 2
+              },
+              "second": {
+                "Pane": 3
               }
             }
           },
-          "zoomed": false,
-          "focused": 1,
-          "root_pane": 1
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 2
-          },
           "panes": {
+            "3": {
+              "cwd": "/home/tenzin/code/stockeye"
+            },
             "2": {
-              "cwd": "/home/tenzin/code",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "33f5b76a-7a61-4c4a-bbb5-c898de765b33"
-              }
+              "cwd": "/home/tenzin/code/stockeye/src"
             }
           },
           "zoomed": false,
@@ -57,7 +42,7 @@
           "root_pane": 2
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
     }
   ],
   "active": 0,
