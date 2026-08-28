@@ -1127,3 +1127,4 @@
 2026-08-28T05:22:19.416180Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
 2026-08-28T05:22:23.578496Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
 2026-08-28T05:22:28.580389Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T05:23:39.927265Z  INFO herdr::app::actions: copied selection to clipboard
