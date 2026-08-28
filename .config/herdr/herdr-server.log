@@ -911,3 +911,27 @@
 2026-08-27T11:58:23.165019Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t3"
 2026-08-27T11:58:28.165470Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-27T12:01:12.137752Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-27T12:05:19.257117Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-08-28T04:49:37.403400Z  INFO herdr::api::server: api server listening path=/home/tenzin/.config/herdr/herdr.sock
+2026-08-28T04:49:37.404755Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-08-28T04:49:37.404775Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-28T04:49:37.459298Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-28T04:49:37.460650Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/home/tenzin
+2026-08-28T04:49:37.460776Z  INFO herdr::server::headless: client protocol socket listening path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-28T04:49:37.460794Z  INFO herdr::server::headless: herdr server started api_socket=/home/tenzin/.config/herdr/herdr.sock client_socket=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-28T04:49:37.460848Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=2339
+2026-08-28T04:49:37.711916Z  INFO herdr::server::headless: client connected client_id=2 cols=151 rows=49 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-28T04:49:37.722343Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-28T04:49:37.731095Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=48 cols=125 scrollback_limit_bytes=10000000
+2026-08-28T04:49:37.731873Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=2422
+2026-08-28T04:49:37.738787Z  INFO herdr::logging: update available event="update.available" subsystem="update" outcome="ok" version="0.8.2"
+2026-08-28T04:49:37.738804Z  INFO herdr::update: new stable build available at https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64
+2026-08-28T04:49:37.739059Z  INFO herdr::update: auto-update check: 0.8.2 available, waiting for explicit install
+2026-08-28T04:49:37.913013Z  INFO herdr::server::headless: client resize client_id=2 cols=306 rows=49 cell_width_px=0 cell_height_px=0
+2026-08-28T04:49:38.284735Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(Claude) process=claude pgid=Some(2580)
+2026-08-28T04:49:42.733338Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-28T04:49:48.227669Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=48 cols=280 scrollback_limit_bytes=10000000
+2026-08-28T04:49:48.228587Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=3403
+2026-08-28T04:49:48.228764Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t4"
+2026-08-28T04:49:51.289557Z  INFO herdr::pane: agent changed pane=2 previous_agent=None agent=Some(Claude) process=claude pgid=Some(3678)
+2026-08-28T04:49:57.446093Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
