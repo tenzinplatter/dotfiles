@@ -2429,3 +2429,13 @@
 2026-08-29T06:11:47.568997Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=61 cell_width_px=0 cell_height_px=0
 2026-08-29T06:11:47.769395Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=64 cell_width_px=0 cell_height_px=0
 2026-08-29T06:12:06.885182Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:32.194208Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=30 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:32.294267Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:34.695868Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=30 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:34.795929Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:38.998721Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=30 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:39.098798Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:40.499732Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=30 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:40.599784Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:18:42.969268Z  INFO herdr::pane: agent changed pane=49 previous_agent=None agent=Some(Claude) process=claude pgid=Some(769998)
+2026-08-29T06:18:49.048168Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
