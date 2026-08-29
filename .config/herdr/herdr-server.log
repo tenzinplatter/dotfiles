@@ -2546,3 +2546,10 @@
 2026-08-29T12:36:39.494311Z  INFO herdr::server::headless: client resize client_id=6 cols=256 rows=38 cell_width_px=0 cell_height_px=0
 2026-08-29T12:37:31.414804Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-08-29T12:38:05.259166Z  INFO herdr::server::headless: client resize client_id=6 cols=277 rows=43 cell_width_px=0 cell_height_px=0
+2026-08-29T12:42:12.861098Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=54 rows=42 cols=273 scrollback_limit_bytes=10000000
+2026-08-29T12:42:12.862913Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=54 pid=969622
+2026-08-29T12:42:12.869140Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t8"
+2026-08-29T12:42:17.871564Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-29T12:43:27.963538Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=54 status="ExitStatus { code: 0, signal: None }"
+2026-08-29T12:43:27.963845Z  INFO herdr::pane: pane session terminated pane=54 pid=969622 signal=Hangup
+2026-08-29T12:43:32.966936Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
