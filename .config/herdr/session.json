@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "40": 44,
-        "13": 17,
         "45": 49,
-        "28": 32
+        "28": 32,
+        "40": 44,
+        "13": 17
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -88,14 +88,14 @@
       "identity_cwd": "/home/tenzin/code/rattler",
       "public_pane_numbers": {
         "46": 1,
-        "49": 4
+        "51": 6
       },
-      "next_public_pane_number": 6,
+      "next_public_pane_number": 7,
       "public_tab_numbers": [
         1,
-        4
+        5
       ],
-      "next_public_tab_number": 5,
+      "next_public_tab_number": 6,
       "tabs": [
         {
           "custom_name": null,
@@ -120,10 +120,10 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 49
+            "Pane": 51
           },
           "panes": {
-            "49": {
+            "51": {
               "cwd": "/home/tenzin",
               "agent_session": {
                 "source": "herdr:claude",
@@ -134,8 +134,8 @@
             }
           },
           "zoomed": false,
-          "focused": 49,
-          "root_pane": 49
+          "focused": 51,
+          "root_pane": 51
         }
       ],
       "active_tab": 1

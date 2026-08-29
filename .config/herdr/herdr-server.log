@@ -2453,3 +2453,13 @@
 2026-08-29T06:31:38.003551Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
 2026-08-29T06:31:38.503946Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=25 cell_width_px=0 cell_height_px=0
 2026-08-29T06:31:38.603996Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-29T06:34:29.768619Z  INFO herdr::pane::osc: restored host terminal default colors after transient override pane=49 owner_pgid=769998
+2026-08-29T06:34:30.070096Z  INFO herdr::pane: agent changed pane=49 previous_agent=Some(Claude) agent=None pgid=Some(441820)
+2026-08-29T06:34:30.202439Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=49 status="ExitStatus { code: 0, signal: None }"
+2026-08-29T06:34:30.204769Z  INFO herdr::pane: pane session terminated pane=49 pid=441820 signal=Hangup
+2026-08-29T06:34:35.206950Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-29T06:34:50.285813Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=51 rows=52 cols=366 scrollback_limit_bytes=10000000
+2026-08-29T06:34:50.287807Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=51 pid=785326
+2026-08-29T06:34:50.287974Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t5"
+2026-08-29T06:34:53.350365Z  INFO herdr::pane: agent changed pane=51 previous_agent=None agent=Some(Claude) process=claude pgid=Some(785646)
+2026-08-29T06:34:59.201165Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2

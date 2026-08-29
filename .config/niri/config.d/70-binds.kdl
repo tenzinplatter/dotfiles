@@ -85,7 +85,7 @@ binds {
 
     // Fullscreen (app goes borderless edge-to-edge).
     Mod+F { fullscreen-window; }
-    Mod+Return { fullscreen-window; }
+    Mod+Return { maximize-column; }
 
     Mod+O repeat=false hotkey-overlay-title="Toggle Window Opacity" { toggle-window-rule-opacity; }
 
