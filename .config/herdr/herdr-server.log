@@ -2482,3 +2482,8 @@
 2026-08-29T06:43:26.570320Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-08-29T06:45:19.117290Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:server:reload-config" method="server.reload_config" changes_ui=true
 2026-08-29T06:45:19.117637Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:server:reload-config" method="server.reload_config"
+2026-08-29T06:46:55.043487Z  INFO herdr::pane::osc: restored host terminal default colors after transient override pane=51 owner_pgid=785646
+2026-08-29T06:46:55.345819Z  INFO herdr::pane: agent changed pane=51 previous_agent=Some(Claude) agent=None pgid=Some(785326)
+2026-08-29T06:46:55.512804Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=51 status="ExitStatus { code: 0, signal: None }"
+2026-08-29T06:46:55.515328Z  INFO herdr::pane: pane session terminated pane=51 pid=785326 signal=Hangup
+2026-08-29T06:47:00.516654Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
