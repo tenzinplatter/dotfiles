@@ -6,17 +6,17 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "33": 37,
         "13": 17,
-        "28": 32,
-        "29": 33
+        "33": 37,
+        "29": 33,
+        "28": 32
       },
-      "next_public_pane_number": 38,
+      "next_public_pane_number": 39,
       "public_tab_numbers": [
         6,
         8
       ],
-      "next_public_tab_number": 10,
+      "next_public_tab_number": 11,
       "tabs": [
         {
           "custom_name": null,
@@ -33,15 +33,15 @@
             }
           },
           "panes": {
-            "13": {
+            "33": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "33": {
+            "13": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
-          "zoomed": true,
-          "focused": 33,
+          "zoomed": false,
+          "focused": 13,
           "root_pane": 13
         },
         {
@@ -59,9 +59,6 @@
             }
           },
           "panes": {
-            "29": {
-              "cwd": "/home/tenzin/code/stockeye"
-            },
             "28": {
               "cwd": "/home/tenzin/code/stockeye",
               "agent_session": {
@@ -70,10 +67,13 @@
                 "kind": "id",
                 "value": "44816bf3-d0b4-470e-bca9-eea568d3d3bf"
               }
+            },
+            "29": {
+              "cwd": "/home/tenzin/code/stockeye"
             }
           },
-          "zoomed": true,
-          "focused": 29,
+          "zoomed": false,
+          "focused": 28,
           "root_pane": 28
         }
       ],
