@@ -2440,3 +2440,6 @@
 2026-08-29T06:18:42.969268Z  INFO herdr::pane: agent changed pane=49 previous_agent=None agent=Some(Claude) process=claude pgid=Some(769998)
 2026-08-29T06:18:49.048168Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-08-29T06:24:29.195230Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-29T06:26:32.668937Z  INFO herdr::server::headless: client resize client_id=2 cols=375 rows=69 cell_width_px=0 cell_height_px=0
+2026-08-29T06:26:33.169313Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:29:06.587007Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0

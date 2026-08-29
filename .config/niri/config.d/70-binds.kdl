@@ -33,8 +33,7 @@ binds {
     // iNiR shell overlays & tools
     // ═══════════════════════════════════════════════════════════════════════
 
-    // Crosshair overlay toggle.
-    Super+G { spawn "/home/tenzin/.local/bin/inir" "overlay" "toggle"; }
+    Mod+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
 
     // iNiR app launcher / overview.
     Mod+Space repeat=false { spawn "/home/tenzin/.local/bin/inir" "overview" "toggle"; }
@@ -45,7 +44,7 @@ binds {
     // Lock screen.
     Mod+Alt+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "activate"; }
     // Re-focus the lock surface (workaround when input feels dead after suspend/resume).
-    Mod+Ctrl+Shift+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "focus"; }
+    Mod+Alt+Shift+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "focus"; }
 
     // Region selector: screenshot / OCR / Google Lens search.
     Mod+Shift+S { spawn "/home/tenzin/.local/bin/inir" "region" "screenshot"; }
@@ -67,10 +66,9 @@ binds {
     // App launchers
     // ═══════════════════════════════════════════════════════════════════════
 
-    Mod+T { spawn "/home/tenzin/.local/bin/inir" "terminal"; }
-    Mod+Return { spawn "/home/tenzin/.local/bin/inir" "terminal"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Super+E { spawn "nautilus"; }
-    Super+W { spawn "/home/tenzin/.local/bin/inir" "browser"; }
+    Super+B hotkey-overlay-title="Open browser" { spawn "zen-browser"; }
 
     // ═══════════════════════════════════════════════════════════════════════
     // Window management
@@ -87,6 +85,9 @@ binds {
 
     // Fullscreen (app goes borderless edge-to-edge).
     Mod+F { fullscreen-window; }
+    Mod+Return { fullscreen-window; }
+
+    Mod+O repeat=false hotkey-overlay-title="Toggle Window Opacity" { toggle-window-rule-opacity; }
 
     // Toggle floating / tiling.
     Mod+A { toggle-window-floating; }
@@ -136,14 +137,15 @@ binds {
     // Focus navigation (arrows + Vim keys)
     // ═══════════════════════════════════════════════════════════════════════
 
-    Mod+Left  { focus-column-left; }
-    Mod+Right { focus-column-right; }
+    Mod+Left  { spawn "/home/tenzin/bin/niri-smart-move.sh" "left" "focus"; }
+    Mod+Right { spawn "/home/tenzin/bin/niri-smart-move.sh" "right" "focus"; }
     Mod+Up    { focus-window-up; }
     Mod+Down  { focus-window-down; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    Mod+H     { spawn "/home/tenzin/bin/niri-smart-move.sh" "left" "focus"; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+    Mod+L     { spawn "/home/tenzin/bin/niri-smart-move.sh" "right" "focus"; }
+    Mod+Semicolon { focus-window-previous; }
 
     // Jump to first / last column.
     Mod+Home { focus-column-first; }
@@ -153,14 +155,14 @@ binds {
     // Move windows (arrows + Vim keys)
     // ═══════════════════════════════════════════════════════════════════════
 
-    Mod+Shift+Left  { move-column-left; }
-    Mod+Shift+Right { move-column-right; }
-    Mod+Shift+Up    { move-window-up; }
-    Mod+Shift+Down  { move-window-down; }
-    Mod+Shift+H     { move-column-left; }
-    Mod+Shift+J     { move-window-down; }
-    Mod+Shift+K     { move-window-up; }
-    Mod+Shift+L     { move-column-right; }
+    Mod+Shift+Left  { set-column-width "-10%"; }
+    Mod+Shift+Right { set-column-width "+10%"; }
+    Mod+Shift+Up    { set-window-height "+10%"; }
+    Mod+Shift+Down  { set-window-height "-10%"; }
+    Mod+Shift+H     { spawn "/home/tenzin/bin/niri-smart-move.sh" "left" "move"; }
+    Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K     { move-window-up-or-to-workspace-up; }
+    Mod+Shift+L     { spawn "/home/tenzin/bin/niri-smart-move.sh" "right" "move"; }
 
     // Move column to first / last position.
     Mod+Ctrl+Home { move-column-to-first; }
@@ -174,12 +176,20 @@ binds {
     Mod+Ctrl+Right { focus-monitor-right; }
     Mod+Ctrl+Up    { focus-monitor-up; }
     Mod+Ctrl+Down  { focus-monitor-down; }
+    Mod+Ctrl+H     { focus-monitor-left; }
+    Mod+Ctrl+J     { focus-monitor-down; }
+    Mod+Ctrl+K     { focus-monitor-up; }
+    Mod+Ctrl+L     { focus-monitor-right; }
 
     // Move the focused column to the monitor in the given direction.
     Mod+Ctrl+Shift+Left  { move-column-to-monitor-left; }
     Mod+Ctrl+Shift+Right { move-column-to-monitor-right; }
     Mod+Ctrl+Shift+Up    { move-column-to-monitor-up; }
     Mod+Ctrl+Shift+Down  { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+H     { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+J     { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+K     { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+L     { move-column-to-monitor-right; }
 
     // Move entire workspace to another monitor:
     // Mod+Ctrl+Shift+Left { move-workspace-to-monitor-left; }
@@ -213,12 +223,18 @@ binds {
     // Navigate workspaces sequentially (useful with dynamic workspaces).
     Mod+Page_Down { focus-workspace-down; }
     Mod+Page_Up   { focus-workspace-up; }
+    Mod+U         { focus-workspace-down; }
+    Mod+I         { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+Ctrl+U         { move-column-to-workspace-down; }
+    Mod+Ctrl+I         { move-column-to-workspace-up; }
 
     // Reorder workspaces.
-    // Mod+Shift+Page_Down { move-workspace-down; }
-    // Mod+Shift+Page_Up   { move-workspace-up; }
+    Mod+Shift+Page_Down { move-workspace-down; }
+    Mod+Shift+Page_Up   { move-workspace-up; }
+    Mod+Shift+U         { move-workspace-down; }
+    Mod+Shift+I         { move-workspace-up; }
 
     // Mouse wheel workspace navigation (rate-limited to avoid flying through).
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
@@ -229,6 +245,13 @@ binds {
     // Mouse wheel column navigation.
     Mod+WheelScrollRight { focus-column-right; }
     Mod+WheelScrollLeft  { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
     // ═══════════════════════════════════════════════════════════════════════
     // Screenshots (Niri native — iNiR has its own region selector above)

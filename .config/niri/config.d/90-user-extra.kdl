@@ -35,3 +35,13 @@
 //       position x=0 y=0
 //   }
 // ─────────────────────────────────────────────────────────────────────────────
+
+window-rule {
+    match is-focused=true
+    opacity 0.94
+}
+
+window-rule {
+    match is-focused=false
+    opacity 0.85
+}
