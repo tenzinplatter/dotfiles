@@ -2342,3 +2342,15 @@
 2026-08-29T03:07:24.376622Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:tC"
 2026-08-29T03:07:29.378779Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-29T03:24:29.185194Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-29T03:25:35.314784Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
+2026-08-29T03:25:35.920656Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-29T03:25:36.638533Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
+2026-08-29T03:25:40.263515Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:tC"
+2026-08-29T03:25:45.264569Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-29T03:25:57.123329Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-29T03:25:58.407203Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
+2026-08-29T03:25:58.733605Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-29T03:25:59.803568Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
+2026-08-29T03:26:04.805959Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-29T03:26:11.300288Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
+2026-08-29T03:26:16.314316Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1

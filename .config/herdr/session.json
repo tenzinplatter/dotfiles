@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
+        "40": 44,
         "45": 49,
         "28": 32,
-        "13": 17,
-        "40": 44
+        "13": 17
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -56,7 +56,7 @@
             }
           },
           "zoomed": false,
-          "focused": 45,
+          "focused": 28,
           "root_pane": 28
         },
         {
@@ -80,7 +80,7 @@
           "root_pane": 40
         }
       ],
-      "active_tab": 2
+      "active_tab": 1
     }
   ],
   "active": 0,
