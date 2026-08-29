@@ -1751,3 +1751,4 @@
 2026-08-29T00:51:40.164984Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
 2026-08-29T00:51:43.435328Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
 2026-08-29T00:51:48.457779Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-29T00:54:29.187747Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
