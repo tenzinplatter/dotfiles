@@ -7,8 +7,8 @@
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
         "13": 17,
-        "28": 32,
-        "33": 37
+        "33": 37,
+        "28": 32
       },
       "next_public_pane_number": 39,
       "public_tab_numbers": [
@@ -32,15 +32,15 @@
             }
           },
           "panes": {
-            "33": {
+            "13": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "13": {
+            "33": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
           "zoomed": false,
-          "focused": 13,
+          "focused": 33,
           "root_pane": 13
         },
         {
