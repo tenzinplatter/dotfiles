@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "40": 44,
+        "45": 49,
         "28": 32,
         "13": 17,
-        "45": 49
+        "40": 44
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -107,7 +107,7 @@
                 "source": "herdr:claude",
                 "agent": "claude",
                 "kind": "id",
-                "value": "6407ba00-4ca9-4769-92eb-23393a97bde7"
+                "value": "b4975b2e-781c-4dca-92bc-35e0588c99ce"
               }
             }
           },

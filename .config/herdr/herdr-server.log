@@ -2541,3 +2541,8 @@
 2026-08-29T12:27:56.305578Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=53 cell_width_px=0 cell_height_px=0
 2026-08-29T12:28:58.449668Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=55 cell_width_px=0 cell_height_px=0
 2026-08-29T12:29:00.751301Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-29T12:36:38.093212Z  INFO herdr::server::headless: client resize client_id=6 cols=302 rows=47 cell_width_px=0 cell_height_px=0
+2026-08-29T12:36:39.194085Z  INFO herdr::server::headless: client resize client_id=6 cols=277 rows=43 cell_width_px=0 cell_height_px=0
+2026-08-29T12:36:39.494311Z  INFO herdr::server::headless: client resize client_id=6 cols=256 rows=38 cell_width_px=0 cell_height_px=0
+2026-08-29T12:37:31.414804Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-29T12:38:05.259166Z  INFO herdr::server::headless: client resize client_id=6 cols=277 rows=43 cell_width_px=0 cell_height_px=0
