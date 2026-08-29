@@ -2530,3 +2530,12 @@
 2026-08-29T12:24:29.221333Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-29T12:24:53.670815Z  INFO herdr::server::headless: client connected client_id=6 cols=180 rows=53 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
 2026-08-29T12:24:54.271955Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:27.983376Z  INFO herdr::server::headless: client resize client_id=6 cols=365 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:28.283607Z  INFO herdr::server::headless: client resize client_id=6 cols=365 rows=55 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:33.388758Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:53.803745Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=51 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:54.103965Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:55.004602Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=50 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:55.304829Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=52 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:56.205481Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=55 cell_width_px=0 cell_height_px=0
+2026-08-29T12:27:56.305578Z  INFO herdr::server::headless: client resize client_id=6 cols=370 rows=53 cell_width_px=0 cell_height_px=0
