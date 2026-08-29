@@ -45,3 +45,34 @@ window-rule {
     match is-focused=false
     opacity 0.85
 }
+
+window-rule {
+    match app-id="spotify"
+    draw-border-with-background false
+    opacity 0.93
+}
+
+window-rule {
+    match app-id="dev.zed.*"
+    opacity 0.85
+}
+
+window-rule {
+    match app-id="kitty" is-active=true
+    opacity 0.90
+}
+
+window-rule {
+    match app-id="kitty" is-focused=false
+    opacity 0.80
+}
+
+window-rule {
+    match app-id="org.wezfurlong.wezterm" is-active=true
+    opacity 0.90
+}
+
+window-rule {
+    match app-id="org.wezfurlong.wezterm" is-focused=false
+    opacity 0.80
+}
