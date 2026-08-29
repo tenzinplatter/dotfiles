@@ -1,0 +1,16 @@
+# kitty configuration — split by concern.
+# Files are included in load order; machine.conf is last so it can override.
+
+include fonts.conf
+include appearance.conf
+include performance.conf
+include behavior.conf
+include remote.conf
+include layouts.conf
+include theme.conf
+include tabs.conf
+include keybinds.conf
+include nav.conf
+
+# Machine-specific overrides (gitignored, per-host)
+include machine.conf

@@ -2413,3 +2413,19 @@
 2026-08-29T05:56:09.080857Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=50 status="ExitStatus { code: 130, signal: None }"
 2026-08-29T05:56:09.082298Z  INFO herdr::pane: pane session terminated pane=50 pid=442295 signal=Hangup
 2026-08-29T05:56:14.083827Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-29T06:08:15.563033Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=66 cell_width_px=0 cell_height_px=0
+2026-08-29T06:08:47.543043Z  INFO herdr::pane::osc: restored host terminal default colors after transient override pane=49 owner_pgid=454985
+2026-08-29T06:09:59.764959Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=60 cell_width_px=0 cell_height_px=0
+2026-08-29T06:10:50.811902Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=63 cell_width_px=0 cell_height_px=0
+2026-08-29T06:10:51.012030Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=60 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:21.447156Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:25.051566Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=66 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:29.954578Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:34.157796Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=61 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:34.357947Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:36.760695Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=60 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:36.960824Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=62 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:44.566637Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:47.568997Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=61 cell_width_px=0 cell_height_px=0
+2026-08-29T06:11:47.769395Z  INFO herdr::server::headless: client resize client_id=2 cols=362 rows=64 cell_width_px=0 cell_height_px=0
+2026-08-29T06:12:06.885182Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=64 cell_width_px=0 cell_height_px=0

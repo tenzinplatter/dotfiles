@@ -1,99 +1,51 @@
-include "monitors.kdl"
-include "window-rules.kdl"
-include "keybinds.kdl"
-include "dms.kdl"
-// include "machine.kdl"
+// ─────────────────────────────────────────────────────────────────────────────
+// iNiR — Niri Compositor Configuration
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// This config is split into modular files under config.d/ so you can edit
+// individual sections without touching the rest. Niri auto-reloads on save.
+//
+//   10  Input, touchpad, mouse, cursor
+//   20  Layout, gaps, borders, shadows, overview
+//   30  Window rules (corner radius, per-app tweaks)
+//   40  Environment variables (Qt, XDG, theming)
+//   50  Processes spawned at login
+//   60  Animations (spring physics tuning)
+//   70  Key bindings (iNiR shell + window management)
+//   80  Layer rules (backdrop surfaces for iNiR panels)
+//   90  Your personal overrides (never touched by updates)
+//
+// Docs: https://niri-wm.github.io/niri/Configuration:-Introduction
+// KDL format: https://kdl.dev
+// ─────────────────────────────────────────────────────────────────────────────
 
-// INPUT
-// ════════════════════════════════════════════════════════════════
+// Ask apps to drop client-side decorations so Niri draws borders around them.
+// This also fixes border/focus-ring rendering behind semitransparent windows.
+// Restart apps after toggling this.
+prefer-no-csd
 
-input {
-    keyboard {
-        xkb {
-        }
-        numlock
-    }
-
-    touchpad {
-        tap
-        natural-scroll
-        dwt // Disable while typing
-    }
-
-    mouse {
-        accel-speed 0.0
-        accel-profile "flat"
-    }
-
-    trackpoint {
-    }
-
-    warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="0%"
-}
-
-// ════════════════════════════════════════════════════════════════
-// LAYOUT
-// ════════════════════════════════════════════════════════════════
-
-layout {
-    gaps 16
-
-    center-focused-column "never"
-
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
-
-    default-column-width { proportion 0.5; }
-
-    focus-ring {
-        width 4
-        active-color "#7fc8ff"
-        inactive-color "#505050"
-    }
-
-    border {
-        off
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
-        urgent-color "#9b0000"
-    }
-
-    shadow {
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
-    }
-
-    struts {
-    }
-}
-
-// ════════════════════════════════════════════════════════════════
-// HOTKEY OVERLAY
-// ════════════════════════════════════════════════════════════════
-
+// Hide the built-in hotkey cheatsheet on startup (iNiR has its own: Mod+/).
 hotkey-overlay {
     skip-at-startup
 }
 
-// ════════════════════════════════════════════════════════════════
-// PREFERENCES
-// ════════════════════════════════════════════════════════════════
-
-prefer-no-csd
-
-// this only applies to the inbuilt niri screenshotter
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-// ════════════════════════════════════════════════════════════════
-// DEBUG
-// ════════════════════════════════════════════════════════════════
+// Honor activation tokens even with invalid serials — lets apps like VS Code,
+// Firefox, etc. steal focus when another app requests it (e.g. Nautilus open-with).
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+
+// Where native Niri screenshots land (Print key).
+// iNiR's region selector (Mod+Shift+S) uses its own path.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// ── Modular includes ────────────────────────────────────────────────────────
+include "config.d/10-input-and-cursor.kdl"
+include "config.d/20-layout-and-overview.kdl"
+include "config.d/30-window-rules.kdl"
+include "config.d/40-environment.kdl"
+include "config.d/50-startup.kdl"
+include "config.d/60-animations.kdl"
+include "config.d/70-binds.kdl"
+include "config.d/80-layer-rules.kdl"
+include "config.d/90-user-extra.kdl"
