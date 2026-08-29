@@ -2480,3 +2480,5 @@
 2026-08-29T06:43:17.436991Z  INFO herdr::pane::osc: restored host terminal default colors after transient override pane=46 owner_pgid=435949
 2026-08-29T06:43:21.568624Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t5"
 2026-08-29T06:43:26.570320Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-29T06:45:19.117290Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:server:reload-config" method="server.reload_config" changes_ui=true
+2026-08-29T06:45:19.117637Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:server:reload-config" method="server.reload_config"

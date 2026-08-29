@@ -2,7 +2,7 @@ onboarding = false
 # herdr configuration — ported from ~/.config/tmux
 
 [theme]
-name = "rose-pine"
+name = "terminal"
 
 [terminal]
 default_shell = "/bin/zsh"
