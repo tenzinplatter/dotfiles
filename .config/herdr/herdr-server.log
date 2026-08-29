@@ -2501,3 +2501,4 @@
 2026-08-29T07:08:40.021847Z  INFO herdr::server::headless: client resize client_id=4 cols=95 rows=47 cell_width_px=0 cell_height_px=0
 2026-08-29T07:08:40.622302Z  INFO herdr::server::headless: client resize client_id=4 cols=302 rows=47 cell_width_px=0 cell_height_px=0
 2026-08-29T07:24:29.202187Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-29T07:32:29.001016Z  INFO herdr::server::headless: client resize client_id=4 cols=302 rows=49 cell_width_px=0 cell_height_px=0
