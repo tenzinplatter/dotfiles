@@ -69,7 +69,7 @@ input {
 
     // Focus windows automatically when the mouse enters them.
     // max-scroll-amount="0%" limits it to windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // ── Gestures ────────────────────────────────────────────────────────────────
