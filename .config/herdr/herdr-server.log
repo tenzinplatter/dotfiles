@@ -2127,3 +2127,4 @@
 2026-08-29T01:51:50.262690Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=36 status="ExitStatus { code: 130, signal: None }"
 2026-08-29T01:51:50.264257Z  INFO herdr::pane: pane session terminated pane=36 pid=310738 signal=Hangup
 2026-08-29T01:51:55.266014Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
+2026-08-29T01:54:29.186594Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
