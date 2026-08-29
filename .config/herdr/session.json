@@ -87,13 +87,15 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/rattler",
       "public_pane_numbers": {
-        "46": 1
+        "46": 1,
+        "49": 4
       },
-      "next_public_pane_number": 4,
+      "next_public_pane_number": 6,
       "public_tab_numbers": [
-        1
+        1,
+        4
       ],
-      "next_public_tab_number": 4,
+      "next_public_tab_number": 5,
       "tabs": [
         {
           "custom_name": null,
@@ -114,9 +116,23 @@
           "zoomed": false,
           "focused": 46,
           "root_pane": 46
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 49
+          },
+          "panes": {
+            "49": {
+              "cwd": "/home/tenzin/build"
+            }
+          },
+          "zoomed": false,
+          "focused": 49,
+          "root_pane": 49
         }
       ],
-      "active_tab": 0
+      "active_tab": 1
     }
   ],
   "active": 1,
