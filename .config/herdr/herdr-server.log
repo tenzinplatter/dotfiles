@@ -2128,3 +2128,11 @@
 2026-08-29T01:51:50.264257Z  INFO herdr::pane: pane session terminated pane=36 pid=310738 signal=Hangup
 2026-08-29T01:51:55.266014Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
 2026-08-29T01:54:29.186594Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-29T02:13:24.721644Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t8"
+2026-08-29T02:13:25.796965Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-29T02:13:26.306696Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=37 rows=48 cols=302 scrollback_limit_bytes=10000000
+2026-08-29T02:13:26.307935Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=37 pid=319898
+2026-08-29T02:13:26.308061Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t6"
+2026-08-29T02:13:29.767618Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=37 status="ExitStatus { code: 0, signal: None }"
+2026-08-29T02:13:29.769067Z  INFO herdr::pane: pane session terminated pane=37 pid=319898 signal=Hangup
+2026-08-29T02:13:34.770122Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=1
