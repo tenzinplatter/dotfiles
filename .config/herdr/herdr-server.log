@@ -2604,3 +2604,4 @@
 2026-08-30T08:39:11.155895Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
 2026-08-30T08:49:44.730516Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-30T09:19:44.731747Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-30T09:49:44.734052Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
