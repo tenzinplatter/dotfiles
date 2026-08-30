@@ -2593,3 +2593,4 @@
 2026-08-30T06:49:49.630171Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(Claude) process=claude pgid=Some(67459)
 2026-08-30T06:49:51.740069Z  INFO herdr::pane: agent changed pane=5 previous_agent=Some(Claude) agent=None pgid=Some(68064)
 2026-08-30T06:49:56.439926Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-08-30T06:59:57.928302Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=55 cell_width_px=0 cell_height_px=0
