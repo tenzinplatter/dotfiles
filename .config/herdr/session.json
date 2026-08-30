@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "40": 44,
-        "45": 49,
-        "13": 17,
-        "28": 32
+        "2": 32,
+        "3": 49,
+        "4": 44,
+        "1": 17
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -22,16 +22,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 13
+            "Pane": 1
           },
           "panes": {
-            "13": {
+            "1": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
           "zoomed": false,
-          "focused": 13,
-          "root_pane": 13
+          "focused": 1,
+          "root_pane": 1
         },
         {
           "custom_name": null,
@@ -40,32 +40,32 @@
               "direction": "Horizontal",
               "ratio": 0.5,
               "first": {
-                "Pane": 28
+                "Pane": 2
               },
               "second": {
-                "Pane": 45
+                "Pane": 3
               }
             }
           },
           "panes": {
-            "28": {
+            "2": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "45": {
+            "3": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
           "zoomed": false,
-          "focused": 28,
-          "root_pane": 28
+          "focused": 2,
+          "root_pane": 2
         },
         {
           "custom_name": null,
           "layout": {
-            "Pane": 40
+            "Pane": 4
           },
           "panes": {
-            "40": {
+            "4": {
               "cwd": "/home/tenzin/code/stockeye",
               "agent_session": {
                 "source": "herdr:claude",
@@ -76,8 +76,8 @@
             }
           },
           "zoomed": false,
-          "focused": 40,
-          "root_pane": 40
+          "focused": 4,
+          "root_pane": 4
         }
       ],
       "active_tab": 2
@@ -87,7 +87,7 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/rattler",
       "public_pane_numbers": {
-        "46": 1
+        "5": 1
       },
       "next_public_pane_number": 11,
       "public_tab_numbers": [
@@ -98,22 +98,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 46
+            "Pane": 5
           },
           "panes": {
-            "46": {
-              "cwd": "/home/tenzin/code/rattler",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "b4975b2e-781c-4dca-92bc-35e0588c99ce"
-              }
+            "5": {
+              "cwd": "/home/tenzin/code/rattler"
             }
           },
           "zoomed": false,
-          "focused": 46,
-          "root_pane": 46
+          "focused": 5,
+          "root_pane": 5
         }
       ],
       "active_tab": 0
