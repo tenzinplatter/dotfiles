@@ -1,5 +1,7 @@
 [[ -f ~/.zsh/machine.zsh ]] && source ~/.zsh/machine.zsh
 
+alias suspend="systemctl suspend"
+
 alias cpwd="pwd | tr -d '\n' | wl-copy"
 alias yz="yazi"
 alias dash="gh dash"

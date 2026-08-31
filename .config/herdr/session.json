@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "2": 32,
         "3": 49,
+        "1": 17,
         "4": 44,
-        "1": 17
+        "2": 32
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -48,10 +48,10 @@
             }
           },
           "panes": {
-            "2": {
+            "3": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "3": {
+            "2": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
@@ -111,10 +111,46 @@
         }
       ],
       "active_tab": 0
+    },
+    {
+      "id": "wC",
+      "custom_name": null,
+      "identity_cwd": "/home/tenzin",
+      "public_pane_numbers": {
+        "6": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 6
+          },
+          "panes": {
+            "6": {
+              "cwd": "/home/tenzin",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "711b7c78-6495-4f94-b082-efea3682d4f7"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 6,
+          "root_pane": 6
+        }
+      ],
+      "active_tab": 0
     }
   ],
-  "active": 1,
-  "selected": 1,
+  "active": 2,
+  "selected": 2,
   "sidebar_width": 36,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []
