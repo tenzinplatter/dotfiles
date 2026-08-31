@@ -44,3 +44,6 @@
 2026-08-31T13:00:45.565121Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=48013
 2026-08-31T13:00:45.565373Z  INFO herdr::client: connecting to server path=/home/tenzin/.config/herdr/herdr-client.sock
 2026-08-31T13:00:45.603975Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-31T13:05:50.898406Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2876
+2026-08-31T13:05:50.898586Z  INFO herdr::client: connecting to server path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-08-31T13:05:50.923212Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame

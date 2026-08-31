@@ -6,9 +6,9 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
+        "4": 44,
         "3": 49,
         "1": 17,
-        "4": 44,
         "2": 32
       },
       "next_public_pane_number": 50,
@@ -48,10 +48,10 @@
             }
           },
           "panes": {
-            "3": {
+            "2": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "2": {
+            "3": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
