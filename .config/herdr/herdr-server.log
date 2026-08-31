@@ -2671,3 +2671,15 @@
 2026-08-31T13:05:51.498910Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(Claude) process=claude pgid=Some(3978)
 2026-08-31T13:05:51.499029Z  INFO herdr::pane: agent changed pane=6 previous_agent=None agent=Some(Claude) process=claude pgid=Some(4026)
 2026-08-31T13:05:55.949157Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-08-31T13:07:17.828882Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=7 rows=52 cols=334 scrollback_limit_bytes=10000000
+2026-08-31T13:07:17.830030Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=7 pid=4704
+2026-08-31T13:07:17.830230Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-31T13:07:22.832352Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-08-31T13:07:28.361211Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-31T13:07:33.366390Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-08-31T13:07:39.389633Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-31T13:07:40.165233Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 0, signal: None }"
+2026-08-31T13:07:40.167519Z  INFO herdr::pane: pane session terminated pane=7 pid=4704 signal=Hangup
+2026-08-31T13:07:45.169490Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-08-31T13:07:49.978808Z  INFO herdr::server::headless: client resize client_id=2 cols=180 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-31T13:08:19.898440Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
