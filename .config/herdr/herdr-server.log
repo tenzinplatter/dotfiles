@@ -2760,3 +2760,8 @@
 2026-09-01T04:41:18.557772Z  INFO herdr::update: auto-update check: 0.8.2 available, waiting for explicit install
 2026-09-01T04:41:18.901587Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(Claude) process=claude pgid=Some(6813)
 2026-09-01T04:41:23.351628Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T04:42:32.151385Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=6 rows=52 cols=334 scrollback_limit_bytes=10000000
+2026-09-01T04:42:32.152518Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=6 pid=8252
+2026-09-01T04:42:32.152738Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T04:42:33.206705Z  INFO herdr::pane: agent changed pane=6 previous_agent=None agent=Some(Claude) process=claude pgid=Some(8415)
+2026-09-01T04:42:38.399034Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
