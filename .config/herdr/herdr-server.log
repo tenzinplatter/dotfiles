@@ -2701,3 +2701,4 @@
 2026-08-31T13:11:35.877304Z  INFO herdr::app::actions: copied selection to clipboard
 2026-08-31T13:11:36.503147Z  INFO herdr::app::actions: copied selection to clipboard
 2026-09-01T00:14:25.600446Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=55 cell_width_px=0 cell_height_px=0
+2026-09-01T00:38:16.451632Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
