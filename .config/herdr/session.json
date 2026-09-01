@@ -6,9 +6,9 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "2": 32,
         "3": 49,
         "4": 44,
+        "2": 32,
         "1": 17
       },
       "next_public_pane_number": 50,
@@ -87,9 +87,9 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/csec3616/a1",
       "public_pane_numbers": {
+        "5": 1,
         "6": 2,
-        "7": 3,
-        "5": 1
+        "7": 3
       },
       "next_public_pane_number": 4,
       "public_tab_numbers": [
