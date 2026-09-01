@@ -2851,3 +2851,21 @@
 2026-09-01T05:20:58.638761Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
 2026-09-01T05:28:39.788971Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
 2026-09-01T05:28:44.791863Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:30:56.891698Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:30:58.591298Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:31:03.592824Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:31:17.742405Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:31:22.744033Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:31:47.135011Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:31:52.136979Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:31:55.276719Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:32:00.278914Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:32:41.284749Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:32:42.074908Z  INFO herdr::pane::osc: restored host terminal default colors after transient override pane=6 owner_pgid=8415
+2026-09-01T05:32:42.377248Z  INFO herdr::pane: agent changed pane=6 previous_agent=Some(Claude) agent=None pgid=Some(8252)
+2026-09-01T05:32:43.882172Z  INFO herdr::pane: agent changed pane=6 previous_agent=None agent=Some(Claude) process=claude pgid=Some(105889)
+2026-09-01T05:32:45.413764Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:32:50.416537Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:33:03.255787Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:33:06.275618Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:33:11.278721Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
