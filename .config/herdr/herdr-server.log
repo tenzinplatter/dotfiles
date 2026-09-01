@@ -2846,3 +2846,6 @@
 2026-09-01T05:11:53.881538Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 0, signal: None }"
 2026-09-01T05:11:53.883080Z  INFO herdr::pane: pane session terminated pane=11 pid=44834 signal=Hangup
 2026-09-01T05:11:58.884277Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T05:20:56.837409Z  INFO herdr::server::headless: client resize client_id=2 cols=108 rows=73 cell_width_px=0 cell_height_px=0
+2026-09-01T05:20:58.538691Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=55 cell_width_px=0 cell_height_px=0
+2026-09-01T05:20:58.638761Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
