@@ -2683,3 +2683,21 @@
 2026-08-31T13:07:45.169490Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
 2026-08-31T13:07:49.978808Z  INFO herdr::server::headless: client resize client_id=2 cols=180 rows=53 cell_width_px=0 cell_height_px=0
 2026-08-31T13:08:19.898440Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-08-31T13:10:51.722846Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=8 rows=52 cols=334 scrollback_limit_bytes=10000000
+2026-08-31T13:10:51.724031Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=8 pid=6896
+2026-08-31T13:10:51.724235Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-31T13:10:56.141062Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:10:56.469526Z  INFO herdr::app::actions: copied double-clicked token to clipboard
+2026-08-31T13:10:56.618520Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:10:56.726509Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-08-31T13:11:18.662981Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:19.248582Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:26.077403Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:31.483771Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:32.247172Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:33.063242Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:33.585436Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:34.053192Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:35.877304Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-31T13:11:36.503147Z  INFO herdr::app::actions: copied selection to clipboard
+2026-09-01T00:14:25.600446Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=55 cell_width_px=0 cell_height_px=0
