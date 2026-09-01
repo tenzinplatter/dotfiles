@@ -2720,3 +2720,17 @@
 2026-09-01T04:10:00.891320Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-09-01T04:10:04.997205Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t1"
 2026-09-01T04:10:09.999114Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T04:13:39.013507Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t1"
+2026-09-01T04:13:40.633636Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 0, signal: None }"
+2026-09-01T04:13:40.640870Z  INFO herdr::pane: pane session terminated pane=9 pid=45162 signal=Hangup
+2026-09-01T04:13:45.642524Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
+2026-09-01T04:14:08.194581Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 0, signal: None }"
+2026-09-01T04:14:08.201886Z  INFO herdr::pane: pane session terminated pane=5 pid=2916 signal=Hangup
+2026-09-01T04:14:09.217346Z  INFO herdr::server::headless: client detach requested via keybind client_id=4
+2026-09-01T04:14:09.222532Z  INFO herdr::server::headless: client disconnected client_id=4
+2026-09-01T04:14:11.906370Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=54 cols=334 scrollback_limit_bytes=10000000
+2026-09-01T04:14:11.907650Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=47971
+2026-09-01T04:14:11.907786Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wD" pane_id=10
+2026-09-01T04:14:11.907794Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wD"
+2026-09-01T04:14:11.907848Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T04:14:16.910160Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
