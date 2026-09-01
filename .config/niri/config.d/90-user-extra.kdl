@@ -89,7 +89,7 @@ output "HDMI-A-3" {
 }
 
 binds {
-    Mod+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
+    Super+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
 
     Mod+Space repeat=false { spawn "/home/tenzin/.local/bin/inir" "overview" "toggle"; }
     Mod+V { spawn "/home/tenzin/.local/bin/inir" "clipboard" "toggle"; }
