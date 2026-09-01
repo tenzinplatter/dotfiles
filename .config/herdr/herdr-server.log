@@ -2735,3 +2735,28 @@
 2026-09-01T04:14:11.907848Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
 2026-09-01T04:14:16.910160Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-09-01T04:23:14.347675Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-09-01T04:41:18.203262Z  INFO herdr::api::server: api server listening path=/home/tenzin/.config/herdr/herdr.sock
+2026-09-01T04:41:18.204417Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-09-01T04:41:18.205050Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=5919
+2026-09-01T04:41:18.205229Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-09-01T04:41:18.205787Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=5924
+2026-09-01T04:41:18.205973Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-09-01T04:41:18.206658Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=5929
+2026-09-01T04:41:18.207056Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=5 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-09-01T04:41:18.207780Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=5 pid=5934
+2026-09-01T04:41:18.207972Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=2
+2026-09-01T04:41:18.208002Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-09-01T04:41:18.272830Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-09-01T04:41:18.274195Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/home/tenzin
+2026-09-01T04:41:18.274327Z  INFO herdr::server::headless: client protocol socket listening path=/home/tenzin/.config/herdr/herdr-client.sock
+2026-09-01T04:41:18.274346Z  INFO herdr::server::headless: herdr server started api_socket=/home/tenzin/.config/herdr/herdr.sock client_socket=/home/tenzin/.config/herdr/herdr-client.sock
+2026-09-01T04:41:18.274524Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=5898
+2026-09-01T04:41:18.328172Z  INFO herdr::server::headless: client connected client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-09-01T04:41:18.348980Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=52 cols=333 scrollback_limit_bytes=10000000
+2026-09-01T04:41:18.350117Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=6333
+2026-09-01T04:41:18.525176Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-09-01T04:41:18.557508Z  INFO herdr::logging: update available event="update.available" subsystem="update" outcome="ok" version="0.8.2"
+2026-09-01T04:41:18.557531Z  INFO herdr::update: new stable build available at https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64
+2026-09-01T04:41:18.557772Z  INFO herdr::update: auto-update check: 0.8.2 available, waiting for explicit install
+2026-09-01T04:41:18.901587Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(Claude) process=claude pgid=Some(6813)
+2026-09-01T04:41:23.351628Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2

@@ -7,8 +7,8 @@
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
         "4": 44,
-        "2": 32,
         "3": 49,
+        "2": 32,
         "1": 17
       },
       "next_public_pane_number": 50,
@@ -87,7 +87,7 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school",
       "public_pane_numbers": {
-        "10": 1
+        "5": 1
       },
       "next_public_pane_number": 2,
       "public_tab_numbers": [
@@ -98,16 +98,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 10
+            "Pane": 5
           },
           "panes": {
-            "10": {
+            "5": {
               "cwd": "/home/tenzin/school"
             }
           },
           "zoomed": false,
-          "focused": 10,
-          "root_pane": 10
+          "focused": 5,
+          "root_pane": 5
         }
       ],
       "active_tab": 0
