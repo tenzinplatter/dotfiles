@@ -69,7 +69,7 @@ input {
 
     // Focus windows automatically when the mouse enters them.
     // max-scroll-amount="0%" limits it to windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    // focus-follows-mouse max-scroll-amount="0%"
 }
 
 // ── Gestures ────────────────────────────────────────────────────────────────
@@ -100,10 +100,8 @@ cursor {
 //     position x=0 y=0                 // Global coordinate space
 // }
 //
-
-output "HDMI-A-3" {
-    mode "1920x1080@74.973"
-    scale 1
-    position x=1920 y=0             // Place right of eDP-1
-    transform "90"
-}
+// /-output "HDMI-A-1" {
+//     mode "2560x1440@144.000"
+//     scale 1
+//     position x=1920 y=0             // Place right of eDP-1
+// }
