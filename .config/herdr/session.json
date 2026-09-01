@@ -8,8 +8,8 @@
       "public_pane_numbers": {
         "1": 17,
         "2": 32,
-        "4": 44,
-        "3": 49
+        "3": 49,
+        "4": 44
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -48,10 +48,10 @@
             }
           },
           "panes": {
-            "2": {
+            "3": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "3": {
+            "2": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
@@ -85,7 +85,7 @@
     {
       "id": "wB",
       "custom_name": null,
-      "identity_cwd": "/home/tenzin/code/rattler",
+      "identity_cwd": "/home/tenzin/code/school",
       "public_pane_numbers": {
         "5": 1
       },
@@ -102,7 +102,7 @@
           },
           "panes": {
             "5": {
-              "cwd": "/home/tenzin/code/rattler"
+              "cwd": "/home/tenzin/code/school"
             }
           },
           "zoomed": false,
@@ -111,59 +111,10 @@
         }
       ],
       "active_tab": 0
-    },
-    {
-      "id": "wC",
-      "custom_name": null,
-      "identity_cwd": "/home/tenzin",
-      "public_pane_numbers": {
-        "8": 3,
-        "6": 1
-      },
-      "next_public_pane_number": 4,
-      "public_tab_numbers": [
-        1
-      ],
-      "next_public_tab_number": 2,
-      "tabs": [
-        {
-          "custom_name": null,
-          "layout": {
-            "Split": {
-              "direction": "Horizontal",
-              "ratio": 0.5,
-              "first": {
-                "Pane": 6
-              },
-              "second": {
-                "Pane": 8
-              }
-            }
-          },
-          "panes": {
-            "8": {
-              "cwd": "/home/tenzin"
-            },
-            "6": {
-              "cwd": "/home/tenzin",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "711b7c78-6495-4f94-b082-efea3682d4f7"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 8,
-          "root_pane": 6
-        }
-      ],
-      "active_tab": 0
     }
   ],
-  "active": 2,
-  "selected": 2,
+  "active": 1,
+  "selected": 1,
   "sidebar_width": 36,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []

@@ -2704,3 +2704,11 @@
 2026-09-01T00:38:16.451632Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-09-01T01:08:16.511528Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-09-01T01:38:16.466390Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-09-01T01:50:13.440547Z  INFO herdr::server::headless: client connected client_id=4 cols=180 rows=55 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-09-01T01:50:14.742090Z  INFO herdr::server::headless: client resize client_id=4 cols=370 rows=55 cell_width_px=0 cell_height_px=0
+2026-09-01T01:50:18.483058Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=8 status="ExitStatus { code: 130, signal: None }"
+2026-09-01T01:50:18.490324Z  INFO herdr::pane: pane session terminated pane=8 pid=6896 signal=Hangup
+2026-09-01T01:50:18.508073Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="error" request_id="cli:request" method="pane.send_keys"
+2026-09-01T01:50:21.137748Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 0, signal: None }"
+2026-09-01T01:50:21.143411Z  INFO herdr::pane: pane session terminated pane=6 pid=3326 signal=Hangup
+2026-09-01T01:50:26.145149Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
