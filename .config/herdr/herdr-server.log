@@ -2878,3 +2878,4 @@
 2026-09-01T06:33:07.881283Z  INFO herdr::server::headless: client detach requested via keybind client_id=2
 2026-09-01T06:33:07.885379Z  INFO herdr::server::headless: client disconnected client_id=2
 2026-09-01T06:41:18.527795Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-09-01T07:11:18.526214Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
