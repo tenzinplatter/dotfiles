@@ -2849,3 +2849,5 @@
 2026-09-01T05:20:56.837409Z  INFO herdr::server::headless: client resize client_id=2 cols=108 rows=73 cell_width_px=0 cell_height_px=0
 2026-09-01T05:20:58.538691Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=55 cell_width_px=0 cell_height_px=0
 2026-09-01T05:20:58.638761Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=53 cell_width_px=0 cell_height_px=0
+2026-09-01T05:28:39.788971Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-09-01T05:28:44.791863Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
