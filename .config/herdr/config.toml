@@ -19,6 +19,10 @@ mouse_scroll_lines = 3   # replaces tmux-smooth-scroll
 agent_panel_sort = "spaces"
 [keys]
 prefix = "ctrl+f"
+focus_pane_left = ""
+focus_pane_down = ""
+focus_pane_up = ""
+focus_pane_right = ""
 
 # splits: tmux `s` = stacked, `v` = side-by-side
 split_vertical = "prefix+v"
@@ -42,3 +46,27 @@ type = "popup"
 command = "/bin/zsh"
 width = "90%"
 height = "90%"
+
+[[keys.command]]
+key = "alt+h"
+type = "plugin_action"
+command = "local.vim-navigator.left"
+description = "Vim-aware pane left"
+
+[[keys.command]]
+key = "alt+j"
+type = "plugin_action"
+command = "local.vim-navigator.down"
+description = "Vim-aware pane down"
+
+[[keys.command]]
+key = "alt+k"
+type = "plugin_action"
+command = "local.vim-navigator.up"
+description = "Vim-aware pane up"
+
+[[keys.command]]
+key = "alt+l"
+type = "plugin_action"
+command = "local.vim-navigator.right"
+description = "Vim-aware pane right"
