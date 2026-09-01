@@ -7,9 +7,9 @@
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
         "2": 32,
-        "1": 17,
         "4": 44,
-        "3": 49
+        "3": 49,
+        "1": 17
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -88,15 +88,13 @@
       "identity_cwd": "/home/tenzin/school/csec3616/a1",
       "public_pane_numbers": {
         "6": 2,
-        "5": 1,
-        "11": 7
+        "5": 1
       },
-      "next_public_pane_number": 8,
+      "next_public_pane_number": 9,
       "public_tab_numbers": [
-        1,
-        5
+        1
       ],
-      "next_public_tab_number": 6,
+      "next_public_tab_number": 7,
       "tabs": [
         {
           "custom_name": null,
@@ -129,26 +127,6 @@
           "zoomed": false,
           "focused": 5,
           "root_pane": 5
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 11
-          },
-          "panes": {
-            "11": {
-              "cwd": "/home/tenzin",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "38924428-aa26-4c78-a37b-aacf0516c53c"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 11,
-          "root_pane": 11
         }
       ],
       "active_tab": 0
