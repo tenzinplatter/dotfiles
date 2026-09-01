@@ -2871,3 +2871,4 @@
 2026-09-01T05:33:11.278721Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=2
 2026-09-01T05:41:18.521593Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-09-01T05:56:00.493246Z  INFO herdr::server::headless: client resize client_id=2 cols=370 rows=55 cell_width_px=0 cell_height_px=0
+2026-09-01T06:11:18.525627Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
