@@ -6,9 +6,9 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "4": 44,
-        "3": 49,
         "2": 32,
+        "3": 49,
+        "4": 44,
         "1": 17
       },
       "next_public_pane_number": 50,
@@ -48,10 +48,10 @@
             }
           },
           "panes": {
-            "3": {
+            "2": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "2": {
+            "3": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
@@ -87,8 +87,8 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/csec3616/a1",
       "public_pane_numbers": {
-        "5": 1,
-        "6": 2
+        "6": 2,
+        "5": 1
       },
       "next_public_pane_number": 9,
       "public_tab_numbers": [
@@ -111,6 +111,9 @@
             }
           },
           "panes": {
+            "5": {
+              "cwd": "/home/tenzin/school/csec3616/a1"
+            },
             "6": {
               "cwd": "/home/tenzin/school/csec3616/a1",
               "agent_session": {
@@ -119,9 +122,6 @@
                 "kind": "id",
                 "value": "0db31fa3-3254-4995-87e0-523852e4c14c"
               }
-            },
-            "5": {
-              "cwd": "/home/tenzin/school/csec3616/a1"
             }
           },
           "zoomed": false,
@@ -130,10 +130,40 @@
         }
       ],
       "active_tab": 0
+    },
+    {
+      "id": "wE",
+      "custom_name": null,
+      "identity_cwd": "/home/tenzin/code",
+      "public_pane_numbers": {
+        "7": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 7
+          },
+          "panes": {
+            "7": {
+              "cwd": "/home/tenzin/code"
+            }
+          },
+          "zoomed": false,
+          "focused": 7,
+          "root_pane": 7
+        }
+      ],
+      "active_tab": 0
     }
   ],
-  "active": 1,
-  "selected": 1,
+  "active": 2,
+  "selected": 2,
   "sidebar_width": 36,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []
