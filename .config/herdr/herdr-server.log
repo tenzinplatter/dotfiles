@@ -2927,3 +2927,8 @@
 2026-09-02T08:12:33.488327Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
 2026-09-02T08:15:18.949519Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t1"
 2026-09-02T08:15:23.950768Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-09-02T08:17:17.848352Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=52 cols=366 scrollback_limit_bytes=10000000
+2026-09-02T08:17:17.849530Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=18451
+2026-09-02T08:17:17.849657Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t3"
+2026-09-02T08:17:18.903586Z  INFO herdr::pane: agent changed pane=9 previous_agent=None agent=Some(Claude) process=claude pgid=Some(18697)
+2026-09-02T08:17:24.704490Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
