@@ -3103,3 +3103,4 @@
 2026-09-02T15:12:16.064641Z  INFO herdr::pane: agent changed pane=6 previous_agent=None agent=Some(Claude) process=claude pgid=Some(4034)
 2026-09-02T15:12:16.064628Z  INFO herdr::pane: agent changed pane=12 previous_agent=None agent=Some(Claude) process=claude pgid=Some(39181)
 2026-09-02T15:42:11.207197Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-09-02T16:12:11.216027Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
