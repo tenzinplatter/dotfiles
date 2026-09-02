@@ -6,14 +6,12 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "4": 44,
-        "14": 50,
-        "1": 17
+        "1": 17,
+        "14": 50
       },
       "next_public_pane_number": 52,
       "public_tab_numbers": [
         6,
-        12,
         15
       ],
       "next_public_tab_number": 17,
@@ -35,26 +33,6 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 4
-          },
-          "panes": {
-            "4": {
-              "cwd": "/home/tenzin/code/stockeye",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "f7b1bf27-275d-48a2-966b-48802d7508e5"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 4,
-          "root_pane": 4
-        },
-        {
-          "custom_name": null,
-          "layout": {
             "Pane": 14
           },
           "panes": {
@@ -67,15 +45,15 @@
           "root_pane": 14
         }
       ],
-      "active_tab": 0
+      "active_tab": 1
     },
     {
       "id": "wD",
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/csec3616/a1",
       "public_pane_numbers": {
-        "6": 2,
-        "5": 1
+        "5": 1,
+        "6": 2
       },
       "next_public_pane_number": 9,
       "public_tab_numbers": [
@@ -98,6 +76,9 @@
             }
           },
           "panes": {
+            "5": {
+              "cwd": "/home/tenzin/school/csec3616/a1"
+            },
             "6": {
               "cwd": "/home/tenzin/school/csec3616/a1",
               "agent_session": {
@@ -106,9 +87,6 @@
                 "kind": "id",
                 "value": "0db31fa3-3254-4995-87e0-523852e4c14c"
               }
-            },
-            "5": {
-              "cwd": "/home/tenzin/school/csec3616/a1"
             }
           },
           "zoomed": false,
@@ -123,9 +101,9 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/Repositories/ros-recipes",
       "public_pane_numbers": {
+        "7": 1,
         "10": 4,
-        "12": 6,
-        "7": 1
+        "12": 6
       },
       "next_public_pane_number": 7,
       "public_tab_numbers": [
