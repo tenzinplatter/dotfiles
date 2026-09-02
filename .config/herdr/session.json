@@ -7,9 +7,9 @@
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
         "1": 17,
-        "4": 44,
+        "2": 32,
         "3": 49,
-        "2": 32
+        "4": 44
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -111,9 +111,6 @@
             }
           },
           "panes": {
-            "5": {
-              "cwd": "/home/tenzin/school/csec3616/a1"
-            },
             "6": {
               "cwd": "/home/tenzin/school/csec3616/a1",
               "agent_session": {
@@ -122,6 +119,9 @@
                 "kind": "id",
                 "value": "0db31fa3-3254-4995-87e0-523852e4c14c"
               }
+            },
+            "5": {
+              "cwd": "/home/tenzin/school/csec3616/a1"
             }
           },
           "zoomed": false,

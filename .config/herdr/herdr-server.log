@@ -2937,3 +2937,6 @@
 2026-09-02T08:18:44.212797Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
 2026-09-02T08:18:57.732046Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t1"
 2026-09-02T08:19:02.736185Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-09-02T08:21:34.247028Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t3"
+2026-09-02T08:21:35.577849Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t1"
+2026-09-02T08:21:40.580199Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
