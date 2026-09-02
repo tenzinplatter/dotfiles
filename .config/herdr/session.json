@@ -6,10 +6,10 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
-        "1": 17,
         "2": 32,
+        "3": 49,
         "4": 44,
-        "3": 49
+        "1": 17
       },
       "next_public_pane_number": 50,
       "public_tab_numbers": [
@@ -48,10 +48,10 @@
             }
           },
           "panes": {
-            "2": {
+            "3": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "3": {
+            "2": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
@@ -80,7 +80,7 @@
           "root_pane": 4
         }
       ],
-      "active_tab": 2
+      "active_tab": 1
     },
     {
       "id": "wD",
@@ -111,9 +111,6 @@
             }
           },
           "panes": {
-            "5": {
-              "cwd": "/home/tenzin/school/csec3616/a1"
-            },
             "6": {
               "cwd": "/home/tenzin/school/csec3616/a1",
               "agent_session": {
@@ -122,6 +119,9 @@
                 "kind": "id",
                 "value": "0db31fa3-3254-4995-87e0-523852e4c14c"
               }
+            },
+            "5": {
+              "cwd": "/home/tenzin/school/csec3616/a1"
             }
           },
           "zoomed": false,
@@ -137,14 +137,16 @@
       "identity_cwd": "/home/tenzin/Repositories/ros-recipes",
       "public_pane_numbers": {
         "7": 1,
-        "9": 3
+        "10": 4,
+        "12": 6
       },
-      "next_public_pane_number": 4,
+      "next_public_pane_number": 7,
       "public_tab_numbers": [
         1,
-        3
+        4,
+        5
       ],
-      "next_public_tab_number": 4,
+      "next_public_tab_number": 6,
       "tabs": [
         {
           "custom_name": null,
@@ -169,22 +171,36 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 9
+            "Pane": 10
           },
           "panes": {
-            "9": {
+            "10": {
+              "cwd": "/home/tenzin/Repositories/ros-recipes/recipes-ctl"
+            }
+          },
+          "zoomed": false,
+          "focused": 10,
+          "root_pane": 10
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 12
+          },
+          "panes": {
+            "12": {
               "cwd": "/home/tenzin/Repositories/ros-recipes",
               "agent_session": {
                 "source": "herdr:claude",
                 "agent": "claude",
                 "kind": "id",
-                "value": "e9fb1d51-8548-4f80-aab5-a6090a0fa8f1"
+                "value": "14aecb86-7007-45ab-8d36-8ce6a2550248"
               }
             }
           },
           "zoomed": false,
-          "focused": 9,
-          "root_pane": 9
+          "focused": 12,
+          "root_pane": 12
         }
       ],
       "active_tab": 0
