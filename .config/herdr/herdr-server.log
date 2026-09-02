@@ -3115,3 +3115,16 @@
 2026-09-02T20:42:11.218223Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-09-02T21:12:11.218180Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-09-02T21:42:11.217005Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-09-02T21:54:28.331608Z  INFO herdr::server::headless: client resize client_id=2 cols=74 rows=53 cell_width_px=0 cell_height_px=0
+2026-09-02T21:54:30.032860Z  INFO herdr::server::headless: client resize client_id=2 cols=256 rows=39 cell_width_px=0 cell_height_px=0
+2026-09-02T21:54:43.242408Z  INFO herdr::server::headless: client resize client_id=2 cols=256 rows=38 cell_width_px=0 cell_height_px=0
+2026-09-02T21:54:48.811378Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=16 rows=37 cols=252 scrollback_limit_bytes=10000000
+2026-09-02T21:54:48.812833Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=16 pid=239027
+2026-09-02T21:54:48.813037Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wG" pane_id=16
+2026-09-02T21:54:48.813045Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wG"
+2026-09-02T21:54:48.813051Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wG" tab_id="wG:t1"
+2026-09-02T21:54:51.093878Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=16 status="ExitStatus { code: 1, signal: None }"
+2026-09-02T21:54:51.093952Z  INFO herdr::pane: pane session terminated pane=16 pid=239027 signal=Hangup
+2026-09-02T21:54:55.723150Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t1"
+2026-09-02T21:54:56.616620Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t4"
+2026-09-02T21:55:01.618635Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
