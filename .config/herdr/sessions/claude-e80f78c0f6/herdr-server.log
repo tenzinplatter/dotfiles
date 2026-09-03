@@ -20,3 +20,4 @@
 2026-09-03T08:59:32.669509Z  INFO herdr::update: auto-update check: 0.8.2 available, waiting for explicit install
 2026-09-03T08:59:32.958373Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(Claude) process=claude pgid=Some(28056)
 2026-09-03T08:59:38.115668Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/sessions/claude-e80f78c0f6/session.json workspaces=1
+2026-09-03T09:03:12.706871Z  INFO herdr::server::headless: client disconnected client_id=1

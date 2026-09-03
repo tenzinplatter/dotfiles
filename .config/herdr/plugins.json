@@ -4,7 +4,7 @@
     "name": "Vim Navigator",
     "version": "0.1.0",
     "min_herdr_version": "0.7.0",
-    "description": "Vim-aware Herdr pane navigation for ctrl+h/j/k/l.",
+    "description": "Vim-aware Herdr pane navigation (HERDR_VIM_NAVIGATOR_MOD+hjkl, alt by default).",
     "manifest_path": "/home/tenzin/.dotfiles/.config/herdr/plugins/github/local.vim-navigator-3b4535ee8077/herdr-vim-navigator/herdr-plugin.toml",
     "plugin_root": "/home/tenzin/.dotfiles/.config/herdr/plugins/github/local.vim-navigator-3b4535ee8077/herdr-vim-navigator",
     "enabled": true,
@@ -60,12 +60,12 @@
     ],
     "source": {
       "kind": "github",
-      "owner": "bojackduy",
+      "owner": "tenzinplatter",
       "repo": "nvim-herdr-navigation",
       "subdir": "herdr-vim-navigator",
-      "resolved_commit": "7798a2f027465698cb1a51695327e138319f61f3",
+      "resolved_commit": "cdd3f7f3ea28531bd217328881ad58d9cb5398e4",
       "managed_path": "/home/tenzin/.config/herdr/plugins/github/local.vim-navigator-3b4535ee8077",
-      "installed_unix_ms": 1788424614683
+      "installed_unix_ms": 1788426160894
     }
   }
 ]
