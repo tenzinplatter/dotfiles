@@ -11,6 +11,9 @@ return {
         backend = "herdr",
         enabled = true,
       },
+      tools = {
+        claude = { native_scroll = true },
+      },
     },
   },
   -- stylua: ignore
