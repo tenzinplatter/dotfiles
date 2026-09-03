@@ -3138,3 +3138,4 @@
 2026-09-02T21:59:20.147306Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wA"
 2026-09-02T21:59:20.147330Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:tF"
 2026-09-02T21:59:25.149024Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/tenzin/.config/herdr/session.json workspaces=3
+2026-09-02T22:05:07.050666Z  INFO herdr::server::headless: client disconnected client_id=2
