@@ -34,50 +34,50 @@ binds {
     // ═══════════════════════════════════════════════════════════════════════
 
     // Crosshair overlay toggle.
-    Super+G { spawn "/home/tenzin/.local/bin/inir" "overlay" "toggle"; }
+    Super+G { spawn "inir" "overlay" "toggle"; }
 
     // iNiR app launcher / overview.
-    Mod+Space repeat=false { spawn "/home/tenzin/.local/bin/inir" "overview" "toggle"; }
+    Mod+Space repeat=false { spawn "inir" "overview" "toggle"; }
 
     // Clipboard history overlay.
-    Mod+V { spawn "/home/tenzin/.local/bin/inir" "clipboard" "toggle"; }
+    Mod+V { spawn "inir" "clipboard" "toggle"; }
 
     // Lock screen.
-    Mod+Alt+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "activate"; }
+    Mod+Alt+L allow-when-locked=true { spawn "inir" "lock" "activate"; }
     // Re-focus the lock surface (workaround when input feels dead after suspend/resume).
-    Mod+Ctrl+Shift+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "focus"; }
+    Mod+Ctrl+Shift+L allow-when-locked=true { spawn "inir" "lock" "focus"; }
 
     // Region selector: screenshot / OCR / Google Lens search.
-    Mod+Shift+S { spawn "/home/tenzin/.local/bin/inir" "region" "screenshot"; }
-    Mod+Shift+X { spawn "/home/tenzin/.local/bin/inir" "region" "ocr"; }
-    Mod+Shift+A { spawn "/home/tenzin/.local/bin/inir" "region" "search"; }
+    Mod+Shift+S { spawn "inir" "region" "menu"; }
+    Mod+Shift+X { spawn "inir" "region" "ocr"; }
+    Mod+Shift+A { spawn "inir" "region" "search"; }
     // Unified snip menu (pick action/scope from the in-overlay toolbar).
-    Ctrl+Shift+S { spawn "/home/tenzin/.local/bin/inir" "region" "menu"; }
+    Ctrl+Shift+S { spawn "inir" "region" "menu"; }
 
     // Wallpaper picker, settings, cheatsheet, panel family switch.
-    Ctrl+Alt+T { spawn "/home/tenzin/.local/bin/inir" "wallpaperSelector" "toggle"; }
-    Mod+Comma { spawn "/home/tenzin/.local/bin/inir" "settings"; }
-    Mod+Slash { spawn "/home/tenzin/.local/bin/inir" "cheatsheet" "toggle"; }
-    Mod+Shift+W { spawn "/home/tenzin/.local/bin/inir" "panelFamily" "cycle"; }
+    Ctrl+Alt+T { spawn "inir" "wallpaperSelector" "toggle"; }
+    Mod+Comma { spawn "inir" "settings"; }
+    Mod+Slash { spawn "inir" "cheatsheet" "toggle"; }
+    Mod+Shift+W { spawn "inir" "panelFamily" "cycle"; }
 
     // Session / power dialog.
-    Mod+Shift+Q { spawn "/home/tenzin/.local/bin/inir" "session" "toggle"; }
+    Mod+Shift+Q { spawn "inir" "session" "toggle"; }
 
     // ═══════════════════════════════════════════════════════════════════════
     // App launchers
     // ═══════════════════════════════════════════════════════════════════════
 
-    Mod+T { spawn "/home/tenzin/.local/bin/inir" "terminal"; }
-    Mod+Return { spawn "/home/tenzin/.local/bin/inir" "terminal"; }
+    Mod+T { spawn "inir" "terminal"; }
+    Mod+Return { spawn "inir" "terminal"; }
     Super+E { spawn "nautilus"; }
-    Super+W { spawn "/home/tenzin/.local/bin/inir" "browser"; }
+    Super+W { spawn "inir" "browser"; }
 
     // ═══════════════════════════════════════════════════════════════════════
     // Window management
     // ═══════════════════════════════════════════════════════════════════════
 
     // Close window (iNiR's close with confirmation dialog for unsaved work).
-    Mod+Q repeat=false { spawn "/home/tenzin/.local/bin/inir" "close-window"; }
+    Mod+Q repeat=false { spawn "inir" "close-window"; }
 
     // Maximize column (fills screen width, keeps gaps/bar).
     Mod+D { maximize-column; }
@@ -102,7 +102,7 @@ binds {
     Mod+R { switch-preset-column-width; }
 
     // Screen recording — region select with audio.
-    Mod+Shift+R { spawn "/home/tenzin/.local/bin/inir" "region" "recordWithSound"; }
+    Mod+Shift+R { spawn "inir" "region" "recordWithSound"; }
 
     // Reset window height to default.
     Mod+Ctrl+R { reset-window-height; }
@@ -243,29 +243,29 @@ binds {
     // ═══════════════════════════════════════════════════════════════════════
 
     // Volume (routed through iNiR for OSD + EasyEffects-aware sink resolution).
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "volumeUp"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "volumeDown"; }
-    XF86AudioMute        allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "mute"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "micMute"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "inir" "audio" "volumeUp"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "inir" "audio" "volumeDown"; }
+    XF86AudioMute        allow-when-locked=true { spawn "inir" "audio" "mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "inir" "audio" "micMute"; }
 
     // Brightness.
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "brightness" "increment"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "brightness" "decrement"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "inir" "brightness" "increment"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "inir" "brightness" "decrement"; }
 
     // Media playback (MPRIS — works with any player: Spotify, Firefox, mpv…).
-    XF86AudioPlay  { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    XF86AudioPause { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    XF86AudioNext  { spawn "/home/tenzin/.local/bin/inir" "mpris" "next"; }
-    XF86AudioPrev  { spawn "/home/tenzin/.local/bin/inir" "mpris" "previous"; }
+    XF86AudioPlay  { spawn "inir" "mpris" "playPause"; }
+    XF86AudioPause { spawn "inir" "mpris" "playPause"; }
+    XF86AudioNext  { spawn "inir" "mpris" "next"; }
+    XF86AudioPrev  { spawn "inir" "mpris" "previous"; }
 
     // Keyboard shortcuts for media (when no media keys are available).
-    Ctrl+Mod+Space { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    Mod+Alt+N      { spawn "/home/tenzin/.local/bin/inir" "mpris" "next"; }
-    Mod+Alt+P      { spawn "/home/tenzin/.local/bin/inir" "mpris" "previous"; }
-    Mod+Shift+M    { spawn "/home/tenzin/.local/bin/inir" "audio" "mute"; }
-    Mod+Shift+P    { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    Mod+Shift+N    { spawn "/home/tenzin/.local/bin/inir" "mpris" "next"; }
-    Mod+Shift+B    { spawn "/home/tenzin/.local/bin/inir" "mpris" "previous"; }
+    Ctrl+Mod+Space { spawn "inir" "mpris" "playPause"; }
+    Mod+Alt+N      { spawn "inir" "mpris" "next"; }
+    Mod+Alt+P      { spawn "inir" "mpris" "previous"; }
+    Mod+Shift+M    { spawn "inir" "audio" "mute"; }
+    Mod+Shift+P    { spawn "inir" "mpris" "playPause"; }
+    Mod+Shift+N    { spawn "inir" "mpris" "next"; }
+    Mod+Shift+B    { spawn "inir" "mpris" "previous"; }
 }
 
 recent-windows {
