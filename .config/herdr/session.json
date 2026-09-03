@@ -7,9 +7,9 @@
       "identity_cwd": "/home/tenzin/code/stockeye",
       "public_pane_numbers": {
         "8": 52,
-        "1": 17,
+        "2": 50,
         "9": 53,
-        "2": 50
+        "1": 17
       },
       "next_public_pane_number": 56,
       "public_tab_numbers": [
@@ -34,10 +34,10 @@
             }
           },
           "panes": {
-            "1": {
+            "8": {
               "cwd": "/home/tenzin/code/stockeye"
             },
-            "8": {
+            "1": {
               "cwd": "/home/tenzin/code/stockeye"
             }
           },
@@ -80,15 +80,15 @@
           "root_pane": 9
         }
       ],
-      "active_tab": 2
+      "active_tab": 0
     },
     {
       "id": "wD",
       "custom_name": null,
       "identity_cwd": "/home/tenzin/school/csec3616/a1",
       "public_pane_numbers": {
-        "3": 1,
-        "4": 2
+        "4": 2,
+        "3": 1
       },
       "next_public_pane_number": 9,
       "public_tab_numbers": [
@@ -136,9 +136,9 @@
       "custom_name": null,
       "identity_cwd": "/home/tenzin/Repositories/ros-recipes",
       "public_pane_numbers": {
-        "6": 4,
         "7": 6,
-        "5": 1
+        "5": 1,
+        "6": 4
       },
       "next_public_pane_number": 7,
       "public_tab_numbers": [

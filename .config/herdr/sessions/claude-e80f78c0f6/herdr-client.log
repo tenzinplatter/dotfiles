@@ -1,0 +1,5 @@
+2026-09-03T08:59:32.418535Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=28089
+2026-09-03T08:59:32.418552Z  INFO herdr::client: attaching to terminal path=/home/tenzin/.config/herdr/sessions/claude-e80f78c0f6/herdr-client.sock
+2026-09-03T08:59:32.424597Z  INFO herdr::client: handshake succeeded version=17 encoding=TerminalAnsi
+2026-09-03T08:59:52.934634Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-09-03T08:59:52.934673Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
