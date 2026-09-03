@@ -48,7 +48,7 @@ width = "90%"
 height = "90%"
 
 [[keys.command]]
-key = "ctrl+h"
+key = "alt+h"
 type = "plugin_action"
 command = "local.vim-navigator.left"
 description = "Vim-aware pane left"
