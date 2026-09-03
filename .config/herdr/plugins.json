@@ -1,0 +1,71 @@
+[
+  {
+    "plugin_id": "local.vim-navigator",
+    "name": "Vim Navigator",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Vim-aware Herdr pane navigation for ctrl+h/j/k/l.",
+    "manifest_path": "/home/tenzin/.dotfiles/.config/herdr/plugins/github/local.vim-navigator-3b4535ee8077/herdr-vim-navigator/herdr-plugin.toml",
+    "plugin_root": "/home/tenzin/.dotfiles/.config/herdr/plugins/github/local.vim-navigator-3b4535ee8077/herdr-vim-navigator",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "down",
+        "title": "Navigate down",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "bin/herdr-vim-navigator",
+          "down"
+        ]
+      },
+      {
+        "id": "left",
+        "title": "Navigate left",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "bin/herdr-vim-navigator",
+          "left"
+        ]
+      },
+      {
+        "id": "right",
+        "title": "Navigate right",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "bin/herdr-vim-navigator",
+          "right"
+        ]
+      },
+      {
+        "id": "up",
+        "title": "Navigate up",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "bin/herdr-vim-navigator",
+          "up"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "bojackduy",
+      "repo": "nvim-herdr-navigation",
+      "subdir": "herdr-vim-navigator",
+      "resolved_commit": "7798a2f027465698cb1a51695327e138319f61f3",
+      "managed_path": "/home/tenzin/.config/herdr/plugins/github/local.vim-navigator-3b4535ee8077",
+      "installed_unix_ms": 1788424614683
+    }
+  }
+]
