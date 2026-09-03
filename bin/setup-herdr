@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if herdr plugin list 2>/dev/null | grep -q 'local\.vim-navigator'; then
+  echo "local.vim-navigator already installed"
+else
+  herdr plugin install tenzinplatter/nvim-herdr-navigation/herdr-vim-navigator --yes
+fi

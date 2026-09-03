@@ -5,3 +5,10 @@
 .config/kitty/dank-theme.conf
 .config/tmux/plugins
 docs/superpowers
+.config/herdr/*.log
+.config/herdr/session.json
+.config/herdr/sessions/
+.config/herdr/plugins/
+.config/herdr/plugins.json
+.config/herdr/release-notes.json
+.config/herdr/.plugins.lock
