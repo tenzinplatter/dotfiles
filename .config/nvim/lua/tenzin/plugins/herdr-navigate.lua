@@ -10,14 +10,19 @@ return {
   end,
   config = function()
     vim.schedule(function()
-      require("herdr-navigation").setup({
-        keybindings = {
-          left = "<M-h>",
-          down = "<M-j>",
-          up = "<M-k>",
-          right = "<M-l>",
-        },
-      })
+      local nav = require("herdr-navigation")
+      local keybindings = {
+        left = "<M-h>",
+        down = "<M-j>",
+        up = "<M-k>",
+        right = "<M-l>",
+      }
+      nav.setup({ keybindings = keybindings })
+      for direction, lhs in pairs(keybindings) do
+        vim.keymap.set("t", lhs, function()
+          nav.navigate(direction)
+        end, { silent = true, desc = "Herdr navigate " .. direction })
+      end
     end)
   end,
 }
