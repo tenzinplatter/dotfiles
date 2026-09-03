@@ -25,6 +25,18 @@
   name = tenzinplatter
   email = 143778894+TenzinPlatter@users.noreply.github.com
 
+[includeIf "hasconfig:remote.*.url:git@github.sydney.edu.au:*/**"]
+  path = config-usyd
+
+[includeIf "hasconfig:remote.*.url:https://github.sydney.edu.au/**"]
+  path = config-usyd
+
+[includeIf "hasconfig:remote.*.url:syd:*"]
+  path = config-usyd
+
+[includeIf "hasconfig:remote.*.url:syd:*/**"]
+  path = config-usyd
+
 [core]
   compression = 9
   whitespace = error
