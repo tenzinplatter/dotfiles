@@ -1,13 +1,15 @@
 return {
-  "folke/sidekick.nvim",
+  -- "folke/sidekick.nvim",
+  "https://github.com/rmarganti/sidekick.nvim",
+  branch = "herdr",
   opts = {
     nes = {
       enabled = false,
     },
     cli = {
       mux = {
-        backend = "tmux",
-        enabled = false,
+        backend = "herdr",
+        enabled = true,
       },
     },
   },
