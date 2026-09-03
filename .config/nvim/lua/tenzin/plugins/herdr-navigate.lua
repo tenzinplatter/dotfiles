@@ -1,5 +1,5 @@
 return {
-  "bojackduy/nvim-herdr-navigation",
+  "tenzinplatter/nvim-herdr-navigation",
   submodules = false,
   cond = function()
     return vim.env.HERDR_PANE_ID ~= nil
