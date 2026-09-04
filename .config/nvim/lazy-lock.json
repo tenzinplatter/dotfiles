@@ -82,5 +82,5 @@
   "vimtex": { "branch": "master", "commit": "cb81778aee678b513af3de7f1ca5943e7ee31b2f" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "xml2lua.nvim": { "branch": "master", "commit": "c5fa33ad038958e9592df06e8ca6a88f4e7543aa" },
-  "yazi.nvim": { "branch": "main", "commit": "8a26074568790bb5c73e56eb871a74709a13dd43" }
+  "yazi.nvim": { "branch": "main", "commit": "2508e758d9057da9a3ec3f8c53e9f33a46a66e2d" }
 }
