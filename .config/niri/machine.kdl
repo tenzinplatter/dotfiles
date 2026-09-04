@@ -1,7 +1,0 @@
-// Laptop-specific niri overrides.
-// Force compositor rendering on the Intel iGPU so the NVIDIA dGPU can
-// stay in RTD3 (D3cold) when no client demands it. Without this niri
-// builds an EGL context on the dGPU at startup, blocking runtime suspend.
-debug {
-    render-drm-device "/dev/dri/by-path/pci-0000:00:02.0-render"
-}
