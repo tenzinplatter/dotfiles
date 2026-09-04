@@ -2,78 +2,78 @@
 # Do not edit manually - changes will be overwritten
 
 [mgr]
-cwd = { fg = "#cfbfeb" }
-hovered         = { fg = "#18151B", bg = "#cfbfeb" }
+cwd = { fg = "#a3cce3" }
+hovered         = { fg = "#11171A", bg = "#a3cce3" }
 preview_hovered = { underline = true }
-find_keyword    = { fg = "#FFEBD1", italic = true }
-find_position   = { fg = "#DDAEFF", bg = "reset", italic = true }
+find_keyword    = { fg = "#FFF17B", italic = true }
+find_position   = { fg = "#D7B0FF", bg = "reset", italic = true }
 marker_selected = { fg = "#00FD98", bg = "#00FD98" }
-marker_copied   = { fg = "#FFEBD1", bg = "#FFEBD1" }
+marker_copied   = { fg = "#FFF17B", bg = "#FFF17B" }
 marker_cut      = { fg = "#FF9BAD", bg = "#FF9BAD" }
-tab_active      = { fg = "#18151B", bg = "#1B181F" }
-tab_inactive    = { fg = "#B1A8A2", bg = "#1B181F" }
+tab_active      = { fg = "#11171A", bg = "#141A1E" }
+tab_inactive    = { fg = "#ADAAA2", bg = "#141A1E" }
 tab_width       = 1
 border_symbol   = "│"
-border_style    = { fg = "#79737E" }
-count_copied    = { fg = "#18151B", bg = "#FFEBD1" }
-count_cut       = { fg = "#18151B", bg = "#FF9BAD" }
-count_selected  = { fg = "#18151B", bg = "#cfbfeb" }
+border_style    = { fg = "#6E777C" }
+count_copied    = { fg = "#11171A", bg = "#FFF17B" }
+count_cut       = { fg = "#11171A", bg = "#FF9BAD" }
+count_selected  = { fg = "#11171A", bg = "#a3cce3" }
 
 [mode]
-normal_main = { fg = "#18151B", bg = "#cfbfeb", bold = true }
-normal_alt  = { fg = "#18151B", bg = "#cfbfeb", bold = true }
-select_main = { fg = "#18151B", bg = "#00FD98", bold = true }
-select_alt  = { fg = "#18151B", bg = "#00FD98", bold = true }
-unset_main  = { fg = "#18151B", bg = "#DDAEFF", bold = true }
-unset_alt   = { fg = "#18151B", bg = "#DDAEFF", bold = true }
+normal_main = { fg = "#11171A", bg = "#a3cce3", bold = true }
+normal_alt  = { fg = "#11171A", bg = "#a3cce3", bold = true }
+select_main = { fg = "#11171A", bg = "#00FD98", bold = true }
+select_alt  = { fg = "#11171A", bg = "#00FD98", bold = true }
+unset_main  = { fg = "#11171A", bg = "#D7B0FF", bold = true }
+unset_alt   = { fg = "#11171A", bg = "#D7B0FF", bold = true }
 
 [status]
 separator_open  = ""
 separator_close = ""
-separator_style = { fg = "#1B181F", bg = "#1B181F" }
-progress_label  = { fg = "#EAE3EF", bold = true }
-progress_normal = { fg = "#cfbfeb", bg = "#1B181F" }
-progress_error  = { fg = "#FF9BAD", bg = "#1B181F" }
-permissions_t   = { fg = "#cfbfeb" }
-permissions_r   = { fg = "#FFEBD1" }
+separator_style = { fg = "#141A1E", bg = "#141A1E" }
+progress_label  = { fg = "#DEE7ED", bold = true }
+progress_normal = { fg = "#a3cce3", bg = "#141A1E" }
+progress_error  = { fg = "#FF9BAD", bg = "#141A1E" }
+permissions_t   = { fg = "#a3cce3" }
+permissions_r   = { fg = "#FFF17B" }
 permissions_w   = { fg = "#FF9BAD" }
 permissions_x   = { fg = "#00FD98" }
-permissions_s   = { fg = "#79737E" }
+permissions_s   = { fg = "#6E777C" }
 
 [input]
-border   = { fg = "#cfbfeb" }
+border   = { fg = "#a3cce3" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [select]
-border   = { fg = "#cfbfeb" }
-active   = { fg = "#DDAEFF", bold = true }
+border   = { fg = "#a3cce3" }
+active   = { fg = "#D7B0FF", bold = true }
 inactive = {}
 
 [tasks]
-border  = { fg = "#cfbfeb" }
+border  = { fg = "#a3cce3" }
 title   = {}
 hovered = { underline = true }
 
 [which]
-mask            = { bg = "#1B181F" }
+mask            = { bg = "#141A1E" }
 cand            = { fg = "#3BF0FD" }
-rest            = { fg = "#79737E" }
-desc            = { fg = "#DDAEFF" }
+rest            = { fg = "#6E777C" }
+desc            = { fg = "#D7B0FF" }
 separator       = "  "
-separator_style = { fg = "#79737E" }
+separator_style = { fg = "#6E777C" }
 
 [help]
-on      = { fg = "#DDAEFF" }
+on      = { fg = "#D7B0FF" }
 run     = { fg = "#3BF0FD" }
-desc    = { fg = "#79737E" }
-hovered = { bg = "#1B181F", bold = true }
-footer  = { fg = "#1B181F", bg = "#B1A8A2" }
+desc    = { fg = "#6E777C" }
+hovered = { bg = "#141A1E", bold = true }
+footer  = { fg = "#141A1E", bg = "#ADAAA2" }
 
 [filetype]
 rules = [
-  { mime = "image/*", fg = "#DDAEFF" },
+  { mime = "image/*", fg = "#D7B0FF" },
   { mime = "video/*", fg = "#3BF0FD" },
   { mime = "audio/*", fg = "#3BF0FD" },
   { mime = "application/zip",             fg = "#FF9BAD" },
@@ -83,6 +83,6 @@ rules = [
   { mime = "application/x-bzip2",         fg = "#FF9BAD" },
   { mime = "application/x-7z-compressed", fg = "#FF9BAD" },
   { mime = "application/x-rar",           fg = "#FF9BAD" },
-  { name = "*",  fg = "#B1A8A2" },
-  { name = "*/", fg = "#cfbfeb" },
+  { name = "*",  fg = "#ADAAA2" },
+  { name = "*/", fg = "#a3cce3" },
 ]
