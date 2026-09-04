@@ -2,87 +2,87 @@
 # Do not edit manually - changes will be overwritten
 
 [mgr]
-cwd = { fg = "#fffbf7" }
-hovered         = { fg = "#1F1E1A", bg = "#fffbf7" }
+cwd = { fg = "#cfbfeb" }
+hovered         = { fg = "#18151B", bg = "#cfbfeb" }
 preview_hovered = { underline = true }
-find_keyword    = { fg = "#F9EFCF", italic = true }
-find_position   = { fg = "#E3B1DB", bg = "reset", italic = true }
-marker_selected = { fg = "#BFEB95", bg = "#BFEB95" }
-marker_copied   = { fg = "#F9EFCF", bg = "#F9EFCF" }
-marker_cut      = { fg = "#E2AC9E", bg = "#E2AC9E" }
-tab_active      = { fg = "#1F1E1A", bg = "#21201C" }
-tab_inactive    = { fg = "#AEA9A5", bg = "#21201C" }
+find_keyword    = { fg = "#FFEBD1", italic = true }
+find_position   = { fg = "#DDAEFF", bg = "reset", italic = true }
+marker_selected = { fg = "#00FD98", bg = "#00FD98" }
+marker_copied   = { fg = "#FFEBD1", bg = "#FFEBD1" }
+marker_cut      = { fg = "#FF9BAD", bg = "#FF9BAD" }
+tab_active      = { fg = "#18151B", bg = "#1B181F" }
+tab_inactive    = { fg = "#B1A8A2", bg = "#1B181F" }
 tab_width       = 1
 border_symbol   = "│"
-border_style    = { fg = "#939185" }
-count_copied    = { fg = "#1F1E1A", bg = "#F9EFCF" }
-count_cut       = { fg = "#1F1E1A", bg = "#E2AC9E" }
-count_selected  = { fg = "#1F1E1A", bg = "#fffbf7" }
+border_style    = { fg = "#79737E" }
+count_copied    = { fg = "#18151B", bg = "#FFEBD1" }
+count_cut       = { fg = "#18151B", bg = "#FF9BAD" }
+count_selected  = { fg = "#18151B", bg = "#cfbfeb" }
 
 [mode]
-normal_main = { fg = "#1F1E1A", bg = "#fffbf7", bold = true }
-normal_alt  = { fg = "#1F1E1A", bg = "#fffbf7", bold = true }
-select_main = { fg = "#1F1E1A", bg = "#BFEB95", bold = true }
-select_alt  = { fg = "#1F1E1A", bg = "#BFEB95", bold = true }
-unset_main  = { fg = "#1F1E1A", bg = "#E3B1DB", bold = true }
-unset_alt   = { fg = "#1F1E1A", bg = "#E3B1DB", bold = true }
+normal_main = { fg = "#18151B", bg = "#cfbfeb", bold = true }
+normal_alt  = { fg = "#18151B", bg = "#cfbfeb", bold = true }
+select_main = { fg = "#18151B", bg = "#00FD98", bold = true }
+select_alt  = { fg = "#18151B", bg = "#00FD98", bold = true }
+unset_main  = { fg = "#18151B", bg = "#DDAEFF", bold = true }
+unset_alt   = { fg = "#18151B", bg = "#DDAEFF", bold = true }
 
 [status]
 separator_open  = ""
 separator_close = ""
-separator_style = { fg = "#21201C", bg = "#21201C" }
-progress_label  = { fg = "#E6E2DB", bold = true }
-progress_normal = { fg = "#fffbf7", bg = "#21201C" }
-progress_error  = { fg = "#E2AC9E", bg = "#21201C" }
-permissions_t   = { fg = "#fffbf7" }
-permissions_r   = { fg = "#F9EFCF" }
-permissions_w   = { fg = "#E2AC9E" }
-permissions_x   = { fg = "#BFEB95" }
-permissions_s   = { fg = "#939185" }
+separator_style = { fg = "#1B181F", bg = "#1B181F" }
+progress_label  = { fg = "#EAE3EF", bold = true }
+progress_normal = { fg = "#cfbfeb", bg = "#1B181F" }
+progress_error  = { fg = "#FF9BAD", bg = "#1B181F" }
+permissions_t   = { fg = "#cfbfeb" }
+permissions_r   = { fg = "#FFEBD1" }
+permissions_w   = { fg = "#FF9BAD" }
+permissions_x   = { fg = "#00FD98" }
+permissions_s   = { fg = "#79737E" }
 
 [input]
-border   = { fg = "#fffbf7" }
+border   = { fg = "#cfbfeb" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [select]
-border   = { fg = "#fffbf7" }
-active   = { fg = "#E3B1DB", bold = true }
+border   = { fg = "#cfbfeb" }
+active   = { fg = "#DDAEFF", bold = true }
 inactive = {}
 
 [tasks]
-border  = { fg = "#fffbf7" }
+border  = { fg = "#cfbfeb" }
 title   = {}
 hovered = { underline = true }
 
 [which]
-mask            = { bg = "#21201C" }
-cand            = { fg = "#A8E6D6" }
-rest            = { fg = "#939185" }
-desc            = { fg = "#E3B1DB" }
+mask            = { bg = "#1B181F" }
+cand            = { fg = "#3BF0FD" }
+rest            = { fg = "#79737E" }
+desc            = { fg = "#DDAEFF" }
 separator       = "  "
-separator_style = { fg = "#939185" }
+separator_style = { fg = "#79737E" }
 
 [help]
-on      = { fg = "#E3B1DB" }
-run     = { fg = "#A8E6D6" }
-desc    = { fg = "#939185" }
-hovered = { bg = "#21201C", bold = true }
-footer  = { fg = "#21201C", bg = "#AEA9A5" }
+on      = { fg = "#DDAEFF" }
+run     = { fg = "#3BF0FD" }
+desc    = { fg = "#79737E" }
+hovered = { bg = "#1B181F", bold = true }
+footer  = { fg = "#1B181F", bg = "#B1A8A2" }
 
 [filetype]
 rules = [
-  { mime = "image/*", fg = "#E3B1DB" },
-  { mime = "video/*", fg = "#A8E6D6" },
-  { mime = "audio/*", fg = "#A8E6D6" },
-  { mime = "application/zip",             fg = "#E2AC9E" },
-  { mime = "application/gzip",            fg = "#E2AC9E" },
-  { mime = "application/x-tar",           fg = "#E2AC9E" },
-  { mime = "application/x-bzip",          fg = "#E2AC9E" },
-  { mime = "application/x-bzip2",         fg = "#E2AC9E" },
-  { mime = "application/x-7z-compressed", fg = "#E2AC9E" },
-  { mime = "application/x-rar",           fg = "#E2AC9E" },
-  { name = "*",  fg = "#AEA9A5" },
-  { name = "*/", fg = "#fffbf7" },
+  { mime = "image/*", fg = "#DDAEFF" },
+  { mime = "video/*", fg = "#3BF0FD" },
+  { mime = "audio/*", fg = "#3BF0FD" },
+  { mime = "application/zip",             fg = "#FF9BAD" },
+  { mime = "application/gzip",            fg = "#FF9BAD" },
+  { mime = "application/x-tar",           fg = "#FF9BAD" },
+  { mime = "application/x-bzip",          fg = "#FF9BAD" },
+  { mime = "application/x-bzip2",         fg = "#FF9BAD" },
+  { mime = "application/x-7z-compressed", fg = "#FF9BAD" },
+  { mime = "application/x-rar",           fg = "#FF9BAD" },
+  { name = "*",  fg = "#B1A8A2" },
+  { name = "*/", fg = "#cfbfeb" },
 ]
