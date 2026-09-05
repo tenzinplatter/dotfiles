@@ -106,7 +106,7 @@ binds {
     Mod+Slash { spawn "/home/tenzin/.local/bin/inir" "cheatsheet" "toggle"; }
     Mod+Shift+W { spawn "/home/tenzin/.local/bin/inir" "panelFamily" "cycle"; }
 
-    Mod+Shift+Q { spawn "/home/tenzin/.local/bin/inir" "session" "toggle"; }
+    Mod+Backspace { spawn "/home/tenzin/.local/bin/inir" "session" "toggle"; }
 
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Super+B hotkey-overlay-title="Open browser" { spawn "zen-browser"; }
