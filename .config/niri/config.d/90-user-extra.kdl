@@ -91,20 +91,9 @@ output "HDMI-A-3" {
 binds {
     Super+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
 
-    Mod+Space repeat=false { spawn "/home/tenzin/.local/bin/inir" "overview" "toggle"; }
-    Mod+V { spawn "/home/tenzin/.local/bin/inir" "clipboard" "toggle"; }
-    Mod+Alt+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "activate"; }
     Mod+Alt+Shift+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "focus"; }
 
     Mod+Shift+S { spawn "/home/tenzin/.local/bin/inir" "region" "screenshot"; }
-    Mod+Shift+X { spawn "/home/tenzin/.local/bin/inir" "region" "ocr"; }
-    Mod+Shift+A { spawn "/home/tenzin/.local/bin/inir" "region" "search"; }
-    Ctrl+Shift+S { spawn "/home/tenzin/.local/bin/inir" "region" "menu"; }
-
-    Ctrl+Alt+T { spawn "/home/tenzin/.local/bin/inir" "wallpaperSelector" "toggle"; }
-    Mod+Comma { spawn "/home/tenzin/.local/bin/inir" "settings"; }
-    Mod+Slash { spawn "/home/tenzin/.local/bin/inir" "cheatsheet" "toggle"; }
-    Mod+Shift+W { spawn "/home/tenzin/.local/bin/inir" "panelFamily" "cycle"; }
 
     Mod+Backspace { spawn "/home/tenzin/.local/bin/inir" "session" "toggle"; }
 
@@ -112,12 +101,8 @@ binds {
     Super+B hotkey-overlay-title="Open browser" { spawn "zen-browser"; }
     Super+W hotkey-overlay-title="Open browser" { spawn "zen-browser"; }
 
-    Mod+Q repeat=false { spawn "/home/tenzin/.local/bin/inir" "close-window"; }
-
     Mod+Return { maximize-column; }
     Mod+O repeat=false hotkey-overlay-title="Toggle Window Opacity" { toggle-window-rule-opacity; }
-
-    Mod+Shift+R { spawn "/home/tenzin/.local/bin/inir" "region" "recordWithSound"; }
 
     Mod+Left  { spawn "/home/tenzin/bin/niri-smart-move.sh" "left" "focus"; }
     Mod+Right { spawn "/home/tenzin/bin/niri-smart-move.sh" "right" "focus"; }
@@ -163,25 +148,4 @@ binds {
     Mod+Shift+WheelScrollUp        { focus-column-left; }
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
-
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "volumeUp"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "volumeDown"; }
-    XF86AudioMute        allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "mute"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "audio" "micMute"; }
-
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "brightness" "increment"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "brightness" "decrement"; }
-
-    XF86AudioPlay  { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    XF86AudioPause { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    XF86AudioNext  { spawn "/home/tenzin/.local/bin/inir" "mpris" "next"; }
-    XF86AudioPrev  { spawn "/home/tenzin/.local/bin/inir" "mpris" "previous"; }
-
-    Ctrl+Mod+Space { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    Mod+Alt+N      { spawn "/home/tenzin/.local/bin/inir" "mpris" "next"; }
-    Mod+Alt+P      { spawn "/home/tenzin/.local/bin/inir" "mpris" "previous"; }
-    Mod+Shift+M    { spawn "/home/tenzin/.local/bin/inir" "audio" "mute"; }
-    Mod+Shift+P    { spawn "/home/tenzin/.local/bin/inir" "mpris" "playPause"; }
-    Mod+Shift+N    { spawn "/home/tenzin/.local/bin/inir" "mpris" "next"; }
-    Mod+Shift+B    { spawn "/home/tenzin/.local/bin/inir" "mpris" "previous"; }
 }
