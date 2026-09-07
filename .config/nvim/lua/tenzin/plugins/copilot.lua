@@ -34,7 +34,7 @@ return {
     opts = {
       suggestion = {
         auto_trigger = true,
-        enabled = false,
+        enabled = true,
         keymap = {
           accept = false,
           accept_word = false,
