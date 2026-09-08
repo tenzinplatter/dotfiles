@@ -38,6 +38,14 @@ return {
       desc = "Sidekick Select Prompt",
     },
     {
+      "<leader>ai",
+      function()
+        require("sidekick.cli").send({ msg = "Implement {this}" })
+      end,
+      mode = { "n", "v" },
+      desc = "Implement this",
+    },
+    {
       "<leader>ac",
       function()
         require("sidekick.cli").toggle({ name = "claude", focus = true })

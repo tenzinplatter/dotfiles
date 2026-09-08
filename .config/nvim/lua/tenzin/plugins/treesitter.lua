@@ -17,17 +17,15 @@ return {
       },
     },
     opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
       ensure_installed = {
         "bash",
         "c",
+        "css",
         "diff",
         "html",
         "javascript",
         "jsdoc",
         "json",
-        "jsonc",
         "lua",
         "luadoc",
         "luap",
@@ -37,6 +35,8 @@ return {
         "python",
         "query",
         "regex",
+        "scss",
+        "svelte",
         "toml",
         "tsx",
         "typescript",
@@ -48,6 +48,9 @@ return {
     },
     config = function(_, opts)
       require("nvim-treesitter").setup(opts)
+      -- On branch `main`, setup() only reads `install_dir`; parsers must be
+      -- installed explicitly. Already-installed languages are skipped.
+      require("nvim-treesitter").install(opts.ensure_installed)
     end,
   },
 }

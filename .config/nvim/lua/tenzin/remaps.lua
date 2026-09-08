@@ -34,6 +34,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to clipboard" })
 vim.keymap.set("n", "<leader>%", "ggVG", { desc = "Select entire buffer" })
 
 vim.keymap.set("n", "<leader>yy", '"+yy', { desc = "Copy line to clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+y$', { desc = "Copy to end of line to clipboard" })
 
 vim.keymap.set("v", "<leader>p", '"+p', { desc = "Paste from clipboard" })
 vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste from clipboard" })
