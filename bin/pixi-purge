@@ -1,0 +1,123 @@
+#!/usr/bin/env -S uv run --script --quiet
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["rich>=13"]
+# ///
+"""Remove all workspace .pixi/ environment dirs under a root (default: $HOME).
+
+Never touch ~/.pixi itself - that is the pixi installation (bin, global envs).
+"""
+
+import os
+import shutil
+import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+from rich.console import Console
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn, TransferSpeedColumn
+from rich.prompt import Confirm
+from rich.table import Table
+
+console = Console()
+
+
+def dir_size(path: Path) -> int:
+    out = subprocess.run(["du", "-sb", str(path)], capture_output=True, text=True)
+    return int(out.stdout.split(maxsplit=1)[0]) if out.returncode == 0 else 0
+
+
+def human(n: float) -> str:
+    for unit in ("B", "KiB", "MiB", "GiB", "TiB"):
+        if n < 1024:
+            return f"{n:.1f} {unit}"
+        n /= 1024
+    return f"{n:.1f} PiB"
+
+
+def find_envs(root: Path, installation: Path) -> list[Path]:
+    found = []
+    for dirpath, dirnames, _ in os.walk(root, onerror=lambda _: None):
+        if ".pixi" not in dirnames:
+            continue
+        dirnames.remove(".pixi")  # a .pixi never contains another workspace
+        env = Path(dirpath) / ".pixi"
+        if env != installation:
+            found.append(env)
+    return found
+
+
+def size_table(targets: list[tuple[Path, int]], root: Path) -> Table:
+    table = Table(box=None, pad_edge=False, header_style="bold bright_green")
+    table.add_column("Workspace", style="bright_cyan", overflow="fold")
+    table.add_column("Size", style="yellow", justify="right")
+    for target, size in targets:
+        workspace = target.parent
+        try:
+            label = str(workspace.relative_to(root))
+        except ValueError:
+            label = str(workspace)
+        table.add_row(label or ".", human(size))
+    return table
+
+
+def main() -> int:
+    root = Path(sys.argv[1] if len(sys.argv) > 1 else Path.home()).expanduser().resolve()
+    installation = Path.home() / ".pixi"
+
+    with console.status("[bright_cyan]Scanning for .pixi environments...", spinner="dots"):
+        paths = find_envs(root, installation)
+        with ThreadPoolExecutor() as pool:
+            targets = sorted(zip(paths, pool.map(dir_size, paths)), key=lambda t: -t[1])
+
+    if not targets:
+        console.print(f"[bright_green]No .pixi environments found under[/] [bright_cyan]{root}")
+        return 0
+
+    total = sum(size for _, size in targets)
+    console.print(size_table(targets, root))
+    console.print(
+        f"\n[bold]{len(targets)}[/] environment(s), [bold yellow]{human(total)}[/] to free\n"
+    )
+
+    try:
+        confirmed = Confirm.ask("[bold bright_red]Delete these environments?", default=True)
+    except (EOFError, KeyboardInterrupt):
+        confirmed = False
+
+    if not confirmed:
+        console.print("[dim]Nothing removed.")
+        return 1
+
+    def clean(target: Path, size: int) -> int:
+        shutil.rmtree(target, ignore_errors=True)
+        return size
+
+    freed = 0
+    with (
+        Progress(
+            SpinnerColumn(style="bright_red"),
+            TextColumn("[bright_red]Removing"),
+            BarColumn(complete_style="bright_red", finished_style="bright_green"),
+            TextColumn("[yellow]{task.percentage:>3.0f}%"),
+            TransferSpeedColumn(),
+            console=console,
+        ) as progress,
+        ThreadPoolExecutor() as pool,
+    ):
+        task = progress.add_task("removing", total=total)
+        futures = [pool.submit(clean, *t) for t in targets]
+        for fut in as_completed(futures):
+            freed += fut.result()
+            progress.update(task, completed=freed)
+
+    console.print(
+        f"[bold bright_green]✓[/] {len(targets)} environment(s) removed, "
+        f"[bold]{human(freed)}[/] freed"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
