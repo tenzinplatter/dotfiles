@@ -1,8 +1,12 @@
-#!/usr/bin/env -S uv run --script --quiet
-# /// script
-# requires-python = ">=3.10"
-# dependencies = ["rich>=13"]
-# ///
+#!/usr/bin/env -S pixi run -q --experimental --script
+# /// conda-script
+# channels = ["https://prefix.dev/conda-forge"]
+# entrypoint = "python ${SCRIPT}"
+#
+# [dependencies]
+# python = ">=3.10"
+# rich = ">=13"
+# /// end-conda-script
 """Remove all workspace .pixi/ environment dirs under a root (default: $HOME).
 
 Never touch ~/.pixi itself - that is the pixi installation (bin, global envs).
