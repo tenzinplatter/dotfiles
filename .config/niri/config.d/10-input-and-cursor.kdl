@@ -39,7 +39,7 @@ input {
         natural-scroll
 
         // Disable touchpad while typing (dwt) or while the trackpoint is in use (dwtp).
-        // dwt
+        dwt
         // dwtp
 
         // Disable the touchpad entirely when an external mouse is plugged in.
