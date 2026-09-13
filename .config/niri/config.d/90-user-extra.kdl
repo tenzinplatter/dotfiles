@@ -93,7 +93,7 @@ binds {
 
     Mod+Alt+Shift+L allow-when-locked=true { spawn "/home/tenzin/.local/bin/inir" "lock" "focus"; }
 
-    Mod+Shift+S { spawn "/home/tenzin/.local/bin/inir" "region" "screenshot"; }
+    Mod+P { spawn "/home/tenzin/.local/bin/inir" "region" "screenshot"; }
 
     Mod+Backspace { spawn "/home/tenzin/.local/bin/inir" "session" "toggle"; }
 
