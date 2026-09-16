@@ -129,8 +129,7 @@ binds {
 
     // Toggle tabbed display for the focused column.
     // Windows show as vertical tabs instead of stacked.
-    // NOTE: Mod+W conflicts with Super+W (browser). Uncomment with a different key if desired.
-    // Mod+W { toggle-column-tabbed-display; }
+    Mod+W { toggle-window-floating; }
 
     // ═══════════════════════════════════════════════════════════════════════
     // Focus navigation (arrows + Vim keys)
