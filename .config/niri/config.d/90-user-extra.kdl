@@ -88,6 +88,20 @@ output "HDMI-A-3" {
     transform "90"
 }
 
+output "DP-3" {
+    mode "3440x1440@159.962"
+    scale 1
+    position x=3000 y=0
+    transform "normal"
+}
+
+window-rule {
+    match app-id=r#"^steam_app_2357570$"# title=r#"^Overwatch$"#
+    open-on-output "DP-3"
+    open-fullscreen true
+    opacity 1.0
+}
+
 binds {
     Super+G hotkey-overlay-title="Toggle Gaming Mode (Kanata)" { spawn "/home/tenzin/bin/kanata-toggle-gaming.sh"; }
 
