@@ -75,6 +75,7 @@ vim.keymap.set("n", "<C-k>", function()
 end, { desc = "Move line up" })
 
 -- Terminal window navigation
+vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("t", "<C-w>h", "<C-\\><C-n><C-w>h", { desc = "Navigate left from terminal" })
 vim.keymap.set("t", "<C-w>j", "<C-\\><C-n><C-w>j", { desc = "Navigate down from terminal" })
 vim.keymap.set("t", "<C-w>k", "<C-\\><C-n><C-w>k", { desc = "Navigate up from terminal" })
