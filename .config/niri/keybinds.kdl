@@ -4,54 +4,20 @@
 
 binds {
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Space hotkey-overlay-title="Application Launcher" { 
-        spawn "dms" "ipc" "call" "spotlight" "toggle"; 
-    }
 
     Mod+E { spawn "nautilus" "--new-window"; }
     Mod+D { spawn "niri" "msg" "action" "toggle-overview"; }
     Mod+Tab repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Super+Backspace hotkey-overlay-title="Power menu" { spawn "dms" "ipc" "call" "powermenu" "open"; }
     Super+B hotkey-overlay-title="Open browser" { spawn "zen-browser"; }
     Mod+P hotkey-overlay-title="Screenshot" { spawn "/home/tenzin/bin/screenshot.sh"; }
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-    Mod+V hotkey-overlay-title="Clipboard Manager" { 
-        spawn "dms" "ipc" "call" "clipboard" "toggle"; 
-    }
-    Mod+M hotkey-overlay-title="Task Manager" { 
-        spawn "dms" "ipc" "call" "processlist" "toggle"; 
-    }
-    Mod+Comma hotkey-overlay-title="Settings" { 
-        spawn "dms" "ipc" "call" "settings" "toggle"; 
-    }
-    Mod+Y hotkey-overlay-title="Browse Wallpapers" {
-        spawn "dms" "ipc" "call" "dankdash" "wallpaper";
-    }
-    Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
-
-    Mod+Alt+L hotkey-overlay-title="Lock Screen" { 
-        spawn "dms" "ipc" "call" "lock" "lock"; 
-    }
-
-   Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { 
-        spawn "dms" "ipc" "call" "processlist" "toggle"; 
-    }
-
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
-
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     Alt+Tab repeat=false { toggle-overview; }
 
