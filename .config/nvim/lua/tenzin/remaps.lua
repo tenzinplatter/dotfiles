@@ -81,16 +81,6 @@ vim.keymap.set("t", "<C-w>j", "<C-\\><C-n><C-w>j", { desc = "Navigate down from 
 vim.keymap.set("t", "<C-w>k", "<C-\\><C-n><C-w>k", { desc = "Navigate up from terminal" })
 vim.keymap.set("t", "<C-w>l", "<C-\\><C-n><C-w>l", { desc = "Navigate right from terminal" })
 
-vim.keymap.set("n", "q", function()
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    if vim.api.nvim_win_get_config(win).relative ~= "" then
-      vim.api.nvim_win_close(win, false)
-      return
-    end
-  end
-  vim.fn.feedkeys("q", "n")
-end, { desc = "Close floating window or record macro" })
-
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
