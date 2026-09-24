@@ -6,7 +6,8 @@ name = "terminal"
 
 [terminal]
 default_shell = "/bin/zsh"
-new_cwd = "follow"  # tmux: split-window -c "#{pane_current_path}"
+new_cwd = "follow"
+kitty_graphics = true
 
 [session]
 resume_agents_on_restore = true  # replaces resurrect + continuum
