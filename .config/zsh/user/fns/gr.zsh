@@ -44,39 +44,39 @@ cdp() {
 #     source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
 # }
 
-lookout() {
-    # Unset the function temporarily to check for the real command
-    unset -f lookout
+# lookout() {
+#     # Unset the function temporarily to check for the real command
+#     unset -f lookout
 
-    # Use environment variable if set (direnv in worktrees), otherwise hardcoded path
-    local venv_path="${LOOKOUT_VENV_PATH:-$HOME/Repositories/lookout/lookout}"
+#     # Use environment variable if set (direnv in worktrees), otherwise hardcoded path
+#     local venv_path="${LOOKOUT_VENV_PATH:-$HOME/Repositories/lookout/lookout}"
 
-    if [[ ! -f "$venv_path/bin/activate" ]]; then
-        echo "Error: Virtual environment not found at $venv_path"
-        # Restore the function before returning
-        source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-        return 1
-    fi
+#     if [[ ! -f "$venv_path/bin/activate" ]]; then
+#         echo "Error: Virtual environment not found at $venv_path"
+#         # Restore the function before returning
+#         source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+#         return 1
+#     fi
 
-    # Source the virtual environment and call lookout
-    source "$venv_path/bin/activate"
+#     # Source the virtual environment and call lookout
+#     source "$venv_path/bin/activate"
 
-    # Check if lookout is now available
-    if command -v lookout > /dev/null 2>&1; then
-        command lookout "$@"
-        # Deactivate venv after command execution
-        deactivate
-    else
-        echo "Error: lookout command not found even after sourcing virtual environment"
-        # Deactivate venv and restore the function before returning
-        deactivate
-        source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-        return 1
-    fi
+#     # Check if lookout is now available
+#     if command -v lookout > /dev/null 2>&1; then
+#         command lookout "$@"
+#         # Deactivate venv after command execution
+#         deactivate
+#     else
+#         echo "Error: lookout command not found even after sourcing virtual environment"
+#         # Deactivate venv and restore the function before returning
+#         deactivate
+#         source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+#         return 1
+#     fi
 
-    # Restore the function for next time
-    source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
-}
+#     # Restore the function for next time
+#     source "${ZDOTDIR:-$HOME/.config/zsh}/user/fns/gr.zsh"
+# }
 
 # gama() {
 #     # Unset the function temporarily to check for the real command
