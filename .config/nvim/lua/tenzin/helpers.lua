@@ -222,7 +222,17 @@ function M.edit_then_open()
     border = "rounded",
     bo = { buftype = "nofile", bufhidden = "wipe", filetype = "text" },
     wo = { wrap = true },
-    keys = { q = "close", ["<Esc>"] = "close" },
+    keys = {
+      q = "close",
+      ["<Esc>"] = "close",
+      ["<CR>"] = {
+        function(win)
+          vim.cmd.stopinsert()
+          win:close()
+        end,
+        mode = { "n", "i" },
+      },
+    },
     on_close = function(win)
       local targets = vim
         .iter(vim.api.nvim_buf_get_lines(win.buf, 0, -1, false))
