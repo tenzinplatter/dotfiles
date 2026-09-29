@@ -88,6 +88,10 @@ vim.keymap.set({ "n", "v" }, "<leader>hs", function()
   require("tenzin.helpers").herdr_shell_at_path()
 end, { desc = "Open herdr shell at path under cursor" })
 
+vim.keymap.set({ "n", "x" }, "gX", function()
+  require("tenzin.helpers").edit_then_open()
+end, { desc = "Edit target in popup, then open with system handler" })
+
 -- Split other windows with current buffer
 vim.keymap.set("n", "<leader>wsh", function()
   require("tenzin.helpers").split_window_with_current_buffer("h", false)

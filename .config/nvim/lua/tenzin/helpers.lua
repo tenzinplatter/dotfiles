@@ -202,4 +202,43 @@ function M.herdr_shell_at_path()
   vim.system({ "herdr", "tab", "create", "--cwd", path, "--focus" })
 end
 
+local function gx_targets()
+  local mode = vim.fn.mode()
+  if mode == "v" or mode == "V" or mode == "\22" then
+    local lines = vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { type = mode })
+    vim.api.nvim_feedkeys(vim.keycode("<Esc>"), "nx", false)
+    return { table.concat(vim.iter(lines):map(vim.trim):totable()) }
+  end
+  return require("vim.ui")._get_urls()
+end
+
+function M.edit_then_open()
+  Snacks.win({
+    text = gx_targets(),
+    title = " Edit, then close to open ",
+    title_pos = "center",
+    width = 0.6,
+    height = 5,
+    border = "rounded",
+    bo = { buftype = "nofile", bufhidden = "wipe", filetype = "text" },
+    wo = { wrap = true },
+    keys = { q = "close", ["<Esc>"] = "close" },
+    on_close = function(win)
+      local targets = vim
+        .iter(vim.api.nvim_buf_get_lines(win.buf, 0, -1, false))
+        :map(vim.trim)
+        :filter(function(line)
+          return line ~= ""
+        end)
+        :totable()
+      for _, target in ipairs(targets) do
+        local _, err = vim.ui.open(target)
+        if err then
+          vim.notify(err, vim.log.levels.ERROR)
+        end
+      end
+    end,
+  })
+end
+
 return M
