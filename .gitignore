@@ -1,7 +1,6 @@
 /.config/kitty/machine.conf
 /.config/wezterm/lua/machine.lua
 /env.zsh
-.claude
 .config/kitty/dank-theme.conf
 .config/tmux/plugins
 docs/superpowers
