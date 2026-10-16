@@ -8,6 +8,5 @@ return {
     npairs.setup({
       disable_filetype = { "TelescopePrompt", "vim" },
     })
-    npairs.add_rule(Rule("<", ">"):with_pair(cond.none()):with_move(cond.done()))
   end,
 }
