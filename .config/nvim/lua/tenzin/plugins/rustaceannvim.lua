@@ -17,8 +17,10 @@ return {
             cargo = {
               features = "all",
             },
-            checkOnSave = {
+            checkOnSave = true,
+            check = {
               command = "clippy",
+              allTargets = true,
             },
           },
         },
