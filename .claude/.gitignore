@@ -1,0 +1,15 @@
+/*
+!/.gitignore
+!/CLAUDE.md
+!/settings.json
+!/agents/
+!/agents-config/
+!/hooks/
+!/guides/
+!/skills/
+/skills/synced/
+/skills/.trash/
+!/plugins/
+/plugins/*
+!/plugins/installed_plugins.json
+!/plugins/known_marketplaces.json

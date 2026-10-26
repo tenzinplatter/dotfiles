@@ -1,3 +1,0 @@
-[submodule ".claude"]
-	path = .claude
-	url = git@github.com:TenzinPlatter/claude-config.git

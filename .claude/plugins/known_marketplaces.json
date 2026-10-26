@@ -1,0 +1,26 @@
+{
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/home/tenzin/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-10-26T09:09:45.037Z"
+  },
+  "ponytail": {
+    "source": {
+      "source": "github",
+      "repo": "DietrichGebert/ponytail"
+    },
+    "installLocation": "/home/tenzin/.claude/plugins/marketplaces/ponytail",
+    "lastUpdated": "2026-06-22T00:28:22.694Z"
+  },
+  "tenzin-plugins": {
+    "source": {
+      "source": "github",
+      "repo": "tenzinplatter/claude-plugins"
+    },
+    "installLocation": "/home/tenzin/.claude/plugins/marketplaces/tenzin-plugins",
+    "lastUpdated": "2026-10-11T23:40:56.725Z"
+  }
+}

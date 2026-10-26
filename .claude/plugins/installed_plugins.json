@@ -1,0 +1,155 @@
+{
+  "version": 2,
+  "plugins": {
+    "clangd-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-01-26T22:23:42.888Z",
+        "lastUpdated": "2026-01-26T22:23:42.888Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-14T05:30:06.548Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ],
+    "pyright-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-01-28T01:50:11.339Z",
+        "lastUpdated": "2026-01-28T01:50:11.339Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-14T05:30:06.548Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ],
+    "rust-analyzer-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/rust-analyzer-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-09-10T00:44:35.850Z",
+        "lastUpdated": "2026-09-10T00:44:35.850Z"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/rust-analyzer-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-14T05:30:06.548Z"
+      }
+    ],
+    "lua-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/lua-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-01-28T06:35:45.463Z",
+        "lastUpdated": "2026-01-28T06:35:45.463Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/lua-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-14T05:30:06.548Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/frontend-design/58267944f921",
+        "version": "58267944f921",
+        "installedAt": "2026-04-14T01:08:35.953Z",
+        "lastUpdated": "2026-10-25T22:37:02.037Z",
+        "gitCommitSha": "58267944f92187b7d6a1c822165c96c81c864806"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/frontend-design/58267944f921",
+        "version": "58267944f921",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-26T08:47:22.549Z",
+        "gitCommitSha": "58267944f92187b7d6a1c822165c96c81c864806"
+      }
+    ],
+    "ponytail@ponytail": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/ponytail/ponytail/4.7.0",
+        "version": "4.7.0",
+        "installedAt": "2026-06-22T00:28:26.869Z",
+        "lastUpdated": "2026-06-22T00:28:26.869Z",
+        "gitCommitSha": "6da37bfa7d0282522c7785759f4d2f1544015354"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/ponytail/ponytail/4.7.0",
+        "version": "4.7.0",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-14T05:30:06.548Z",
+        "gitCommitSha": "6da37bfa7d0282522c7785759f4d2f1544015354"
+      }
+    ],
+    "agenda@tenzin-plugins": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/tenzin-plugins/agenda/0.7.0",
+        "version": "0.7.0",
+        "installedAt": "2026-10-09T05:33:08.718Z",
+        "lastUpdated": "2026-10-11T23:40:56.730Z",
+        "gitCommitSha": "d8b11f0379b4fc16a029ac0770dceb00fdc480b9"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/tenzin-plugins/agenda/0.7.0",
+        "version": "0.7.0",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-14T05:30:06.548Z",
+        "gitCommitSha": "d8b11f0379b4fc16a029ac0770dceb00fdc480b9"
+      }
+    ],
+    "mattpocock-skills@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/mattpocock-skills/1.3.1",
+        "version": "1.3.1",
+        "installedAt": "2026-10-12T00:37:53.421Z",
+        "lastUpdated": "2026-10-16T05:12:20.382Z",
+        "gitCommitSha": "49dd158d1076134a641b33efb035946536778336"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/mattpocock-skills/1.3.1",
+        "version": "1.3.1",
+        "installedAt": "2026-10-14T05:30:06.548Z",
+        "lastUpdated": "2026-10-26T08:47:25.643Z",
+        "gitCommitSha": "49dd158d1076134a641b33efb035946536778336"
+      }
+    ]
+  }
+}
