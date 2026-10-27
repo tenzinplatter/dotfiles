@@ -1,13 +1,13 @@
 [opener]
-imgopen = [{ run = 'zen-browser "$@"', orphan = true, for = "unix" }]
-edit = [{ run = "$EDITOR \"$@\"", block = true, for = "unix" }]
-fallback = [{ run = "xdg-open \"$@\"", orphan = true, for = "unix" }]
+imgopen = [{ run = "zen-browser %s", orphan = true, for = "unix" }]
+edit = [{ run = "${EDITOR:-vi} %s", block = true, for = "unix" }]
+fallback = [{ run = "xdg-open %s1", orphan = true, for = "unix" }]
 
 [open]
 rules = [
 	{ mime = "image/*", use = "imgopen" },
 	{ mime = "text/*", use = "edit" },
-	{ mime = "*", use = "fallback" },
+	{ url = "*", use = "fallback" },
 ]
 
 [mgr]
