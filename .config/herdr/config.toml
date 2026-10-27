@@ -17,12 +17,14 @@ copy_on_select = true    # replaces tmux-yank
 mouse_scroll_lines = 3   # replaces tmux-smooth-scroll
 
 agent_panel_sort = "spaces"
+
 [keys]
 prefix = "ctrl+f"
 focus_pane_left = ""
 focus_pane_down = ""
 focus_pane_up = ""
 focus_pane_right = ""
+switch_workspace = "prefix+shift+1..9"
 
 # splits: tmux `s` = stacked, `v` = side-by-side
 split_vertical = "prefix+v"
