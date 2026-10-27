@@ -78,11 +78,11 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/frontend-design/58267944f921",
-        "version": "58267944f921",
+        "installPath": "/home/tenzin/.claude/plugins/cache/claude-plugins-official/frontend-design/1.1.1",
+        "version": "1.1.1",
         "installedAt": "2026-04-14T01:08:35.953Z",
-        "lastUpdated": "2026-10-25T22:37:02.037Z",
-        "gitCommitSha": "58267944f92187b7d6a1c822165c96c81c864806"
+        "lastUpdated": "2026-10-27T22:43:43.475Z",
+        "gitCommitSha": "f8c5e7a1dcb71b10cb74586224b5401f3de5db28"
       },
       {
         "scope": "project",
