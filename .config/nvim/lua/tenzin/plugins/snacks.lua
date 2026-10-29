@@ -1,3 +1,44 @@
+local window_directions = { h = "left", j = "bottom", k = "top", l = "right" }
+local window_cmds = { [""] = "edit", v = "vsplit", s = "split" }
+
+local function definition_keys()
+  local keys = {
+    {
+      "gdd",
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+      desc = "Goto Definition",
+    },
+    {
+      "gdvv",
+      function()
+        Snacks.picker.lsp_definitions({ confirm = "edit_vsplit" })
+      end,
+      desc = "Goto Definition in vertical split",
+    },
+    {
+      "gdss",
+      function()
+        Snacks.picker.lsp_definitions({ confirm = "edit_split" })
+      end,
+      desc = "Goto Definition in horizontal split",
+    },
+  }
+  for direction, direction_name in pairs(window_directions) do
+    for cmd_key, cmd in pairs(window_cmds) do
+      table.insert(keys, {
+        "gd" .. cmd_key .. direction,
+        function()
+          require("tenzin.helpers").goto_definition_in_window(direction, cmd)
+        end,
+        desc = ("Goto Definition (%s) in %s window"):format(cmd, direction_name),
+      })
+    end
+  end
+  return keys
+end
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -72,7 +113,7 @@ return {
       },
     },
   },
-  keys = {
+  keys = vim.list_extend({
     -- Top Pickers & Explorer
     {
       "<leader><space>",
@@ -351,86 +392,6 @@ return {
     },
     -- LSP
     {
-      "gdd",
-      function()
-        Snacks.picker.lsp_definitions()
-      end,
-      desc = "Goto Definition",
-    },
-    {
-      "gdv",
-      function()
-        vim.cmd("vsplit")
-        vim.lsp.buf.definition()
-      end,
-      desc = "Goto Definition in vertical split",
-    },
-    {
-      "gds",
-      function()
-        vim.cmd("split")
-        vim.lsp.buf.definition()
-      end,
-      desc = "Goto Definition in horizontal split",
-    },
-    -- Goto definition in splits of other windows
-    {
-      "gdvh",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("h", true)
-      end,
-      desc = "Goto Definition vsplit left window",
-    },
-    {
-      "gdvj",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("j", true)
-      end,
-      desc = "Goto Definition vsplit bottom window",
-    },
-    {
-      "gdvk",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("k", true)
-      end,
-      desc = "Goto Definition vsplit top window",
-    },
-    {
-      "gdvl",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("l", true)
-      end,
-      desc = "Goto Definition vsplit right window",
-    },
-    {
-      "gdsh",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("h", false)
-      end,
-      desc = "Goto Definition split left window",
-    },
-    {
-      "gdsj",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("j", false)
-      end,
-      desc = "Goto Definition split bottom window",
-    },
-    {
-      "gdsk",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("k", false)
-      end,
-      desc = "Goto Definition split top window",
-    },
-    {
-      "gdsl",
-      function()
-        require("tenzin.helpers").goto_definition_in_split("l", false)
-      end,
-      desc = "Goto Definition split right window",
-    },
-    {
       "gD",
       function()
         Snacks.picker.lsp_declarations()
@@ -573,7 +534,7 @@ return {
         })
       end,
     },
-  },
+  }, definition_keys()),
   init = function()
     vim.api.nvim_create_autocmd("User", {
       pattern = "VeryLazy",
