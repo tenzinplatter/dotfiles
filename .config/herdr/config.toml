@@ -75,6 +75,6 @@ description = "Vim-aware pane right"
 [[keys.command]]
 key = "prefix+a"
 type = "popup"
-command = "pen"
+command = "pen --popup"
 width = "90%"
 height = "90%"
