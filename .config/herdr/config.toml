@@ -71,3 +71,10 @@ key = "alt+l"
 type = "plugin_action"
 command = "local.vim-navigator.right"
 description = "Vim-aware pane right"
+
+[[keys.command]]
+key = "prefix+a"
+type = "popup"
+command = "pen"
+width = "90%"
+height = "90%"
