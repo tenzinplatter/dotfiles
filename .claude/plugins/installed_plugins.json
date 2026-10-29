@@ -134,6 +134,15 @@
         "lastUpdated": "2026-10-26T08:47:25.643Z",
         "gitCommitSha": "49dd158d1076134a641b33efb035946536778336"
       }
+    ],
+    "pen@pen-local": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/pen-local/pen/0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2026-10-29T00:44:20.399Z",
+        "lastUpdated": "2026-10-29T00:44:20.399Z"
+      }
     ]
   }
 }

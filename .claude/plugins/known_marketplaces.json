@@ -22,5 +22,13 @@
     },
     "installLocation": "/home/tenzin/.claude/plugins/marketplaces/tenzin-plugins",
     "lastUpdated": "2026-10-11T23:40:56.725Z"
+  },
+  "pen-local": {
+    "source": {
+      "source": "directory",
+      "path": "/home/tenzin/code/pen/marketplace"
+    },
+    "installLocation": "/home/tenzin/code/pen/marketplace",
+    "lastUpdated": "2026-10-29T00:44:19.339Z"
   }
 }
