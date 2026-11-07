@@ -283,3 +283,8 @@ nvl() {
 newest() {
     ls -snew | tail -1
 }
+
+spicetify-refresh() {
+    spicteify restore backup
+    spicteify backup apply
+}
