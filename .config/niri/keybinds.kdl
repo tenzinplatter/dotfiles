@@ -4,6 +4,7 @@
 
 binds {
     Mod+Space { spawn "dms" "ipc" "launcher" "open"; }
+    Mod+Comma { spawn "dms" "ipc" "settings" "open"; }
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+E { spawn "nautilus" "--new-window"; }
     Mod+D { spawn "niri" "msg" "action" "toggle-overview"; }
