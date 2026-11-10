@@ -285,6 +285,6 @@ newest() {
 }
 
 spicetify-refresh() {
-    spicteify restore backup
-    spicteify backup apply
+    spicetify restore backup
+    spicetify backup apply
 }
