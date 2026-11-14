@@ -86,4 +86,3 @@ debug {
 
 // DMS Include Configs
 include "dms/windowrules.kdl"
-dms.kdl
