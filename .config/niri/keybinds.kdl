@@ -14,6 +14,7 @@ binds {
     Super+B hotkey-overlay-title="Open browser" { spawn "zen-browser"; }
     Mod+P hotkey-overlay-title="Screenshot" { spawn "/home/tenzin/bin/screenshot.sh"; }
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    Mod+Alt+L { spawn "dms" "ipc" "lock" "lock"; }
 
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
