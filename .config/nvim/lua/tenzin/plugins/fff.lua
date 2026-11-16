@@ -12,7 +12,7 @@ return {
   lazy = false,
   keys = {
     {
-      "<leader>ff",
+      "<leader>sf",
       function()
         require("fff").find_files()
       end,
