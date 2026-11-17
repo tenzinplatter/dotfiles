@@ -1,4 +1,8 @@
 # User Preferences
+## Code Style
+This is one of if not the MOST IMPORTANT things to keep in mind.
+- When implementing your code should always be acting at ONE level of abstraction. Do not mix things, extract into functions and call those.
+
 ## ghcr.io auth
 - Use the $API_TOKEN_GITHUB env var instead of `gh token`, as `gh token` doesn't have read:packages
 
@@ -13,6 +17,7 @@
     - `sonnet`: the default. Ordinary implementation, investigation, debugging and agentic coding; near-Opus capability at roughly half the cost.
     - `opus`: hard design, subtle debugging, adversarial review, or anything where Sonnet has already struggled.
     - `fable`: don't dispatch. Opus matches or beats it at much lower cost.
+
 ## Repositories
 - All repos live in ~/Repositories, and platform_* repos live in ~/Repositories/platform/packages/
 - The "products" refer to gama, lookout, and missim, all of which live in ~/Repositories/
