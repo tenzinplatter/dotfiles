@@ -16,7 +16,7 @@ This is one of if not the MOST IMPORTANT things to keep in mind.
     - `haiku`: mechanical edits, greps, file lookups and other rote work. Clearly weaker at multi-step reasoning, so don't give it anything requiring judgement.
     - `sonnet`: the default. Ordinary implementation, investigation, debugging and agentic coding; near-Opus capability at roughly half the cost.
     - `opus`: hard design, subtle debugging, adversarial review, or anything where Sonnet has already struggled.
-    - `fable`: don't dispatch. Opus matches or beats it at much lower cost.
+    - `fable`: step up from opus, used for architectural planning and decisions.
 
 ## Repositories
 - All repos live in ~/Repositories, and platform_* repos live in ~/Repositories/platform/packages/
