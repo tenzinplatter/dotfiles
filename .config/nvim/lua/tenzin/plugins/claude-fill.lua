@@ -1,7 +1,5 @@
 return {
-  dir = "~/code/claude-fill.nvim",
-  name = "claude-fill.nvim",
-  main = "claude_fill",
+  "https://github.com/tenzinplatter/claude-fill.nvim",
   cmd = "ClaudeFill",
   opts = {},
 }
