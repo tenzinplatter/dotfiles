@@ -30,5 +30,13 @@
     },
     "installLocation": "/home/tenzin/code/pen/marketplace",
     "lastUpdated": "2026-10-29T00:44:19.339Z"
+  },
+  "cursor-plugins": {
+    "source": {
+      "source": "github",
+      "repo": "cursor/plugins"
+    },
+    "installLocation": "/home/tenzin/.claude/plugins/marketplaces/cursor-plugins",
+    "lastUpdated": "2026-11-18T05:03:42.959Z"
   }
 }

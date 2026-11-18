@@ -51,8 +51,9 @@
     "lua-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "mattpocock-skills@claude-plugins-official": true,
-    "pen@pen-local": true
+    "mattpocock-skills@claude-plugins-official": false,
+    "pen@pen-local": true,
+    "pstack@cursor-plugins": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -71,6 +72,12 @@
       "source": {
         "source": "directory",
         "path": "/home/tenzin/code/pen/marketplace"
+      }
+    },
+    "cursor-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "cursor/plugins"
       }
     }
   },

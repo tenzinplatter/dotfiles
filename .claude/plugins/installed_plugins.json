@@ -145,11 +145,21 @@
       },
       {
         "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
         "installPath": "/home/tenzin/.claude/plugins/cache/pen-local/pen/0.1.0",
         "version": "0.1.0",
         "installedAt": "2026-11-01T22:16:05.397Z",
-        "lastUpdated": "2026-11-01T22:16:05.397Z",
-        "projectPath": "/home/tenzin/.dotfiles"
+        "lastUpdated": "2026-11-01T22:16:05.397Z"
+      }
+    ],
+    "pstack@cursor-plugins": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/cursor-plugins/pstack/0.15.43",
+        "version": "0.15.43",
+        "installedAt": "2026-11-18T05:03:47.134Z",
+        "lastUpdated": "2026-11-18T05:03:47.134Z",
+        "gitCommitSha": "93b916d4a1e806507e22f4716b352fa91f2b227e"
       }
     ]
   }
