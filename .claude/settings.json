@@ -53,7 +53,7 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "mattpocock-skills@claude-plugins-official": true,
     "pen@pen-local": true,
-    "pstack@cursor-plugins": true
+    "pstack@cursor-plugins": false
   },
   "extraKnownMarketplaces": {
     "ponytail": {
