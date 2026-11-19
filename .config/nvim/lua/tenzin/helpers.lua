@@ -48,6 +48,15 @@ function M.split_window_with_current_buffer(direction, vertical)
   vim.api.nvim_set_current_win(current_win)
 end
 
+---@param key "j"|"k"
+---@return string
+function M.vertical_motion(key)
+  if vim.v.count > 1 then
+    return "m'" .. vim.v.count .. key
+  end
+  return "g" .. key
+end
+
 ---@param direction "h"|"j"|"k"|"l"
 ---@param cmd "edit"|"split"|"vsplit"
 function M.goto_definition_in_window(direction, cmd)

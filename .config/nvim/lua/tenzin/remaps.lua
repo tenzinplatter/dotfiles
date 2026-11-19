@@ -49,17 +49,12 @@ vim.keymap.set("n", "<leader>qf", function()
   vim.cmd("copen")
 end, { desc = "Open quickfix list" })
 
-local function counted_jump(key, display_key)
-  return function()
-    if vim.v.count > 1 then
-      return "m'" .. vim.v.count .. key
-    end
-    return display_key
-  end
-end
-
-vim.keymap.set("n", "j", counted_jump("j", "gj"), { expr = true, desc = "Down by display line, or counted jump" })
-vim.keymap.set("n", "k", counted_jump("k", "gk"), { expr = true, desc = "Up by display line, or counted jump" })
+vim.keymap.set("n", "j", function()
+  return require("tenzin.helpers").vertical_motion("j")
+end, { expr = true, desc = "Down by display line, or counted jump" })
+vim.keymap.set("n", "k", function()
+  return require("tenzin.helpers").vertical_motion("k")
+end, { expr = true, desc = "Up by display line, or counted jump" })
 
 vim.keymap.set("n", "<C-c>", function()
   vim.cmd("nohlsearch")
