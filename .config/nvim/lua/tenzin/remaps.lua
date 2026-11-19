@@ -49,8 +49,17 @@ vim.keymap.set("n", "<leader>qf", function()
   vim.cmd("copen")
 end, { desc = "Open quickfix list" })
 
-vim.keymap.set("n", "j", "gj", { desc = "Move down by display line" })
-vim.keymap.set("n", "k", "gk", { desc = "Move up by display line" })
+local function counted_jump(key, display_key)
+  return function()
+    if vim.v.count > 1 then
+      return "m'" .. vim.v.count .. key
+    end
+    return display_key
+  end
+end
+
+vim.keymap.set("n", "j", counted_jump("j", "gj"), { expr = true, desc = "Down by display line, or counted jump" })
+vim.keymap.set("n", "k", counted_jump("k", "gk"), { expr = true, desc = "Up by display line, or counted jump" })
 
 vim.keymap.set("n", "<C-c>", function()
   vim.cmd("nohlsearch")
