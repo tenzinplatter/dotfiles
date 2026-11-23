@@ -86,3 +86,4 @@ debug {
 // DMS Include Configs
 include "dms/windowrules.kdl"
 include "dms/colors.kdl"
+include "dms/outputs.kdl"
