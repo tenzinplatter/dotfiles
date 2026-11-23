@@ -163,12 +163,21 @@
       },
       {
         "scope": "project",
+        "projectPath": "/home/tenzin/.dotfiles",
         "installPath": "/home/tenzin/.claude/plugins/cache/cursor-plugins/pstack/0.15.43",
         "version": "0.15.43",
         "installedAt": "2026-11-18T06:22:14.362Z",
         "lastUpdated": "2026-11-18T06:22:14.362Z",
-        "gitCommitSha": "93b916d4a1e806507e22f4716b352fa91f2b227e",
-        "projectPath": "/home/tenzin/.dotfiles"
+        "gitCommitSha": "93b916d4a1e806507e22f4716b352fa91f2b227e"
+      }
+    ],
+    "linear@anthropic-plugin-directory": [
+      {
+        "scope": "user",
+        "installPath": "/home/tenzin/.claude/plugins/cache/anthropic-plugin-directory/linear/7b7a29e0458e-8d68c977",
+        "version": "7b7a29e0458e-8d68c977",
+        "installedAt": "2026-11-23T22:52:48.315Z",
+        "lastUpdated": "2026-11-23T22:52:48.315Z"
       }
     ]
   }
