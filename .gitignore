@@ -11,3 +11,7 @@ docs/superpowers
 .config/herdr/plugins.json
 .config/herdr/release-notes.json
 .config/herdr/.plugins.lock
+.config/kitty/dank-tabs.conf
+.config/nvim/lua/plugins/dankcolors.lua
+.config/wezterm/colors/dank-theme.toml
+.config/zed/themes/dank-zed-theme.json
