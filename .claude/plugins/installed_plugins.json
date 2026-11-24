@@ -177,7 +177,9 @@
         "installPath": "/home/tenzin/.claude/plugins/cache/anthropic-plugin-directory/linear/7b7a29e0458e-8d68c977",
         "version": "7b7a29e0458e-8d68c977",
         "installedAt": "2026-11-23T22:52:48.315Z",
-        "lastUpdated": "2026-11-23T22:52:48.315Z"
+        "lastUpdated": "2026-11-24T00:14:29.598Z",
+        "gitCommitSha": "7b7a29e0458e3fd9417b0f46e403843b52958a83",
+        "directoryRepositoryKey": "github.com/anthropics/claude-plugins-official#external_plugins/linear"
       }
     ]
   }
