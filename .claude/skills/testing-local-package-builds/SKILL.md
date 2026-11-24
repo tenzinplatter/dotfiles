@@ -23,14 +23,17 @@ comments:
 
 ## Overview
 
-Product workspaces have a `dev` feature with a high-priority local channel:
+Product workspaces list a local channel first in the workspace `channels`, with no explicit priority:
 
 ```toml
-[feature.dev]
-channels = [{ channel = "file:///tmp/gr-dev-channel", priority = 1 }]
+[workspace]
+channels = [
+  "file:///tmp/gr-dev-channel",
+  "az://stgrcondachannel.blob.core.windows.net/general",
+]
 ```
 
-The channel is empty by default and doesn't affect any solve. A package published into it shadows the remote build for the `dev` environments only; `default`/prod environments keep resolving from the remote channel. The dev containers mount the channel at the same absolute path, so the lock resolves identically on host and in the container.
+The channel is empty by default and doesn't affect any solve. A package published into it shadows the remote build in every environment. A lock with no entries from the channel never reads it. A pre-commit hook keeps those entries out of commits. The dev containers mount the channel at the same absolute path, so the lock resolves identically on host and in the container.
 
 **Requires** a pixi-gr build with `pixi publish --allow-source-dependencies`, and pixi-plugins with `pixi publish-recurse`.
 
@@ -63,7 +66,7 @@ pixi publish-recurse PKG -- --to "file://$CHAN" --build-string-prefix dev --buil
 
 This publishes `PKG` and every workspace it transitively path-depends on (e.g. `topic_utils` → `xtensor_vendor`), dependencies first, one at a time, each with `pixi publish --path . --allow-source-dependencies`. Publishing the whole chain means everything the product sees was built from the same checkout, so there's no ABI mismatch.
 
-- **Stale siblings win.** Every package in the chain shadows its remote build in `dev` environments, whatever its version. Check `git status -sb` in the module first; if it's behind `origin`, pull (or rebase your work) so the siblings aren't older than their releases.
+- **Stale siblings win.** Every package in the chain shadows its remote build in every environment, whatever its version. Check `git status -sb` in the module first; if it's behind `origin`, pull (or rebase your work) so the siblings aren't older than their releases.
 - `--build-string-prefix dev` — makes local builds obvious in `pixi where` output (`dev_h976c01b_1`).
 - `--build-number <n>` — the build string hash doesn't change when the source does. Use an `n` higher than any `dev_` build already in `$CHAN/linux-64`, or the new artifact keeps the old filename and the cached one wins.
 - The command's output lists every workspace it published. Those package names are the `PKG [DEPS...]` for the steps below.
@@ -85,16 +88,16 @@ This touches only workspaces whose `pixi.lock` already pins one of the packages.
 pixi where --json --verbose --platform linux-64 PKG [DEPS...]
 ```
 
-Each row of `packages.<pkg>.rows[]` is one (workspace, channel, build) group with its `environments`. Pass when, for every workspace you care about, the row containing `dev` has:
+Each row of `packages.<pkg>.rows[]` is one (workspace, channel, build) group with its `environments`. Pass when, for every workspace you care about, the row has:
 
 - `"channel": "/tmp/gr-dev-channel"` (`where` prints the path without `file://`)
 - `"build"` starting with `dev`
 
-Rows for `default`/prod environments still showing the remote `az://...` channel are expected, not a failure. A `dev` row still on `az://` means the relock didn't take — rerun step 3 for that workspace and check its manifest's `dev` feature has the channel.
+A row still on `az://` means the relock didn't take. Rerun step 3 for that workspace and check its manifest lists the channel first.
 
 ## 5. Rebuild the containers
 
-Always use the product CLI, never `docker compose` directly. The dev image installs the env at build time, so a rebuild is required.
+Always use the product CLI, never `docker compose` directly. The image installs the env at build time, so a rebuild is required.
 
 | Product | Command |
 |---|---|
@@ -105,10 +108,10 @@ Always use the product CLI, never `docker compose` directly. The dev image insta
 
 missim and lookout are pixi-only, so they don't take `--pixi`.
 
-Then confirm each running container's `dev` env holds the local builds:
+Then confirm each running container's env holds the local builds:
 
 ```bash
-docker exec <container> sh -c 'ls /repo/projects/*/ws/.pixi/envs/dev/conda-meta /repo/projects/*/.pixi/envs/dev/conda-meta 2>/dev/null' | grep -E 'PKG|DEP'
+docker exec <container> sh -c 'ls /repo/projects/*/ws/.pixi/envs/*/conda-meta /repo/projects/*/.pixi/envs/*/conda-meta 2>/dev/null' | grep -E 'PKG|DEP'
 ```
 
 Every package in the chain should show a `dev_` build, e.g. `topic_utils-1.28.0-dev_h976c01b_1.json` in `gama_vessel`.
@@ -134,5 +137,4 @@ Then check `pixi where` shows the remote channel again, and `git diff -- '*pixi.
 | Plain `pixi publish` on a package with path deps | Error: `has source run dependencies (...)`. Use `publish-recurse` |
 | Relocking/checking only `PKG` | Pass every package in the chain to `update-all` and `where` |
 | Same version and build number republished | Bump `--build-number`, or the cached artifact wins |
-| Reading `default` rows as a failure | Only `dev` environments see the local channel |
 | Committing relocked lockfiles | Revert (step 6) before committing anything |
