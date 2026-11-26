@@ -7,7 +7,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "opus",
+  "model": "fable",
   "hooks": {
     "PreToolUse": [
       {
@@ -84,6 +84,11 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
   "autoCompactWindow": 300000,
   "remote": {
     "defaultEnvironmentId": "env_01JcCCHaXVe1aGK4NkWbFkhj"
@@ -107,11 +112,6 @@
       "env": {
         "SHORTCUT_API_TOKEN": "${SHORTCUT_API_TOKEN}"
       }
-    }
-  },
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "medium"
     }
   }
 }
