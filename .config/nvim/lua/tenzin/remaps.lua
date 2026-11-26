@@ -27,7 +27,7 @@ vim.keymap.set("n", "ZZ", function()
 end, { desc = "Save session, close all buffers and quit" })
 
 vim.keymap.set("n", "<C-l>", "xp", { desc = "Swap character with next" })
-vim.keymap.set("n", "<C-h>", "xhP", { desc = "Swap character with previous" })
+vim.keymap.set("n", "<C-h>", "hxph", { desc = "Swap character with previous" })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to clipboard" })
 
